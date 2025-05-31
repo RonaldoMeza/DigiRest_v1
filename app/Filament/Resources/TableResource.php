@@ -33,6 +33,7 @@ class TableResource extends Resource
                     ->options([
                         'available' => 'Disponible',
                         'occupied'  => 'Ocupada',
+                        
                     ])
                     ->required(),
             ]);
