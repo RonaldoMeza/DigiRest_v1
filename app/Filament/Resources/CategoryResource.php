@@ -23,8 +23,9 @@ use Illuminate\Support\Str;
 class CategoryResource extends Resource
 {
     protected static ?string $model = Category::class;
-
     protected static ?string $navigationIcon = 'heroicon-o-tag';
+    protected static ?string $navigationLabel = 'Categorías';
+
 
     public static function form(Form $form): Form
     {
@@ -75,9 +76,9 @@ class CategoryResource extends Resource
                 Tables\Columns\ImageColumn::make('image')
                     ->label('Imagen'),
                     /* ->circular(), */
-                Tables\Columns\TextColumn::make('slug')
+                /* Tables\Columns\TextColumn::make('slug')
                     ->label('Slug')
-                    ->searchable(),
+                    ->searchable(), */
                 Tables\Columns\IconColumn::make('is_active')
                     ->label('Activo')
                     ->boolean(),
@@ -101,9 +102,10 @@ class CategoryResource extends Resource
                 ]),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
+                /* Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                ]), */
+                Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
 

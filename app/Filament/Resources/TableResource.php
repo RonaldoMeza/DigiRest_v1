@@ -16,26 +16,44 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class TableResource extends Resource
 {
     protected static ?string $model = TableModel::class;
-
-    protected static ?string $navigationIcon = 'heroicon-o-table-cells';
+    protected static ?string $navigationIcon = 'heroicon-o-Inbox';
+    protected static ?string $navigationLabel = 'Mesas';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\TextInput::make('code')
-                    ->label('Código')
+                    ->label('Código de Mesa')
                     ->required()
-                    ->maxLength(50),
-                
+                    ->unique(
+                        \App\Models\Table::class, // 1️⃣ Clase Eloquent cuyo $table interno se usará
+                        'code',                   // 2️⃣ Columna única (igual que antes)
+                        ignorable: fn ($record)   
+                            => $record            // 3️⃣ Ignora el registro actual al editar
+                ),
+                Forms\Components\TextInput::make('capacity')
+                    ->label('Capacidad')
+                    ->numeric()
+                    ->required()
+                    ->minValue(1),
                 Forms\Components\Select::make('status')
                     ->label('Estado')
                     ->options([
                         'available' => 'Disponible',
                         'occupied'  => 'Ocupada',
-                        
                     ])
-                    ->required(),
+                    ->required()
+                    ->default('available'),
+                Forms\Components\Select::make('location')
+                    ->label('Ubicación')
+                    ->options([
+                        'primer_piso' => 'Primer piso',
+                        'segundo_piso'  => 'Segundo piso',
+                    ])
+                    ->required()
+                    ->searchable()
+                    ->placeholder('Selecciona un piso'),
             ]);
     }
 
@@ -45,32 +63,41 @@ class TableResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('code')
                     ->label('Código')
-                    ->searchable()
+                    ->sortable()
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('capacity')
+                    ->label('Capacidad')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('status')
                     ->label('Estado')
-                    ->searchable()
                     ->sortable()
-                    ->formatStateUsing(fn (string $state): string => match ($state) {
-                        'available' => 'Disponible',
-                        'occupied'  => 'Ocupada',
-                        default     => $state,
-                    }),
+                    ->formatStateUsing(fn($state) => $state === 'available' ? 'Disponible' : 'Ocupada'),
+                Tables\Columns\TextColumn::make('location')
+                    ->label('Ubicación')
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->label('Fecha de creación')
+                    ->dateTime('d/m/Y H:i:s')
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->label('Fecha de actualización')
+                    ->dateTime('d/m/Y H:i:s')
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\ActionGroup::make([
-                    Tables\Actions\ViewAction::make(),
                     Tables\Actions\EditAction::make(),
                     Tables\Actions\DeleteAction::make(),
                 ]),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
+                /* Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                ]), */
             ]);
     }
 

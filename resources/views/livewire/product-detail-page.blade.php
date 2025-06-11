@@ -9,15 +9,15 @@
                 </div>
                 <div class="flex-wrap hidden md:flex ">
                 <div class="w-1/2 p-2 sm:w-1/4" x-on:click="mainImage='https://m.media-amazon.com/images/I/71f5Eu5lJSL._SX679_.jpg'">
-                    <img src="https://m.media-amazon.com/images/I/71f5Eu5lJSL._SX679_.jpg" alt="" class="object-cover w-full lg:h-20 cursor-pointer hover:border hover:border-blue-500">
+                    <img src="https://m.media-amazon.com/images/I/71f5Eu5lJSL._SX679_.jpg" alt="" class="object-cover w-full lg:h-20 cursor-pointer hover:border hover:border-digirestDark">
                 </div>
 
                 <div class="w-1/2 p-2 sm:w-1/4" x-on:click="mainImage='https://m.media-amazon.com/images/I/61XPhYGQOQL._SX679_.jpg'">
-                    <img src="https://m.media-amazon.com/images/I/61XPhYGQOQL._SX679_.jpg" alt="" class="object-cover w-full lg:h-20 cursor-pointer hover:border hover:border-blue-500">
+                    <img src="https://m.media-amazon.com/images/I/61XPhYGQOQL._SX679_.jpg" alt="" class="object-cover w-full lg:h-20 cursor-pointer hover:border hover:border-digirestDark">
                 </div>
 
                 <div class="w-1/2 p-2 sm:w-1/4" x-on:click="mainImage='https://m.media-amazon.com/images/I/81v5JNjZ4-L._SX679_.jpg'">
-                    <img src="https://m.media-amazon.com/images/I/81v5JNjZ4-L._SX679_.jpg" alt="" class="object-cover w-full lg:h-20 cursor-pointer hover:border hover:border-blue-500">
+                    <img src="https://m.media-amazon.com/images/I/81v5JNjZ4-L._SX679_.jpg" alt="" class="object-cover w-full lg:h-20 cursor-pointer hover:border hover:border-digirestDark">
                 </div>
 
                 </div>
@@ -29,7 +29,7 @@
                         </path>
                     </svg>
                     </span>
-                    <h2 class="text-lg font-bold text-gray-700 dark:text-gray-400">Free Shipping</h2>
+                    <h2 class="text-lg font-bold text-gray-700 dark:text-gray-400">Compra libre</h2>
                 </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                 </p>
                 </div>
                 <div class="w-32 mb-8 ">
-                <label for="" class="w-full pb-1 text-xl font-semibold text-gray-700 border-b border-blue-300 dark:border-gray-600 dark:text-gray-400">Quantity</label>
+                <label for="" class="w-full pb-1 text-xl font-semibold text-gray-700 border-b border-digirest dark:border-gray-600 dark:text-gray-400">Quantity</label>
                 <div class="relative flex flex-row w-full h-10 mt-6 bg-transparent rounded-lg">
                     <button class="w-20 h-full text-gray-600 bg-gray-300 rounded-l outline-none cursor-pointer dark:hover:bg-gray-700 dark:text-gray-400 hover:text-gray-700 dark:bg-gray-900 hover:bg-gray-400">
                     <span class="m-auto text-2xl font-thin">-</span>
@@ -62,8 +62,8 @@
                 </div>
                 </div>
                 <div class="flex flex-wrap items-center gap-4">
-                <button class="w-full p-4 bg-blue-500 rounded-md lg:w-2/5 dark:text-gray-200 text-gray-50 hover:bg-blue-600 dark:bg-blue-500 dark:hover:bg-blue-700">
-                    Add to cart</button>
+                <button class="w-full p-4 bg-digirest rounded-md lg:w-2/5 dark:text-gray-200 text-gray-50 hover:bg-digirestDark dark:bg-digirestDark dark:hover:bg-blue-700">
+                    Añadir al carrito</button>
                 </div>
             </div>
             </div>

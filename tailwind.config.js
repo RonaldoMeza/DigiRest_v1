@@ -14,8 +14,10 @@ export default {
         kaffeesatz: ['"Yanone Kaffeesatz"', 'sans-serif'],
       },
       colors: {
+        whiteDark: '#F0F3F4',
         digirest: '#FAC122',
         digirestDark: '#e0aa00',
+        digirestClear:'rgb(252, 235, 188)',
       },
     },
   },

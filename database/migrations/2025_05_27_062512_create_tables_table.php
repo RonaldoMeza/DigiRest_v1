@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('tables', function (Blueprint $table) {
             $table->id();
 
-            $table->string('code')->unique();                      // “M1”, “M2”, …
-            $table->enum('status', ['available', 'occupied'])      // solo 2 estados
-                ->default('available');
+            $table->string('code')->unique();
+            $table->unsignedInteger('capacity');         // “M1”, “M2”, …
+            $table->enum('status', ['available', 'occupied'])->default('available'); // Dos estados
+            $table->string('location')->nullable();
 
             $table->timestamps();
         });

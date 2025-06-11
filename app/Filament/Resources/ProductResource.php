@@ -26,8 +26,8 @@ use Filament\Tables\Filters\SelectFilter;
 class ProductResource extends Resource
 {
     protected static ?string $model = Product::class;
-
     protected static ?string $navigationIcon = 'heroicon-o-squares-2x2';
+    protected static ?string $navigationLabel = 'Productos';
 
     public static function form(Form $form): Form
     {
@@ -102,35 +102,7 @@ class ProductResource extends Resource
                             Toggle::make('on_sale')
                                 ->label('En Oferta')
                                 ->default(false), */
-                            /* Select::make('is_active')
-                                ->label('Activo')
-                                ->options([
-                                    true => 'Sí',
-                                    false => 'No',
-                                ])
-                                ->default(true)
-                                ->required(),
-                            Select::make('in_stock')
-                                ->label('En Stock')
-                                ->options([
-                                    true => 'Sí',
-                                    false => 'No',
-                                ])
-                                ->default(true),
-                            Select::make('is_featured')
-                                ->label('Destacado')
-                                ->options([
-                                    true => 'Sí',
-                                    false => 'No',
-                                ])
-                                ->default(false),
-                            Select::make('on_sale')
-                                ->label('En Oferta')
-                                ->options([
-                                    true => 'Sí',
-                                    false => 'No',
-                                ])
-                                ->default(false), */
+                            
                         ]),
                     ])->columnSpan(1)
 
@@ -155,7 +127,7 @@ class ProductResource extends Resource
                 Tables\Columns\TextColumn::make('price')
                     ->label('Precio')
                     ->searchable() // searchable sirve para que el campo sea buscable en la tabla
-                    ->money('PEN', true) // true para mostrar el símbolo de la moneda
+                    ->prefix('S/ ')
                     ->sortable(),
                 Tables\Columns\IconColumn::make('is_active')
                     ->label('Activo')
@@ -176,7 +148,6 @@ class ProductResource extends Resource
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 
-
                 /* Tables\Columns\IconColumn::make('is_featured')
                     ->label('Destacado')
                     ->boolean()
@@ -185,32 +156,6 @@ class ProductResource extends Resource
                     ->label('En Oferta')
                     ->boolean()
                     ->sortable(), */
-                /* Tables\Columns\TextColumn::make('category_id')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('name')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('slug')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('price')
-                    ->money()
-                    ->sortable(),
-                Tables\Columns\IconColumn::make('is_active')
-                    ->boolean(),
-                Tables\Columns\IconColumn::make('is_featured')
-                    ->boolean(),
-                Tables\Columns\IconColumn::make('in_stock')
-                    ->boolean(),
-                Tables\Columns\IconColumn::make('on_sale')
-                    ->boolean(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true), */
             ])
             ->filters([
                 SelectFilter::make('category_id')

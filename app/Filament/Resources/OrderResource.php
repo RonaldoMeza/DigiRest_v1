@@ -31,8 +31,8 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class OrderResource extends Resource
 {
     protected static ?string $model = Order::class;
-
-    protected static ?string $navigationIcon = 'heroicon-o-Shopping-bag';
+    protected static ?string $navigationIcon = 'heroicon-o-Shopping-Cart';
+    protected static ?string $navigationLabel = 'Pedidos';
 
     public static function form(Form $form): Form
     {
@@ -50,8 +50,6 @@ class OrderResource extends Resource
                         Select::make('payment_method')
                             ->label('Método de Pago')
                             ->options([
-                                /* 'credit_card' => 'Tarjeta de Crédito',
-                                'cod' => 'Pago en Efectivo', */
                                 'tarjeta de crédito' => 'Tarjeta de Crédito',
                                 'pago en efectivo' => 'Pago en Efectivo',
                             ])
@@ -76,7 +74,7 @@ class OrderResource extends Resource
                                 'processing' => 'En Proceso',
                                 'shipped' => 'Enviado',
                                 'delivered' => 'Entregado',
-                                'cancelled' => 'Cancelado',
+                                /* 'cancelled' => 'Cancelado', */
                             ])
                             ->default('processing')
                             ->reactive()
@@ -85,22 +83,15 @@ class OrderResource extends Resource
                                 'processing' => 'warning',
                                 'shipped' => 'success',
                                 'delivered' => 'success',
-                                'cancelled' => 'danger',
+                                /* 'cancelled' => 'danger', */
                             ])
                             ->icons([
                                 /* 'new' => 'heroicon-m-sparkles', */
                                 'processing' => 'heroicon-m-arrow-path',
                                 'shipped' => 'heroicon-m-truck',
                                 'delivered' => 'heroicon-m-check-circle',
-                                'cancelled' => 'heroicon-m-x-circle',
+                                /* 'cancelled' => 'heroicon-m-x-circle', */
                             ]),
-                        /* Select::make('currecy')
-                            ->label('Moneda')
-                            ->options([
-                                'PE' => 'Sol Peruano',
-                            ])
-                            ->default('PE')
-                            ->required(), */
                         Textarea::make('notes')
                             ->label('Notas del Pedido')
                             ->placeholder('Escribe aquí cualquier nota o instrucción especial para el pedido')
@@ -200,11 +191,6 @@ class OrderResource extends Resource
                     ->sortable()
                     ->searchable(),
 
-                /* TextColumn::make('currecy')
-                    ->label('Moneda')
-                    ->sortable()
-                    ->searchable(), */
-
                 SelectColumn::make('status')
                     ->label('Estado del Pedido')
                     ->sortable()
@@ -260,7 +246,7 @@ class OrderResource extends Resource
 
     public static function getNavigationBadgeColor(): string|array|null
     {
-        return static::getModel()::count() > 0 ? 'success' : 'gray'; // succe
+        return static::getModel()::count() > 0 ? 'success' : 'warning'; 
     }
     
 

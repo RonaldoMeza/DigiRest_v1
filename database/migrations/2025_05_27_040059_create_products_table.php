@@ -15,17 +15,15 @@ return new class extends Migration
             $table->id();
 
             $table->foreignId('category_id')->constrained('categories')->cascadeOnDelete();
-            /* $table->foreignId('brand_id')->constrained('brands')->cascadeOnDelete(); */
             $table->string('name');
             $table->string('slug')->unique();
             $table->json('images')->nullable();
             $table->longText('description')->nullable();
             $table->decimal('price', 10, 2);
             $table->boolean('is_active')->default(true);
-            $table->boolean('is_featured')->default(false);
             $table->boolean('in_stock')->default(true);
-            $table->boolean('on_sale')->default(false);
-
+            /* $table->boolean('is_featured')->default(false);
+            $table->boolean('on_sale')->default(false); */
             $table->timestamps();
         });
     }
@@ -36,5 +34,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('products');
+        
     }
 };

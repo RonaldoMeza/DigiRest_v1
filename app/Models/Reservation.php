@@ -2,56 +2,48 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Model;
 
 class Reservation extends Model
 {
     use HasFactory;
+
+    // Laravel infiere la tabla "reservations" a partir del nombre del modelo.
     protected $fillable = [
-        'user_id',     // quien hizo la reserva
-        'table_id',    // mesa asignada
-        'guests',      // número de comensales
-        'status',      // pending, confirmed, cancelled
-        'starts_at',   // inicio de la reserva
-        'ends_at',     // fin de la reserva (nullable)
+        'customer_name',
+        'customer_phone',
+        'date',
+        'start_time',
+        'end_time',
+        'guests',
+        'table_id',
+        'status',
     ];
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+
+    /**
+     * Una reserva pertenece a una mesa.
+     */
     public function table()
     {
         return $this->belongsTo(Table::class);
     }
 
-    // Boot para actualizar el estado de la mesa
-    protected static function booted()
+    /**
+     * Opcional: accessor para mostrar rango de horas de forma legible.
+     */
+    public function getTimeRangeAttribute(): string
     {
-        static::created(function ($r) {
-            $r->table->update(['status' => 'occupied']);
-        });
-
-        static::deleted(function ($r) {
-            $r->table->update(['status' => 'available']);
-        });
-
-        static::updated(function ($r) {
-            // Si cambias a 'cancelled', liberar la mesa
-            if ($r->status === 'cancelled') {
-                $r->table->update(['status' => 'available']);
-            }
-        });
+        return "{$this->start_time} - {$this->end_time}";
     }
 
     /**
-     * Accesor para obtener la duración en minutos.
+     * Un scope para obtener solo reservas pendientes.
      */
-    public function getDurationInMinutesAttribute()
+    public function scopePending($query)
     {
-        return Carbon::parse($this->ends_at)
-                    ->diffInMinutes(Carbon::parse($this->starts_at));
+        return $query->where('status', 'pending');
     }
 
+    // Puedes añadir scopes similares para confirmed, cancelled, finished...
 }

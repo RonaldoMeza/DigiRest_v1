@@ -12,21 +12,22 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('reservations', function (Blueprint $table) {
-            $table->id();
+            $table->id();  
 
-            $table->foreignId('user_id')
-                ->constrained('users')
-                ->cascadeOnDelete();
-                
-            $table->foreignId('table_id')
+            $table->string('customer_name');  // Nombre del cliente
+            $table->string('customer_phone');  // Número de celular del cliente
+            $table->date('date');  // Fecha para la reserva
+            $table->time('start_time');  // Hora inicio para la reserva
+            $table->time('end_time')->nullable();   // Hora fin para la reserva
+            $table->unsignedInteger('guests'); // Comensales
+
+            $table->foreignId('table_id') // Comensales
                 ->constrained('tables')
-                ->cascadeOnDelete();    
+                ->onUpdate('cascade')
+                ->onDelete('restrict');
 
-            $table->unsignedTinyInteger('guests')->default(1);   // # comensales
-            $table->enum('status', ['pending','confirmed','cancelled'])
-                  ->default('pending');                         // flujo de reserva
-            $table->timestamp('starts_at');                      // inicio
-            $table->timestamp('ends_at')->nullable();            // fin (opcional)
+            $table->enum('status', ['pending', 'confirmed', 'cancelled', 'finished'])  // Estado de la reserva por defecto pendiente
+                ->default('pending');
 
             $table->timestamps();
         });
@@ -38,5 +39,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('reservations');
+        
     }
 };
