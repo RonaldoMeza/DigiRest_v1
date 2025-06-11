@@ -246,7 +246,7 @@ class OrderResource extends Resource
 
     public static function getNavigationBadgeColor(): string|array|null
     {
-        return static::getModel()::count() > 0 ? 'success' : 'warning'; 
+        return static::getModel()::count() > 0 ? 'warning' : 'gray'; 
     }
     
 

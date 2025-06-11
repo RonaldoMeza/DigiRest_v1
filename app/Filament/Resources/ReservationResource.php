@@ -32,10 +32,10 @@ class ReservationResource extends Resource
         return $form
             ->schema([
                 TextInput::make('customer_name')
-                    ->label('Nombre')
+                    ->label('Nombre completo')
                     ->required(),
                 TextInput::make('customer_phone')
-                    ->label('Teléfono')
+                    ->label('Número de celular')
                     ->required(),
                 DatePicker::make('date')
                     ->label('Fecha')
@@ -52,17 +52,22 @@ class ReservationResource extends Resource
                     ->required(),
                 Select::make('table_id')
                     ->label('Mesa')
-                    ->relationship('table', 'code')
+                    ->relationship(
+                        'table',
+                        'code',
+                        fn(Builder $query) => $query->where('status', 'available') // Filtro para buscar mesas solo disponibles
+                    )
                     ->preload()
                     ->searchable()
                     ->required()
-                    // Deshabilita selección si la reserva ya no puede editarse
-                    ->disabled(fn($livewire) => 
-                        // Si no hay registro (create), getRecord() es null y optional() lo maneja
-                        in_array(
-                        optional($livewire->getRecord())->status,
-                        ['cancelled', 'finished'],
-                    )),
+                    // GUARD para no romper en Create/List/View si no existe getRecord()
+                    ->disabled(fn ($livewire) =>
+                        method_exists($livewire, 'getRecord')
+                        && in_array(
+                            optional($livewire->getRecord())->status,
+                            ['cancelled', 'finished'],
+                        )
+                    ),
                 ToggleButtons::make('status')
                     ->label('Estado')
                     ->inline()
