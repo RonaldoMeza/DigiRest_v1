@@ -2,22 +2,22 @@
     <section class="overflow-hidden bg-white py-11 font-poppins dark:bg-gray-800">
         <div class="max-w-6xl px-4 py-4 mx-auto lg:py-8 md:px-6">
         <div class="flex flex-wrap -mx-4">
-            <div class="w-full mb-8 md:w-1/2 md:mb-0" x-data="{ mainImage: 'https://m.media-amazon.com/images/I/71f5Eu5lJSL._SX679_.jpg' }">
-            <div class="sticky top-0 z-50 overflow-hidden ">
+            <div class="w-full mb-8 md:w-1/2 md:mb-0" x-data="{ mainImage: '/images/fondos1-categorias.png' }">
+            <div class="sticky top-0 z-40 overflow-hidden ">
                 <div class="relative mb-6 lg:mb-10 lg:h-2/4 ">
-                <img x-bind:src="mainImage" alt="" class="object-cover w-full lg:h-full ">
+                    <img x-bind:src="mainImage" alt="" class="object-cover w-full lg:h-full ">
                 </div>
                 <div class="flex-wrap hidden md:flex ">
                 <div class="w-1/2 p-2 sm:w-1/4" x-on:click="mainImage='https://m.media-amazon.com/images/I/71f5Eu5lJSL._SX679_.jpg'">
-                    <img src="https://m.media-amazon.com/images/I/71f5Eu5lJSL._SX679_.jpg" alt="" class="object-cover w-full lg:h-20 cursor-pointer hover:border hover:border-digirestDark">
+                    <img src="/images/fondos1-categorias.png" alt="" class="object-cover w-full lg:h-20 cursor-pointer hover:border hover:border-digirestDark">
                 </div>
 
                 <div class="w-1/2 p-2 sm:w-1/4" x-on:click="mainImage='https://m.media-amazon.com/images/I/61XPhYGQOQL._SX679_.jpg'">
-                    <img src="https://m.media-amazon.com/images/I/61XPhYGQOQL._SX679_.jpg" alt="" class="object-cover w-full lg:h-20 cursor-pointer hover:border hover:border-digirestDark">
+                    <img src="/images/fondos1-categorias.png" alt="" class="object-cover w-full lg:h-20 cursor-pointer hover:border hover:border-digirestDark">
                 </div>
 
                 <div class="w-1/2 p-2 sm:w-1/4" x-on:click="mainImage='https://m.media-amazon.com/images/I/81v5JNjZ4-L._SX679_.jpg'">
-                    <img src="https://m.media-amazon.com/images/I/81v5JNjZ4-L._SX679_.jpg" alt="" class="object-cover w-full lg:h-20 cursor-pointer hover:border hover:border-digirestDark">
+                    <img src="/images/fondos1-categorias.png" alt="" class="object-cover w-full lg:h-20 cursor-pointer hover:border hover:border-digirestDark">
                 </div>
 
                 </div>
@@ -38,19 +38,18 @@
             <div class="lg:pl-20">
                 <div class="mb-8 ">
                 <h2 class="max-w-xl mb-6 text-2xl font-bold dark:text-gray-400 md:text-4xl">
-                    Macbook Pro M130c90</h2>
+                    Lomo Saltado</h2>
                 <p class="inline-block mb-6 text-4xl font-bold text-gray-700 dark:text-gray-400 ">
-                    <span>$1500.99</span>
-                    <span class="text-base font-normal text-gray-500 line-through dark:text-gray-400">$1800.99</span>
+                    <span>S/ 20.00</span>
+                    <span class="text-base font-normal text-gray-500 line-through dark:text-gray-400">S/ 25.00</span>
                 </p>
                 <p class="max-w-md text-gray-700 dark:text-gray-400">
-                    Lorem ispum dor amet Lorem ispum dor amet Lorem ispum dor amet Lorem ispum dor amet
-                    Lorem ispum dor amet Lorem ispum dor amet Lorem ispum dor amet Lorem ispum dor amet
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta eligendi esse laboriosam ex hic magni inventore dolores numquam, veniam totam ratione iusto explicabo accusamus, sit alias, architecto voluptate officiis quaerat?
+                    Delicioso plato peruano que fusiona sabores criollos y orientales.
+                    Preparado con jugosos trozos de carne de res salteados con cebolla, tomate y ají amarillo, servido con papas fritas crocantes y arroz blanco. Una explosión de sabor en cada bocado.
                 </p>
                 </div>
                 <div class="w-32 mb-8 ">
-                <label for="" class="w-full pb-1 text-xl font-semibold text-gray-700 border-b border-digirest dark:border-gray-600 dark:text-gray-400">Quantity</label>
+                <label for="" class="w-full pb-1 text-xl font-semibold text-gray-700 border-b border-digirest dark:border-gray-600 dark:text-gray-400">Cantidad</label>
                 <div class="relative flex flex-row w-full h-10 mt-6 bg-transparent rounded-lg">
                     <button class="w-20 h-full text-gray-600 bg-gray-300 rounded-l outline-none cursor-pointer dark:hover:bg-gray-700 dark:text-gray-400 hover:text-gray-700 dark:bg-gray-900 hover:bg-gray-400">
                     <span class="m-auto text-2xl font-thin">-</span>

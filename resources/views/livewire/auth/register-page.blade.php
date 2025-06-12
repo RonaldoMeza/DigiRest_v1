@@ -7,7 +7,7 @@
                 <h1 class="block text-2xl font-bold text-gray-800 dark:text-white">DigiRest</h1>
                 <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
                 ¿Ya tienes cuenta?
-                <a class="text-digirest decoration-2 hover:underline font-medium dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/login">
+                <a class="text-digirestDark decoration-2 hover:underline font-medium dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/login">
                     Inicia Sesión aquí
                 </a>
                 </p>
@@ -64,7 +64,7 @@
                 <!-- End Form Group -->
 
 
-                <button type="submit" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-digirest text-white hover:bg-digirestDark disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">Registrarse</button>
+                <button type="submit" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-digirest text-black hover:bg-digirestDark disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">Registrarse</button>
                 </div>
             </form>
             <!-- End Form -->

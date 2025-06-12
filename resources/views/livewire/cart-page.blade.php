@@ -8,7 +8,7 @@
                 <thead>
                 <tr>
                     <th class="text-left font-semibold">Producto</th>
-                    <th class="text-left font-semibold">Precio</th>
+                    <th class="text-left font-semibold">Precio unitario</th>
                     <th class="text-left font-semibold">Cantidad</th>
                     <th class="text-left font-semibold">Total</th>
                     <th class="text-left font-semibold">Acción</th>
@@ -49,16 +49,16 @@
                 <span>Delivery</span>
                 <span>S/ 5.00</span>
             </div>
-            <div class="flex justify-between mb-2">
+            {{-- <div class="flex justify-between mb-2">
                 <span>Envío</span>
                 <span>S/ 0.00</span>
-            </div>
+            </div> --}}
             <hr class="my-2">
             <div class="flex justify-between mb-2">
                 <span class="font-semibold">Total</span>
                 <span class="font-semibold">S/ 55.00</span>
             </div>
-            <button class="bg-digirest hover:bg-digirestDark text-white py-2 px-4 rounded-lg mt-4 w-full">Solicitar </button>
+            <button class="bg-digirest hover:bg-digirestDark text-black py-2 px-4 rounded-lg mt-4 w-full">Realizar pedido</button>
             </div>
         </div>
         </div>
