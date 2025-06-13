@@ -75,7 +75,6 @@ class CategoryResource extends Resource
                     ->searchable(),
                 Tables\Columns\ImageColumn::make('image')
                     ->label('Imagen'),
-                    /* ->circular(), */
                 /* Tables\Columns\TextColumn::make('slug')
                     ->label('Slug')
                     ->searchable(), */

@@ -14,16 +14,17 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('category_id')->constrained('categories')->cascadeOnDelete();
-            $table->string('name');
-            $table->string('slug')->unique();
-            $table->json('images')->nullable();
-            $table->longText('description')->nullable();
-            $table->decimal('price', 10, 2);
-            $table->boolean('is_active')->default(true);
-            $table->boolean('in_stock')->default(true);
-            /* $table->boolean('is_featured')->default(false);
-            $table->boolean('on_sale')->default(false); */
+            $table->foreignId('category_id')->constrained('categories')
+                ->cascadeOnDelete(); // FK - Relación con la tabla de categorías.
+                
+            $table->string('name'); // Nombre del producto. 
+            $table->string('slug');  // Slug, parte de una URL que identifica una página específica en un sitio web de forma legible. Una cadena de texto separada por guiones
+            $table->json('images'); // Imagen del producto
+            $table->longText('description')->nullable(); // Descripción del producto.
+            $table->decimal('price', 10, 2); // Precio del producto
+            $table->boolean('is_active')->default(true); // Campo booleano(true o false) - Estado del producto 
+            $table->boolean('in_stock')->default(true); // Campo booleano - Stock
+
             $table->timestamps();
         });
     }

@@ -14,10 +14,13 @@ return new class extends Migration
         Schema::create('tables', function (Blueprint $table) {
             $table->id();
 
-            $table->string('code')->unique();
-            $table->unsignedInteger('capacity');         // “M1”, “M2”, …
-            $table->enum('status', ['available', 'occupied'])->default('available'); // Dos estados
-            $table->string('location')->nullable();
+            $table->string('code')->unique(); // Código de mesa - ÚNICO “M1”, “M2”
+            $table->unsignedInteger('capacity');  // Capacidad: cuantas personas pueden ocupar la mesa
+            
+            $table->enum('status', ['available', 'occupied'])
+                ->default('available'); // Estados (ocupada, disponible)
+            
+            $table->string('location')->nullable(); // Ubicación - primer o segundo piso
 
             $table->timestamps();
         });
@@ -29,5 +32,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('tables');
+        
     }
 };

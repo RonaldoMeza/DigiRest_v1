@@ -7,7 +7,7 @@
                 <h1 class="block text-2xl font-leckerli text-gray-1000 dark:text-white">DigiRest</h1>
                 <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
                 ¿Aún no tienes cuenta?
-                <a class="text-digirestDark decoration-2 hover:underline font-medium dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/register">
+                <a class="text-digirestDark decoration-2 hover:underline font-medium dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/registrar">
                     Registrate aquí
                 </a>
                 </p>
@@ -29,7 +29,7 @@
                         </svg>
                     </div>
                     </div>
-                    <p class="hidden text-xs text-red-600 mt-2" id="email-error">Please include a valid email address so we can get back to you</p>
+                    <p class="hidden text-xs text-red-600 mt-2" id="email-error">Incluya una dirección de correo electrónico válida para que podamos comunicarnos con usted.</p>
                 </div>
                 <!-- End Form Group -->
 
@@ -37,7 +37,7 @@
                 <div>
                     <div class="flex justify-between items-center">
                     <label for="password" class="block text-sm mb-2 dark:text-white">Contraseña</label>
-                    <a class="text-sm text-digirestDark decoration-2 hover:underline font-medium dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/forgot">¿Olvidaste tu contraseña?</a>
+                    <a class="text-sm text-digirestDark decoration-2 hover:underline font-medium dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/contraseña-olvidada">¿Olvidaste tu contraseña?</a>
                     </div>
                     <div class="relative">
                     <input type="password" id="password" name="password" class="py-3 px-4 block w-full border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600" required aria-describedby="password-error">
@@ -47,7 +47,7 @@
                         </svg>
                     </div>
                     </div>
-                    <p class="hidden text-xs text-red-600 mt-2" id="password-error">8+ characters required</p>
+                    <p class="hidden text-xs text-red-600 mt-2" id="password-error">Se requieren más de 8 caracteres</p>
                 </div>
                 <!-- End Form Group -->
                 <button type="submit" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent 

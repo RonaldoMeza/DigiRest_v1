@@ -14,11 +14,15 @@ return new class extends Migration
         Schema::create('order_items', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('order_id')->constrained('orders')->cascadeOnDelete();
-            $table->foreignId('product_id')->constrained('products')->cascadeOnDelete();
-            $table->integer('quantity')->default(1);
-            $table->decimal('unit_amount', 10, 2)->nullable();
-            $table->decimal('total_amount', 10, 2)->nullable();
+            $table->foreignId('order_id')->constrained('orders')
+                ->cascadeOnDelete(); // FK - Relación con la tabla de pedidos.
+
+            $table->foreignId('product_id')->constrained('products')
+                ->cascadeOnDelete(); // FK - Relación con la tabla de productos.
+
+            $table->integer('quantity')->default(1); // Cantidad
+            $table->decimal('unit_amount', 10, 2)->nullable(); // Precio unitario
+            $table->decimal('total_amount', 10, 2)->nullable(); // Precio total del producto
             
             $table->timestamps();
         });

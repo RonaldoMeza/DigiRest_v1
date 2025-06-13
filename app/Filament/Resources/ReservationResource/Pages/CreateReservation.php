@@ -14,7 +14,7 @@ class CreateReservation extends CreateRecord
     protected function handleRecordCreation(array $data): Reservation
     {
         $reservation = parent::handleRecordCreation($data);
-        // Al crear reserva, marca mesa como ocupada
+        // Al crear una reserva, marca a la mesa como ocupada.
         $reservation->table->update(['status' => 'occupied']);
 
         return $reservation;

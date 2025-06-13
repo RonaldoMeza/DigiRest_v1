@@ -96,12 +96,6 @@ class ProductResource extends Resource
                                 ->label('En Stock')
                                 ->default(true)
                                 ->required(),
-                            /* Toggle::make('is_featured')
-                                ->label('Destacado')
-                                ->default(false),
-                            Toggle::make('on_sale')
-                                ->label('En Oferta')
-                                ->default(false), */
                             
                         ]),
                     ])->columnSpan(1)
@@ -126,7 +120,7 @@ class ProductResource extends Resource
                     ->sortable(), */
                 Tables\Columns\TextColumn::make('price')
                     ->label('Precio')
-                    ->searchable() // searchable sirve para que el campo sea buscable en la tabla
+                    ->searchable() // searchable sirve para que el campo de la tabla sea pueda encontrar a través de la busqueda
                     ->prefix('S/ ')
                     ->sortable(),
                 Tables\Columns\IconColumn::make('is_active')
@@ -147,22 +141,13 @@ class ProductResource extends Resource
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                
-                /* Tables\Columns\IconColumn::make('is_featured')
-                    ->label('Destacado')
-                    ->boolean()
-                    ->sortable(),
-                Tables\Columns\IconColumn::make('on_sale')  
-                    ->label('En Oferta')
-                    ->boolean()
-                    ->sortable(), */
             ])
             ->filters([
-                SelectFilter::make('category_id')
+                SelectFilter::make('category_id') // Llamar a la tabla categoría
                     ->label('Categoría')
-                    ->relationship('category', 'name')
-                    ->searchable() 
-                    ->preload(), 
+                    ->relationship('category', 'name')  // Relación con el nombre de la categoría
+                    ->searchable() // Para un pequeño apartado de busqueda.
+                    ->preload(), // Para hacer una precarga de categorias, en la parte de filtros
             ])
             ->actions([
                 Tables\Actions\ActionGroup::make([

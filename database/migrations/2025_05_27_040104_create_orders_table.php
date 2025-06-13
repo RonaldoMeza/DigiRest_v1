@@ -14,12 +14,15 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
-            $table->decimal('grand_total', 10, 2)->nullable();
-            $table->string('payment_method')->nullable();
-            $table->string('payment_status')->nullable();
-            $table->enum('status', ['new', 'processing', 'shipped', 'delivered', 'canceled'])->default('new');
-            $table->text('notes')->nullable();
+            $table->foreignId('user_id')->constrained('users')
+                ->cascadeOnDelete(); // FK - Relación con la tabla de usuario o cliente.
+
+            $table->decimal('grand_total', 10, 2); // Precio total del pedido.
+            $table->string('payment_method'); // Método de pago
+            $table->string('payment_status'); // Estado del pago
+            $table->enum('status', ['processing', 'shipped', 'delivered', 'canceled'])
+                ->default('processing'); // Estado del pedido - en proceso, enviado, entregado y cancelado.
+            $table->text('notes')->nullable(); // Notas adicionales para el pedido.
 
 
             $table->timestamps();

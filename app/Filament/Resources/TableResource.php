@@ -27,10 +27,10 @@ class TableResource extends Resource
                     ->label('Código de Mesa')
                     ->required()
                     ->unique(
-                        \App\Models\Table::class, // 1️⃣ Clase Eloquent cuyo $table interno se usará
-                        'code',                   // 2️⃣ Columna única (igual que antes)
+                        \App\Models\Table::class, // Clase Eloquent cuyo $table interno se usará
+                        'code',                   // Columna única
                         ignorable: fn ($record)   
-                            => $record            // 3️⃣ Ignora el registro actual al editar
+                            => $record            // Ignora el registro actual al editar
                 ),
                 Forms\Components\TextInput::make('capacity')
                     ->label('Capacidad')

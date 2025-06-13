@@ -14,20 +14,20 @@ return new class extends Migration
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();  
 
-            $table->string('customer_name');  // Nombre del cliente
+            $table->string('customer_name');  // Nombre completo del cliente
             $table->string('customer_phone');  // Número de celular del cliente
             $table->date('date');  // Fecha para la reserva
             $table->time('start_time');  // Hora inicio para la reserva
-            $table->time('end_time')->nullable();   // Hora fin para la reserva
-            $table->unsignedInteger('guests'); // Comensales
+            $table->time('end_time')->nullable();   // Hora fin para la reserva - puede ser nulo
+            $table->unsignedInteger('guests'); // Comensales - cantidad total de personas que ocuparán la mesa
 
-            $table->foreignId('table_id') // Comensales
-                ->constrained('tables')
+            $table->foreignId('table_id') // FK - relación con la tabla de mesas
+                ->constrained('tables') 
                 ->onUpdate('cascade')
                 ->onDelete('restrict');
 
-            $table->enum('status', ['pending', 'confirmed', 'cancelled', 'finished'])  // Estado de la reserva por defecto pendiente
-                ->default('pending');
+            $table->enum('status', ['pending', 'confirmed', 'cancelled', 'finished'])  // Estado de la reserva, por defecto pendiente.
+                ->default('pending');  // Estados - pendiente, confirmado, cancelado y finalizado.
 
             $table->timestamps();
         });

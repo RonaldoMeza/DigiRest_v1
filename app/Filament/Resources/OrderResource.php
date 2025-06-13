@@ -70,27 +70,24 @@ class OrderResource extends Resource
                             ->inline()
                             ->required()
                             ->options([
-                                /* 'new' => 'Nuevo', */
                                 'processing' => 'En Proceso',
                                 'shipped' => 'Enviado',
                                 'delivered' => 'Entregado',
-                                /* 'cancelled' => 'Cancelado', */
+                                'cancelled' => 'Cancelado',
                             ])
                             ->default('processing')
                             ->reactive()
                             ->colors([
-                                /* 'new' => 'info', */
                                 'processing' => 'warning',
                                 'shipped' => 'success',
                                 'delivered' => 'success',
-                                /* 'cancelled' => 'danger', */
+                                'cancelled' => 'danger',
                             ])
                             ->icons([
-                                /* 'new' => 'heroicon-m-sparkles', */
                                 'processing' => 'heroicon-m-arrow-path',
                                 'shipped' => 'heroicon-m-truck',
                                 'delivered' => 'heroicon-m-check-circle',
-                                /* 'cancelled' => 'heroicon-m-x-circle', */
+                                'cancelled' => 'heroicon-m-x-circle',
                             ]),
                         Textarea::make('notes')
                             ->label('Notas del Pedido')
@@ -132,7 +129,7 @@ class OrderResource extends Resource
                                     ->numeric()
                                     ->required() 
                                     ->disabled()
-                                    ->dehydrated() // dehydrated es para que no se envíe al servidor
+                                    ->dehydrated() // dehydrated, es para que no se envíe al servidor
                                     ->columnSpan(3),
 
                                 TextInput::make('total_amount')

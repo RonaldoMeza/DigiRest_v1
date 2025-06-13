@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
 
-            $table->string('name');
-            $table->string('slug')->unique();
-            $table->string('image')->nullable();
-            $table->boolean('is_active')->default(true);
+            $table->string('name'); // Nombre de la categoría.
+            $table->string('slug')->unique(); // Slug: parte de una URL que identifica una página específica en un sitio web de forma legible. Una cadena de texto separada por guiones
+            $table->string('image')->nullable(); // Imagen que hace referencia a la categoría.
+            $table->boolean('is_active')->default(true); // Estado de la categoría por defecto siempre True.
 
             $table->timestamps();
         });

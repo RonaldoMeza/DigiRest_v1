@@ -26,11 +26,11 @@
                 Inicio
                 </a>
 
-                <a class=" nav-link-prop " href="/categories">
+                <a class=" nav-link-prop " href="/categorias">
                 Categorías
                 </a>
 
-                <a class=" nav-link-prop " href="/products">
+                <a class=" nav-link-prop " href="/productos">
                 Productos
                 </a>
 
@@ -42,7 +42,7 @@
                 Reservar
                 </a>
 
-                <a class="nav-link-prop flex items-center " href="/cart">
+                <a class="nav-link-prop flex items-center " href="/carrito">
                     <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-5 h-5 mr-1" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386a.75.75 0 0 1 .728.577L5.67 8.25H19.5a.75.75 0 0 1 .733.937l-1.5 6A.75.75 0 0 1 18 15H7.174a.75.75 0 0 1-.728-.577L4.5 5.25m0 0L3.386 3.577A.75.75 0 0 0 2.25 3M6 21a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm12 0a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" />
                     </svg>
@@ -50,7 +50,7 @@
                 </a>
 
                 <div class="pt-3 md:pt-0 me-1">
-                    <a class="nav-btn" href="/login">
+                    <a class="nav-btn" href="/iniciar-sesion">
                         <svg class="flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
                         <circle cx="12" cy="7" r="4" />

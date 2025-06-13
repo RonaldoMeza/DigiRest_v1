@@ -21,19 +21,19 @@ use App\Livewire\CancelPage;
 
 Route::get('/', HomePage::class);
 
-Route::get('/categories', CategoriesPage::class);
-Route::get('/products', ProductsPage::class);
-Route::get('/cart', CartPage::class);
-Route::get('/products/{product}', ProductDetailPage::class);
+Route::get('/categorias', CategoriesPage::class);
+Route::get('/productos', ProductsPage::class);
+Route::get('/carrito', CartPage::class);
+Route::get('/productos/{producto}', ProductDetailPage::class);
 
-Route::get('/checkout', CheckoutPage::class);
-Route::get('/my-orders', MyOrdersPage::class);
-Route::get('/my-orders/{order}', OrderDetailPage::class);
+Route::get('/verificar', CheckoutPage::class);
+Route::get('/mis-pedidos', MyOrdersPage::class);
+Route::get('/mis-pedidos/{pedido}', OrderDetailPage::class);
 
-Route::get('/login', LoginPage::class);
-Route::get('/register', RegisterPage::class);
-Route::get('/forgot', ForgotPasswordPage::class);
-Route::get('/reset', ResetPasswordPage::class);
+Route::get('/iniciar-sesion', LoginPage::class);
+Route::get('/registrar', RegisterPage::class);
+Route::get('/contraseña-olvidada', ForgotPasswordPage::class);
+Route::get('/restaurar-contraseña', ResetPasswordPage::class);
 
-Route::get('/success', SuccessPage::class);
-Route::get('/cancel', CancelPage::class);
+Route::get('/exitoso', SuccessPage::class);
+Route::get('/cancelado', CancelPage::class);

@@ -89,10 +89,10 @@
                 </div>
             </div>
             <div class="flex items-center justify-start gap-4 px-4 mt-6 ">
-                <a href="/products" class="w-full text-center px-4 py-2 text-digirestDark border border-digirestDark rounded-md md:w-auto hover:text-white hover:bg-digirestDark dark:border-gray-700 dark:hover:bg-gray-700 dark:text-gray-300">
+                <a href="/productos" class="w-full text-center px-4 py-2 text-digirestDark border border-digirestDark rounded-md md:w-auto hover:text-white hover:bg-digirestDark dark:border-gray-700 dark:hover:bg-gray-700 dark:text-gray-300">
                 Seguir comprando
                 </a>
-                <a href="/orders" class="w-full text-center px-4 py-2 bg-digirestDark rounded-md text-gray-50 md:w-auto dark:text-gray-300 hover:bg-digirestDark dark:hover:bg-gray-700 dark:bg-gray-800">
+                <a href="/mis-pedidos" class="w-full text-center px-4 py-2 bg-digirestDark rounded-md text-gray-50 md:w-auto dark:text-gray-300 hover:bg-digirestDark dark:hover:bg-gray-700 dark:bg-gray-800">
                 Ver mi historial de pedidos
                 </a>
             </div>
