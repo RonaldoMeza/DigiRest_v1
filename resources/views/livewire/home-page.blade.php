@@ -11,48 +11,53 @@
                     min-h-[calc(100vh-5rem)]">
                 <!-- TEXTO -->
                 <div class="space-y-6">
-                <h1
-                    class="text-3xl sm:text-4xl lg:text-6xl font-leckerli text-white leading-tight text-center md:text-left">
-                    Ven y disfruta de la mejor gastronomía <span class="text-digirest"></span>
-                </h1>
-                <p class="flex items-start text-lg text-gray-300">
-                    <svg class="w-6 h-6 mr-2 text-digirest" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    Realiza tus reservas de manera sencilla y rápida.
-                </p>
-                <p class="flex items-start text-lg text-gray-300">
-                    <svg class="w-6 h-6 mr-2 text-digirest" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    Descubre un menú variado y delicioso.
-                </p>
-                <p class="flex items-start text-lg text-gray-300">
-                    <svg class="w-6 h-6 mr-2 text-digirest" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    Recibe tus platillos favoritos en la puerta de tu casa.
-                </p>
-                <div class="mt-4 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <a href="/register"
-                    class="py-3 px-6 text-sm font-semibold rounded-lg bg-digirest text-black hover:bg-digirestDark transition">
-                    Reservar mesa
-                    <svg class="inline-block ml-2 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <h1
+                        class="text-3xl sm:text-4xl lg:text-6xl font-leckerli text-white leading-tight text-center md:text-left">
+                        Ven y disfruta de la mejor gastronomía <span class="text-digirest"></span>
+                    </h1>
+                    <div class="features-container flex flex-col space-y-4 px-4 items-center md:items-start">
+                    <p class="feature-item flex items-center gap-x-2 text-base md:text-lg text-gray-300">
+                        <svg class="w-6 h-6 text-digirest" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        Recibe tus platillos favoritos en la puerta de tu casa y disfruta del verdadero sabor.
+                    </p>
+                    <p class="feature-item flex items-center gap-x-2 text-base md:text-lg text-gray-300">
+                        <svg class="w-5 h-5 text-digirest" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        Descubre un menú variado y delicioso solo aquí, en DigiRest.
+                    </p>
+                    <p class="feature-item flex items-center gap-x-2 text-base md:text-lg text-gray-300">
+                        <svg class="w-6 h-6 text-digirest" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        Realiza tus reservas de manera sencilla y rápida para vivir una experiencia inolvidable.
+                    </p>
+                    </div>
+
+                    <div class="mt-4 flex flex-wrap gap-4 justify-center md:justify-start px-4">
+                    <a href="/reservas"
+                        class="inline-flex items-center py-3 px-6 text-sm font-semibold rounded-lg bg-digirest text-black hover:bg-digirestDark transition">
+                        Reservar mesa
+                        <svg class="inline-block ml-2 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                         <path d="M9 18l6-6-6-6"></path>
-                    </svg>
+                        </svg>
                     </a>
-                    <a href="/contact"
-                    class="py-3 px-6 text-sm font-medium rounded-lg border border-gray-200 bg-white text-black hover:bg-gray-200 transition">
-                    Contacto
+                    <a href="#contacto"
+                        class="inline-flex items-center py-3 px-6 text-sm font-medium rounded-lg border border-gray-200 bg-white text-black hover:bg-gray-200 transition">
+                        Contacto
                     </a>
-                </div>
+                    </div>
                 </div>
 
                 <!-- IMAGEN -->
-                <div class="flex justify-center md:justify-end overflow-hidden">
-                <img src="/images/robot-chef.png" alt="Robot-Chef"
+                <div class="container-padre flex justify-center md:justify-end overflow-hidden ">
+                    <div class="container-hijo">
+                        <img src="/images/robot-chef-v2.png" alt="Robot-Chef"
                     class="chef-img w-full h-auto object-contain rounded-lg shadow-md" />
+                    </div>
                 </div>
             </div>
         </div>
@@ -61,18 +66,18 @@
 
 
         <!----------------------SECTION BIENVENIDOS ------------------>
-        <section class="min-h-screen flex items-center justify-center py-5 px-4 relative overflow-hidden">
+        <section class="min-h-screen flex items-center justify-center py-10 px-4 relative overflow-hidden">
             <!-- Decorative background element -->
             <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary/5 to-transparent rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
             <div class="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-blue-500/5 to-transparent rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
             
             <div class="max-w-6xl mx-auto w-full">
-                <div class="flex flex-col items-center justify-center text-center space-y-16">
+                <div class="flex flex-col items-center justify-center text-center space-y-6">
                     
                     <!-- Contenido de texto centrado arriba -->
                     <div class="max-w-xl mx-auto">
                         <div class="text-center ">
-                            <div class="relative flex flex-col items-center mb-8">
+                            <div class="relative flex flex-col items-center mb-6">
                                 <h1 class="text-3xl sm:text-4xl lg:text-5xl  font-leckerli dark:text-gray-200 text-white">
                                 Bienvenidos a Digi<span class="text-digirest">Rest</span> </h1>
                 
@@ -87,7 +92,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         
                         <!-- Card 1: Menú Digital -->
-                        <a href="#menu" class="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 card-shadow-menu h-80">
+                        <a href="reservas" class="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 card-shadow-menu h-80">
                             <div class="relative w-full h-full overflow-hidden">
                                 <img src="/images/restaurant.jpg" 
                                     alt="Menú Digital" 
@@ -116,7 +121,7 @@
                                 
                                 <div class="absolute inset-0 flex items-center justify-center p-6">
                                     <h3 class="text-white text-xl font-semibold drop-shadow-lg text-center relative accent-line">
-                                        Gestión de Pedidos
+                                        Platillos excelentes
                                     </h3>
                                 </div>
                             </div>
@@ -170,11 +175,11 @@
 
     
     <!---------------------- SECCION CATEGORIAS ------------------>
-    <div class="bg-whiteDark py-20">
+    <div class="bg-gradient-to-b from-black to-gray-800 py-20">
     <div class="max-w-xl mx-auto">
         <div class="text-center ">
         <div class="relative flex flex-col items-center mb-6">
-            <h1 class="text-5xl font-leckerli dark:text-gray-200"> Nuestra <span class="text-digirest">Carta</span> </h1>
+            <h1 class="text-5xl text-white font-leckerli dark:text-gray-200">Nuestra <span class="text-digirest">Carta</span> </h1>
             {{-- <div class="flex w-40 mt-2 mb-6 overflow-hidden rounded">
             <div class="flex-1 h-2 bg-digiresClear">
             </div>
@@ -184,7 +189,7 @@
             </div>
             </div> --}}
         </div>
-        <p class="mb-12 text-base text-center text-gray-700">
+        <p class="mb-12 text-base text-center text-gray-400">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus magni eius eaque?
             Pariatur
             numquam, odio quod nobis ipsum ex cupiditate?
@@ -282,360 +287,181 @@
     <!---------------------- FIN CATEGORIAS ------------------>
     
 
-    <!---------------------- SECTION COMENTARIOS ------------------>
-    <section class="py-14 bg-white font-poppins dark:bg-white">
-        <div class="max-w-6xl px-4 py-6 mx-auto lg:py-4 md:px-6">
-            <div class="max-w-xl mx-auto">
-            <div class="text-center ">
-                <div class="relative flex flex-col items-center mb-6">
-                <h1 class="text-5xl font-leckerli dark:text-gray-200"> Coment<span class="text-digirest">arios</span>
-                    </span> </h1>
-                {{-- <div class="flex w-40 mt-2 mb-6 overflow-hidden rounded">
-                    <div class="flex-1 h-2 bg-digirestClear">
-                    </div>
-                    <div class="flex-1 h-2 bg-digirest">
-                    </div>
-                    <div class="flex-1 h-2 bg-digirestDark">
-                    </div>
-                </div> --}}
-                </div>
-                <p class="mb-12 text-base text-center text-black">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus magni eius eaque?
-                Pariatur
-                numquam, odio quod nobis ipsum ex cupiditate?
+    <!-------------------- Sección de Testimonios -------------------------->
+    <section class="bg-gradient-to-b from-gray-800 to-black py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <!-- Título de la sección -->
+            <div class="text-center mb-12">
+                <h2 class="text-4xl sm:text-5xl font-bold text-white mb-4">
+                    Lo que dicen nuestros 
+                    <span class="text-[#FAC122]">clientes</span>
+                </h2>
+                <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+                    Descubre por qué miles de usuarios confían en nosotros para sus proyectos más importantes
                 </p>
-            </div>
             </div>
 
-            <div class="grid grid-cols-1 gap-6 lg:grid-cols-2 ">
-            <div class="py-6 bg-white rounded-md shadow dark:bg-gray-900">
-                <div class="flex flex-wrap items-center justify-between pb-4 mb-6 space-x-2 border-b dark:border-gray-700">
-                <div class="flex items-center px-6 mb-2 md:mb-0 ">
-                    <div class="flex mr-2 rounded-full">
-                    <img src="/images/cliente.png" alt="" class="object-cover w-12 h-12 rounded-full">
+            <!-- Grid de testimonios -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+                
+                <!-- Testimonio 1 -->
+                <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <!-- Header del testimonio -->
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=face" 
+                            alt="Avatar de Carlos" 
+                            class="w-14 h-14 rounded-full object-cover mr-4">
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-gray-900 text-lg">Carlos Mendoza</h3>
+                            <p class="text-gray-600 text-sm">CEO, TechStart Solutions</p>
+                            <p class="text-gray-400 text-xs mt-1">15 de mayo, 2024</p>
+                        </div>
                     </div>
-                    <div>
-                    <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-300">
-                        Mariana López</h2>
-                    <p class="text-xs text-gray-500 dark:text-gray-400">Web Designer</p>
-                    </div>
-                </div>
-                <p class="px-6 text-base font-medium text-gray-600 dark:text-gray-400"> 12 de mayo de 2025
-                </p>
-                </div>
-                <p class="px-6 mb-6 text-base text-gray-500 dark:text-gray-400">
-                ¡Excelente atención y la comida llegó justo a tiempo! Reservar fue súper fácil, y el sabor del lomo saltado es simplemente espectacular. ¡Definitivamente volveré!
-                </p>
-                <div class="flex flex-wrap justify-between pt-4 border-t dark:border-gray-700">
-                <div class="flex px-6 mb-2 md:mb-0">
-                    <ul class="flex items-center justify-start mr-4">
-                    <li>
-                        <a href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 mr-1 text-digirest dark:text-digirest bi bi-star-fill" viewBox="0 0 16 16">
-                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                            </path>
-                        </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 mr-1 text-digirest dark:text-digirest bi bi-star-fill" viewBox="0 0 16 16">
-                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                            </path>
-                        </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 mr-1 text-digirest dark:text-digirest bi bi-star-fill" viewBox="0 0 16 16">
-                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                            </path>
-                        </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 mr-1 text-digirest dark:text-digirest bi bi-star-fill" viewBox="0 0 16 16">
-                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                            </path>
-                        </svg>
-                        </a>
-                    </li>
-                    </ul>
-                    <h2 class="text-sm text-gray-500 dark:text-gray-400">Calificación:<span class="font-semibold text-gray-600 dark:text-gray-300">
-                        3.0</span>
-                    </h2>
-                </div>
-                <div class="flex items-center px-6 space-x-1 text-sm font-medium text-gray-500 dark:text-gray-400">
-                    <div class="flex items-center">
-                    <div class="flex mr-3 text-sm text-gray-700 dark:text-gray-400">
-                        <a href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 h-4 mr-1 text-digirest bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
-                            <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z">
-                            </path>
-                        </svg>
-                        </a>
-                        <span>12</span>
-                    </div>
-                    {{-- <div class="flex text-sm text-gray-700 dark:text-gray-400">
-                        <a href="#" class="inline-flex hover:underline">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 h-4 mr-1 text-digirest bi bi-chat" viewBox="0 0 16 16">
-                            <path d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z">
-                            </path>
-                        </svg>Reply</a>
-                    </div> --}}
+
+                    <!-- Contenido del comentario -->
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        "Excelente servicio y atención al cliente. El equipo superó nuestras expectativas en cada etapa del proyecto. La calidad del trabajo y la dedicación son impresionantes."
+                    </p>
+
+                    <!-- Footer con estrellas y likes -->
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="flex text-[#FAC122] text-lg mr-2">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                            <span class="text-gray-600 text-sm font-medium">5.0</span>
+                        </div>
+                        <div class="flex items-center text-gray-500">
+                            <svg class="w-5 h-5 mr-1 hover:text-[#FAC122] cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"></path>
+                            </svg>
+                            <span class="text-sm">24</span>
+                        </div>
                     </div>
                 </div>
-                </div>
-            </div>
-            <div class="py-6 bg-white rounded-md shadow dark:bg-gray-900">
-                <div class="flex flex-wrap items-center justify-between pb-4 mb-6 space-x-2 border-b dark:border-gray-700">
-                <div class="flex items-center px-6 mb-2 md:mb-0 ">
-                    <div class="flex mr-2 rounded-full">
-                    <img src="/images/cliente.png" alt="" class="object-cover w-12 h-12 rounded-full">
+
+                <!-- Testimonio 2 -->
+                <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b95aa46c?w=64&h=64&fit=crop&crop=face" 
+                             alt="Avatar de María" 
+                             class="w-14 h-14 rounded-full object-cover mr-4">
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-gray-900 text-lg">María González</h3>
+                            <p class="text-gray-600 text-sm">Directora de Marketing, InnovaCorp</p>
+                            <p class="text-gray-400 text-xs mt-1">8 de mayo, 2024</p>
+                        </div>
                     </div>
-                    <div>
-                    <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-300">
-                        Pablo García</h2>
-                    <p class="text-xs text-gray-500 dark:text-gray-400">Manager</p>
-                    </div>
-                </div>
-                <p class="px-6 text-base font-medium text-gray-600 dark:text-gray-400"> 3 de mayo de 2025
-                </p>
-                </div>
-                <p class="px-6 mb-6 text-base text-gray-500 dark:text-gray-400">
-                Buena comida, pero el tiempo de espera fue un poco más largo de lo prometido. Aun así, la app es fácil de usar.
-                </p>
-                <div class="flex flex-wrap justify-between pt-4 border-t dark:border-gray-700">
-                <div class="flex px-6 mb-2 md:mb-0">
-                    <ul class="flex items-center justify-start mr-4">
-                    <li>
-                        <a href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 mr-1 text-digirest dark:text-digirest bi bi-star-fill" viewBox="0 0 16 16">
-                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                            </path>
-                        </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 mr-1 text-digirest dark:text-digirest bi bi-star-fill" viewBox="0 0 16 16">
-                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                            </path>
-                        </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 mr-1 text-digirest dark:text-digirest bi bi-star-fill" viewBox="0 0 16 16">
-                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                            </path>
-                        </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 mr-1 text-digirest dark:text-digirest bi bi-star-fill" viewBox="0 0 16 16">
-                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                            </path>
-                        </svg>
-                        </a>
-                    </li>
-                    </ul>
-                    <h2 class="text-sm text-gray-500 dark:text-gray-400">Calificación:<span class="font-semibold text-gray-600 dark:text-gray-300">
-                        3.0</span>
-                    </h2>
-                </div>
-                <div class="flex items-center px-6 space-x-1 text-sm font-medium text-gray-500 dark:text-gray-400">
-                    <div class="flex items-center">
-                    <div class="flex mr-3 text-sm text-gray-700 dark:text-gray-400">
-                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 h-4 mr-1 text-digirest bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
-                            <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z">
-                            </path>
-                        </svg></a>
-                        <span>12</span>
-                    </div>
-                    {{-- <div class="flex text-sm text-gray-700 dark:text-gray-400">
-                        <a href="#" class="inline-flex hover:underline">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 h-4 mr-1 text-digirest bi bi-chat" viewBox="0 0 16 16">
-                            <path d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z">
-                            </path>
-                        </svg>Reply</a>
-                    </div> --}}
+
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        "Una experiencia increíble de principio a fin. El nivel de profesionalismo y la capacidad de adaptarse a nuestras necesidades específicas nos convenció por completo."
+                    </p>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="flex text-[#FAC122] text-lg mr-2">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                            <span class="text-gray-600 text-sm font-medium">5.0</span>
+                        </div>
+                        <div class="flex items-center text-gray-500">
+                            <svg class="w-5 h-5 mr-1 hover:text-[#FAC122] cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"></path>
+                            </svg>
+                            <span class="text-sm">18</span>
+                        </div>
                     </div>
                 </div>
-                </div>
-            </div>
-            <div class="py-6 bg-white rounded-md shadow dark:bg-gray-900">
-                <div class="flex flex-wrap items-center justify-between pb-4 mb-6 space-x-2 border-b dark:border-gray-700">
-                <div class="flex items-center px-6 mb-2 md:mb-0 ">
-                    <div class="flex mr-2 rounded-full">
-                    <img src="/images/cliente.png" alt="" class="object-cover w-12 h-12 rounded-full">
+
+                <!-- Testimonio 3 -->
+                <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop&crop=face" 
+                             alt="Avatar de Roberto" 
+                             class="w-14 h-14 rounded-full object-cover mr-4">
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-gray-900 text-lg">Roberto Silva</h3>
+                            <p class="text-gray-600 text-sm">Fundador, EcoTech Innovations</p>
+                            <p class="text-gray-400 text-xs mt-1">3 de mayo, 2024</p>
+                        </div>
                     </div>
-                    <div>
-                    <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-300">
-                        Andrés Martínez</h2>
-                    <p class="text-xs text-gray-500 dark:text-gray-400">Marketing Officer</p>
-                    </div>
-                </div>
-                <p class="px-6 text-base font-medium text-gray-600 dark:text-gray-400"> 9 de mayo de 2025
-                </p>
-                </div>
-                <p class="px-6 mb-6 text-base text-gray-500 dark:text-gray-400">
-                La comida estaba riquísima y caliente. El sistema de reserva es intuitivo, aunque me gustaría que incluyeran más opciones veganas.
-                </p>
-                <div class="flex flex-wrap justify-between pt-4 border-t dark:border-gray-700">
-                <div class="flex px-6 mb-2 md:mb-0">
-                    <ul class="flex items-center justify-start mr-4">
-                    <li>
-                        <a href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 mr-1 text-digirest dark:text-digirest bi bi-star-fill" viewBox="0 0 16 16">
-                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                            </path>
-                        </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 mr-1 text-digirest dark:text-digirest bi bi-star-fill" viewBox="0 0 16 16">
-                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                            </path>
-                        </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 mr-1 text-digirest dark:text-digirest bi bi-star-fill" viewBox="0 0 16 16">
-                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                            </path>
-                        </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 mr-1 text-digirest dark:text-digirest bi bi-star-fill" viewBox="0 0 16 16">
-                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                            </path>
-                        </svg>
-                        </a>
-                    </li>
-                    </ul>
-                    <h2 class="text-sm text-gray-500 dark:text-gray-400">Calificación:<span class="font-semibold text-gray-600 dark:text-gray-300">
-                        3.0</span>
-                    </h2>
-                </div>
-                <div class="flex items-center px-6 space-x-1 text-sm font-medium text-gray-500 dark:text-gray-400">
-                    <div class="flex items-center">
-                    <div class="flex mr-3 text-sm text-gray-700 dark:text-gray-400">
-                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 h-4 mr-1 text-digirest bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
-                            <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z">
-                            </path>
-                        </svg></a>
-                        <span>12</span>
-                    </div>
-                    {{-- <div class="flex text-sm text-gray-700 dark:text-gray-400">
-                        <a href="#" class="inline-flex hover:underline">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 h-4 mr-1 text-digirest bi bi-chat" viewBox="0 0 16 16">
-                            <path d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z">
-                            </path>
-                        </svg>Reply</a>
-                    </div> --}}
+
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        "Trabajar con este equipo ha sido una experiencia transformadora. Su enfoque innovador y atención al detalle realmente marcaron la diferencia en nuestro proyecto."
+                    </p>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="flex text-[#FAC122] text-lg mr-2">
+                                ⭐⭐⭐⭐☆
+                            </div>
+                            <span class="text-gray-600 text-sm font-medium">4.0</span>
+                        </div>
+                        <div class="flex items-center text-gray-500">
+                            <svg class="w-5 h-5 mr-1 hover:text-[#FAC122] cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"></path>
+                            </svg>
+                            <span class="text-sm">12</span>
+                        </div>
                     </div>
                 </div>
-                </div>
-            </div>
-            <div class="py-6 bg-white rounded-md shadow dark:bg-gray-900">
-                <div class="flex flex-wrap items-center justify-between pb-4 mb-6 space-x-2 border-b dark:border-gray-700">
-                <div class="flex items-center px-6 mb-2 md:mb-0 ">
-                    <div class="flex mr-2 rounded-full">
-                    <img src="/images/cliente.png" alt="" class="object-cover w-12 h-12 rounded-full">
+
+                <!-- Testimonio 4 -->
+                <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=64&h=64&fit=crop&crop=face" 
+                             alt="Avatar de Ana" 
+                             class="w-14 h-14 rounded-full object-cover mr-4">
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-gray-900 text-lg">Ana Martínez</h3>
+                            <p class="text-gray-600 text-sm">CTO, DigitalFlow Agency</p>
+                            <p class="text-gray-400 text-xs mt-1">28 de abril, 2024</p>
+                        </div>
                     </div>
-                    <div>
-                    <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-300">
-                        Laura Jiménez</h2>
-                    <p class="text-xs text-gray-500 dark:text-gray-400">Java Programmer</p>
-                    </div>
-                </div>
-                <p class="px-6 text-base font-medium text-gray-600 dark:text-gray-400">  5 de mayo de 2025
-                </p>
-                </div>
-                <p class="px-6 mb-6 text-base text-gray-500 dark:text-gray-400">
-                Perfecto para almuerzos rápidos. Me encantó que pude elegir el horario exacto y ¡todo estuvo listo cuando llegué!
-                </p>
-                <div class="flex flex-wrap justify-between pt-4 border-t dark:border-gray-700">
-                <div class="flex px-6 mb-2 md:mb-0">
-                    <ul class="flex items-center justify-start mr-4">
-                    <li>
-                        <a href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 mr-1 text-digirest dark:text-digirest bi bi-star-fill" viewBox="0 0 16 16">
-                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                            </path>
-                        </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 mr-1 text-digirest dark:text-digirest bi bi-star-fill" viewBox="0 0 16 16">
-                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                            </path>
-                        </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 mr-1 text-digirest dark:text-digirest bi bi-star-fill" viewBox="0 0 16 16">
-                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                            </path>
-                        </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 mr-1 text-digirest dark:text-digirest bi bi-star-fill" viewBox="0 0 16 16">
-                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                            </path>
-                        </svg>
-                        </a>
-                    </li>
-                    </ul>
-                    <h2 class="text-sm text-gray-500 dark:text-gray-400">Calificación:<span class="font-semibold text-gray-600 dark:text-gray-300">
-                        3.0</span>
-                    </h2>
-                </div>
-                <div class="flex items-center px-6 space-x-1 text-sm font-medium text-gray-500 dark:text-gray-400">
-                    <div class="flex items-center">
-                    <div class="flex mr-3 text-sm text-gray-700 dark:text-gray-400">
-                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 h-4 mr-1 text-digirest bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
-                            <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z">
-                            </path>
-                        </svg></a>
-                        <span>12</span>
-                    </div>
-                    {{-- <div class="flex text-sm text-gray-700 dark:text-gray-400">
-                        <a href="#" class="inline-flex hover:underline">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 h-4 mr-1 text-digirest bi bi-chat" viewBox="0 0 16 16">
-                            <path d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z">
-                            </path>
-                        </svg>Reply</a>
-                    </div> --}}
+
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        "La comunicación fue fluida durante todo el proceso y los resultados superaron ampliamente nuestras expectativas. Definitivamente recomendaría sus servicios."
+                    </p>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="flex text-[#FAC122] text-lg mr-2">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                            <span class="text-gray-600 text-sm font-medium">5.0</span>
+                        </div>
+                        <div class="flex items-center text-gray-500">
+                            <svg class="w-5 h-5 mr-1 hover:text-[#FAC122] cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"></path>
+                            </svg>
+                            <span class="text-sm">31</span>
+                        </div>
                     </div>
                 </div>
-                </div>
-            </div>
+
             </div>
         </div>
     </section>
-    <!---------------------- FIN COMENTARIOS ------------------>
+    <!---------------------- FIN COMENTARIOS ----------------------->
 
     <!---------------------- Sección de Contacto y Ubicación ----------------------->
-    <section class="bg-neutral-900 py-16 px-4 sm:px-6 lg:px-8">
+    <section id="contacto" class="bg-gradient-to-b from-black to-gray-800 py-16 px-4 sm:px-6 lg:px-8">
         <div class="container mx-auto max-w-7xl">
+
+            <div class="text-center mb-12">
+                <h2 class="text-4xl sm:text-5xl font-bold text-white mb-4">
+                    Contáct<span class="text-[#FAC122]">anos</span>
+                </h2>
+                <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+                    Gracias por visitar nuestro sitio web. Esperamos puedas visitarnos para vivir una experiencia inolvidable
+                </p>
+            </div>  
             <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-stretch">
                 
                 <!-- Columna Izquierda - Mapa -->
                 <div class="w-full md:w-1/2">
                     <div class="h-64 md:h-96 w-full rounded-lg overflow-hidden shadow-2xl border border-zinc-700">
-                        {{-- <iframe 
+                        <iframe 
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31208.84167394065!2d-76.97531545!3d-12.0463731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c6f19ee5b4c5%3A0x4c9e82b8c8b8b8b8!2sSanta%20Anita%2C%20Lima!5e0!3m2!1ses!2spe!4v1609459200000!5m2!1ses!2spe"
                             width="100%" 
                             height="100%" 
@@ -644,7 +470,7 @@
                             loading="lazy" 
                             referrerpolicy="no-referrer-when-downgrade"
                             class="w-full h-full">
-                        </iframe> --}}
+                        </iframe>
                     </div>
                 </div>
 

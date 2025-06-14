@@ -111,8 +111,8 @@
                 <div class="w-full px-3 mb-6 sm:w-1/2 md:w-1/3">
                 <div class="border border-gray-300 dark:border-gray-700">
                     <div class="relative bg-gray-200">
-                    <a href="/products/product_one" class="">
-                        <img src="/images/postres1-categorias.png" alt="" class="object-cover w-full h-56 mx-auto ">
+                    <a href="/productos/lomo-saltado" class="">
+                        <img src="/images/lomo-saltado.png" alt="" class="object-cover w-full h-56 mx-auto ">
                     </a>
                     </div>
                     <div class="p-3 ">

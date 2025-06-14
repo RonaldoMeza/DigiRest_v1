@@ -1,5 +1,4 @@
 
-
 <footer class="pie-pagina">
 
     <div class="grupo-1">
@@ -13,8 +12,11 @@
         </div>
         <div class="box box-2">
             <h2 class="font-bold">SOBRE NOSOTROS</h2>
-            <P class="text-gray-400">"En Digirest nos dedicamos a ofrecer experiencias gastronómicas inolvidables, combinando frescura, sabor y calidad en cada plato."</P>
-            <P class="text-gray-400 text-base">"Pasión por la buena comida, hecha con amor."</P>
+            <p class="text-gray-400">
+                En <strong>DigiRest</strong> somos un equipo apasionado por la gastronomía que trabaja cada día 
+                para ofrecerte experiencias culinarias inolvidables. Nuestra meta es combinar ingredientes 
+                frescos, creatividad y tradición en cada plato.
+            </p>
         </div>
         <div class="box box-3">
             <div class="redes-container">

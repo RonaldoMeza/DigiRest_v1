@@ -18,11 +18,13 @@ use App\Livewire\Auth\ResetPasswordPage;
 
 use App\Livewire\SuccessPage;
 use App\Livewire\CancelPage;
+use App\Livewire\ReservationsPage;
 
 Route::get('/', HomePage::class);
 
 Route::get('/categorias', CategoriesPage::class);
 Route::get('/productos', ProductsPage::class);
+Route::get('/reservas', ReservationsPage::class);
 Route::get('/carrito', CartPage::class);
 Route::get('/productos/{producto}', ProductDetailPage::class);
 

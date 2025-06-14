@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,12 +14,16 @@
 
         @livewireStyles
     </head>
-    <body class="bg-slate-200 dark:bg-slate-700">
+    <body class="bg-slate-200 dark:bg-slate-700 flex flex-col min-h-screen">
 
+        {{-- NAVBAR --}}
         @livewire('partials.navbar')
-        <main>
+
+        <main class="flex-1">
             {{ $slot }}
         </main>
+
+        {{-- FOOTER --}}
         @livewire('partials.footer')  
 
         @livewireScripts

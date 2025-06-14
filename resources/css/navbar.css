@@ -19,7 +19,7 @@
     color: #d7d7d7;
     /* position: relative; */
     text-decoration: none;
-    padding: 1.8rem 2px;
+    transition: .3s;
 }
 
 .nav-link-prop:hover{
@@ -71,4 +71,10 @@
 
 .nav-btn:active {
     scale: 0.9;
+}
+
+@media screen and (max-width:768px){
+    .nav-link-prop {
+        
+    }
 }

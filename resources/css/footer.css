@@ -81,7 +81,7 @@
 }
 
 .pie-pagina .grupo-2{
-    background-color: #1d1d1d;
+    background-color: #0a0a0a;
     padding: 15px 10px;
     text-align: center;
     color: white;
@@ -91,7 +91,7 @@
     font-size: 15px;
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width:768px) {
     .pie-pagina .grupo-1{
         width: 90%;
         grid-template-columns: repeat(1, 1fr);

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('image')->nullable(); // Imagen que hace referencia a la categoría.
             $table->boolean('is_active')->default(true); // Estado de la categoría por defecto siempre True.
 
-            $table->timestamps();
+            $table->timestamps(); // FECHA DE CREACIÓN Y MODIFICACIÓN
         });
     }
 

@@ -20,17 +20,17 @@
 
         <div id="navbar-collapse-with-animation" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block">
             <div class="overflow-hidden overflow-y-auto max-h-[80vh]  [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-slate-700 dark:[&::-webkit-scrollbar-thumb]:bg-slate-500">
-            <div class="flex flex-col gap-x-0 mt-5 divide-y divide-dashed divide-black md:flex-row md:items-center md:justify-end md:gap-x-7 md:mt-0 md:ps-7 md:divide-y-0 md:divide-solid dark:divide-gray-700">
+            <div class="py-4 flex flex-col gap-x-0 mt-5 divide-y divide-dashed divide-black md:flex-row md:items-center md:justify-end md:gap-x-7 md:mt-0 md:ps-7 md:divide-y-0 md:divide-solid dark:divide-gray-700">
                 
-                <a class="nav-link-prop text-digirest " href="/" aria-current="page">
+                <a wire:navigate class="nav-link-prop {{ request()->is('/') ? 'text-digirest':'text-[#d7d7d7]'}}" href="/" aria-current="page">
                 Inicio
                 </a>
 
-                <a class=" nav-link-prop " href="/categorias">
+                <a wire:navigate class=" nav-link-prop {{ request()->is('categorias') ? 'text-digirest':'text-[#d7d7d7]'}}" href="/categorias">
                 Categorías
                 </a>
 
-                <a class=" nav-link-prop " href="/productos">
+                <a wire:navigate class=" nav-link-prop {{ request()->is('productos') ? 'text-digirest':'text-[#d7d7d7]'}}" href="/productos">
                 Productos
                 </a>
 
@@ -38,11 +38,11 @@
                 Pedir delivery
                 </a> --}}
 
-                <a class=" nav-link-prop " href="/reserva">
-                Reservar
+                <a wire:navigate class=" nav-link-prop {{ request()->is('reservas') ? 'text-digirest':'text-[#d7d7d7]'}}" href="/reservas">
+                Reservas
                 </a>
 
-                <a class="nav-link-prop flex items-center " href="/carrito">
+                <a class="nav-link-prop flex items-center {{ request()->is('carrito') ? 'text-digirest':'text-[#d7d7d7]'}}" href="/carrito">
                     <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-5 h-5 mr-1" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386a.75.75 0 0 1 .728.577L5.67 8.25H19.5a.75.75 0 0 1 .733.937l-1.5 6A.75.75 0 0 1 18 15H7.174a.75.75 0 0 1-.728-.577L4.5 5.25m0 0L3.386 3.577A.75.75 0 0 0 2.25 3M6 21a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm12 0a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" />
                     </svg>
@@ -50,7 +50,7 @@
                 </a>
 
                 <div class="pt-3 md:pt-0 me-1">
-                    <a class="nav-btn" href="/iniciar-sesion">
+                    <a wire:navigate class="nav-btn" href="/iniciar-sesion">
                         <svg class="flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
                         <circle cx="12" cy="7" r="4" />

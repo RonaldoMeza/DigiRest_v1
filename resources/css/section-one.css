@@ -10,20 +10,30 @@
     
     
 }
-
+.container-padre{
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.container-hijo img{
+    width: 400px;
+}
 
 .chef-img{
     transition: 0.3s ease;
     &:hover{
         transform: translateY(-5px);
-        filter: drop-shadow(3px 3px 7px #FAC122);
+        filter: drop-shadow(5px 5px 10px #FAC122);
     }
 }
 
 
 @media screen and (max-width:768px) {
     .section1{
-        padding-top: 1.5rem;
+        padding-top: 2rem;
+    }
+    .container-hijo img{
+        width: 250px;
     }
     
 }

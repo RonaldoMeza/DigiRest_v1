@@ -5,13 +5,12 @@ namespace App\Livewire;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
+#[Title('Reservas - DigiRest')]
 
-#[Title('DigiRest - Pagina principal')]
-
-class HomePage extends Component
+class ReservationsPage extends Component
 {
     public function render()
     {
-        return view('livewire.home-page');
+        return view('livewire.reservations-page');
     }
 }
