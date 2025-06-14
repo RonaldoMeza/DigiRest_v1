@@ -73,8 +73,8 @@ class ReservationResource extends Resource
                     ->inline()
                     ->options([
                         'pending'    => 'Pendiente',
-                        'confirmed'  => 'Confirmada',
-                        /* 'cancelled'  => 'Cancelada',
+                        /* 'confirmed'  => 'Confirmada',
+                        'cancelled'  => 'Cancelada',
                         'finished'   => 'Finalizada', */
                     ])
                     ->default('pending')

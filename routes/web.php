@@ -20,6 +20,8 @@ use App\Livewire\SuccessPage;
 use App\Livewire\CancelPage;
 use App\Livewire\ReservationsPage;
 
+use Illuminate\Support\Facades\Auth;
+
 Route::get('/', HomePage::class);
 
 Route::get('/categorias', CategoriesPage::class);
@@ -28,14 +30,24 @@ Route::get('/reservas', ReservationsPage::class);
 Route::get('/carrito', CartPage::class);
 Route::get('/productos/{producto}', ProductDetailPage::class);
 
-Route::get('/verificar', CheckoutPage::class);
-Route::get('/mis-pedidos', MyOrdersPage::class);
-Route::get('/mis-pedidos/{pedido}', OrderDetailPage::class);
 
-Route::get('/iniciar-sesion', LoginPage::class);
-Route::get('/registrar', RegisterPage::class);
-Route::get('/contraseña-olvidada', ForgotPasswordPage::class);
-Route::get('/restaurar-contraseña', ResetPasswordPage::class);
+Route::middleware('guest')->group(function(){
+    Route::get('/iniciar-sesion', LoginPage::class)->name('login');
+    Route::get('/registrar', RegisterPage::class);
+    Route::get('/contraseña-olvidada', ForgotPasswordPage::class);
+    Route::get('/restaurar-contraseña', ResetPasswordPage::class);
+});
 
-Route::get('/exitoso', SuccessPage::class);
-Route::get('/cancelado', CancelPage::class);
+Route::middleware('auth')->group(function(){
+    Route::get('/logout', function(){ 
+        Auth::logout();
+        return redirect('/');
+    });
+
+    Route::get('/verificar', CheckoutPage::class);
+    Route::get('/mis-pedidos', MyOrdersPage::class);
+    Route::get('/mis-pedidos/{pedido}', OrderDetailPage::class);
+
+    Route::get('/exitoso', SuccessPage::class);
+    Route::get('/cancelado', CancelPage::class);
+});

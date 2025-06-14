@@ -1,10 +1,10 @@
 <div>
     
     <!---------------------- INICIO 2 SECTIONS ------------------>
-    <div class="section-container">
+    
 
         <!---------------------- SECCION INICIO ------------------>
-        <div class="w-full"> 
+        <div class="section-container w-full "> 
             <div
                 class="section1 mx-auto max-w-[85rem] px-4 sm:px-6 lg:px-8 
                     grid grid-cols-1 md:grid-cols-2 gap-8 items-center
@@ -63,10 +63,11 @@
         </div>
         <!---------------------- FIN DE SECCION INICIO ------------------>
 
+    
+    <!---------------------FIN 2 SECTIONS------------------------------>
 
-
-        <!----------------------SECTION BIENVENIDOS ------------------>
-        <section class="min-h-screen flex items-center justify-center py-10 px-4 relative overflow-hidden">
+    <!----------------------SECTION BIENVENIDOS ------------------>
+        <section class="bg-gradient-to-b from-black to-gray-900 min-h-screen flex items-center justify-center py-10 px-4 relative overflow-hidden">
             <!-- Decorative background element -->
             <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary/5 to-transparent rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
             <div class="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-blue-500/5 to-transparent rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
@@ -83,19 +84,19 @@
                 
                             </div>
                             <p class="text-base text-center text-gray-300">
-                            En DigiRest, combinamos la pasión por la gastronomía con la tecnología para ofrecerte una experiencia única.</p>
+                            En DigiRest, llevamos la experiencia gastronómica al siguiente nivel. Realiza tus reservas fácilmente, recibe tus platos favoritos con nuestro servicio de delivery, y descubre una amplia variedad de productos pensados para ti.</p>
                         </div>
                     </div>
                     
                     <!-- Grid de tarjetas centrado abajo -->
                     <div class="w-full max-w-5xl">
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         
                         <!-- Card 1: Menú Digital -->
                         <a href="reservas" class="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 card-shadow-menu h-80">
                             <div class="relative w-full h-full overflow-hidden">
                                 <img src="/images/restaurant.jpg" 
-                                    alt="Menú Digital" 
+                                    alt="Reservas en línea" 
                                     class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
                                 
                                 <!-- Overlay con gradiente -->
@@ -104,24 +105,24 @@
                                 <!-- Contenido del card -->
                                 <div class="absolute inset-0 flex items-center justify-center p-6">
                                     <h3 class="text-white text-xl font-semibold drop-shadow-lg text-center relative accent-line">
-                                        Reservas
+                                        Reservas en línea
                                     </h3>
                                 </div>
                             </div>
                         </a>
                         
                         <!-- Card 2: Gestión de Pedidos -->
-                        <a href="#orders" class="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 card-shadow-orders h-80">
+                        <a href="productos" class="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 card-shadow-orders h-80">
                             <div class="relative w-full h-full overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=400&fit=crop&crop=center" 
-                                    alt="Gestión de Pedidos" 
+                                <img src="/images/platillos-de-restaurante.jpg" 
+                                    alt="Platillos deliciosos" 
                                     class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
                                 
                                 <div class="absolute inset-0 overlay-gradient opacity-80 group-hover:opacity-90 transition-opacity duration-400"></div>
                                 
                                 <div class="absolute inset-0 flex items-center justify-center p-6">
                                     <h3 class="text-white text-xl font-semibold drop-shadow-lg text-center relative accent-line">
-                                        Platillos excelentes
+                                        Platillos deliciosos
                                     </h3>
                                 </div>
                             </div>
@@ -130,7 +131,7 @@
                         <!-- Card 3: Análisis de Datos -->
                         <a href="#analytics" class="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 card-shadow-analytics h-80">
                             <div class="relative w-full h-full overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=400&fit=crop&crop=center" 
+                                <img src="/images/delivery.jpg" 
                                     alt="Análisis de Datos" 
                                     class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
                                 
@@ -138,14 +139,14 @@
                                 
                                 <div class="absolute inset-0 flex items-center justify-center p-6">
                                     <h3 class="text-white text-xl font-semibold drop-shadow-lg text-center relative accent-line">
-                                        Análisis de Datos
+                                        Envios a tu hogar
                                     </h3>
                                 </div>
                             </div>
                         </a>
                         
                         <!-- Card 4: Experiencia del Cliente -->
-                        <a href="#customer" class="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 card-shadow-customer h-80">
+                        {{-- <a href="#customer" class="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 card-shadow-customer h-80">
                             <div class="relative w-full h-full overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=400&fit=crop&crop=center" 
                                     alt="Experiencia del Cliente" 
@@ -159,7 +160,7 @@
                                     </h3>
                                 </div>
                             </div>
-                        </a>
+                        </a> --}}
                         
                     </div>
                 </div>
@@ -169,25 +170,14 @@
         </section>
         <!---------------------- FIN SECTION BIENVENIDOS ------------------>
 
-    </div>
-    <!---------------------FIN 2 SECTIONS------------------------------>
-
-
     
     <!---------------------- SECCION CATEGORIAS ------------------>
-    <div class="bg-gradient-to-b from-black to-gray-800 py-20">
+    {{-- <div class="bg-gradient-to-b from-black to-gray-800 py-20">
     <div class="max-w-xl mx-auto">
         <div class="text-center ">
         <div class="relative flex flex-col items-center mb-6">
             <h1 class="text-5xl text-white font-leckerli dark:text-gray-200">Nuestra <span class="text-digirest">Carta</span> </h1>
-            {{-- <div class="flex w-40 mt-2 mb-6 overflow-hidden rounded">
-            <div class="flex-1 h-2 bg-digiresClear">
-            </div>
-            <div class="flex-1 h-2 bg-digiresClear">
-            </div>
-            <div class="flex-1 h-2 bg-digirest">
-            </div>
-            </div> --}}
+            
         </div>
         <p class="mb-12 text-base text-center text-gray-400">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus magni eius eaque?
@@ -283,12 +273,12 @@
         </div>
     </div>
 
-    </div>
+    </div> --}}
     <!---------------------- FIN CATEGORIAS ------------------>
     
 
     <!-------------------- Sección de Testimonios -------------------------->
-    <section class="bg-gradient-to-b from-gray-800 to-black py-16 px-4 sm:px-6 lg:px-8">
+    <section class="bg-gradient-to-b from-gray-900 to-black py-16 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
             <!-- Título de la sección -->
             <div class="text-center mb-12">
@@ -296,8 +286,8 @@
                     Lo que dicen nuestros 
                     <span class="text-[#FAC122]">clientes</span>
                 </h2>
-                <p class="text-gray-300 text-lg max-w-2xl mx-auto">
-                    Descubre por qué miles de usuarios confían en nosotros para sus proyectos más importantes
+                <p class="text-base text-center text-gray-300">
+                    Descubre por qué miles de usuarios confían en nosotros
                 </p>
             </div>
 
@@ -452,7 +442,7 @@
                 <h2 class="text-4xl sm:text-5xl font-bold text-white mb-4">
                     Contáct<span class="text-[#FAC122]">anos</span>
                 </h2>
-                <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+                <p class="text-base text-center text-gray-300">
                     Gracias por visitar nuestro sitio web. Esperamos puedas visitarnos para vivir una experiencia inolvidable
                 </p>
             </div>  

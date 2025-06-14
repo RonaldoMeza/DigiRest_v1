@@ -23,6 +23,7 @@ use Illuminate\Support\Str;
 class CategoryResource extends Resource
 {
     protected static ?string $model = Category::class;
+    
     protected static ?string $navigationIcon = 'heroicon-o-tag';
     protected static ?string $navigationLabel = 'Categorías';
 
@@ -82,6 +83,7 @@ class CategoryResource extends Resource
                     ->label('Activo')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('created_at')
+                ->label('Creado')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),

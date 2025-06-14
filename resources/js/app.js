@@ -1,6 +1,6 @@
 import './bootstrap';
-import 'preline';
 import '../css/app.css';
+import 'preline';
 
 
 document.addEventListener('livewire:navigated', () => {
@@ -8,9 +8,9 @@ document.addEventListener('livewire:navigated', () => {
 }); 
 
 // Inicializa Preline al cargar el DOM
-/* document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     window.HSStaticMethods?.autoInit();
-}); */
+});
 
 // Re-inicializa Preline después de que Livewire actualice el DOM
 /* document.addEventListener('livewire:load', () => {
