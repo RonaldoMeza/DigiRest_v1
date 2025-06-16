@@ -13,6 +13,7 @@ class LoginPage extends Component {
 
     public $email;
     public $password;
+    /* public $errorMessage = null; */
 
     public function save() {
         $this ->validate([
@@ -23,6 +24,7 @@ class LoginPage extends Component {
         // Si la autenticación no se valida, se mostrará un error
         if (!Auth::attempt(['email' => $this->email, 'password' => $this->password])){
             session()->flash('error', 'Credenciales inválidas');
+            /* $this->errorMessage = 'Credenciales incorrectas'; */
             return;
         }
         

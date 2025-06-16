@@ -131,14 +131,14 @@ class ProductResource extends Resource
                     ->boolean(),
 
                 Tables\Columns\TextColumn::make('created_at')
-                    ->label('Creado')
-                    ->dateTime()
+                    ->label('Fecha de Creación')
+                    ->dateTime('d/m/Y H:i')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
 
                 Tables\Columns\TextColumn::make('updated_at')
-                    ->label('Actualizado')
-                    ->dateTime()
+                    ->label('Fecha de Actualización')
+                    ->dateTime('d/m/Y H:i')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])

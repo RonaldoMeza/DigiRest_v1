@@ -13,7 +13,9 @@ class Address extends Model
         'first_name',
         'last_name',
         'phone',
+        'district',
         'street_address',
+        'reference',
     ];
     public function order()
     {

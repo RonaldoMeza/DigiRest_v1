@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\OrderResource\Pages;
 use App\Filament\Resources\OrderResource\RelationManagers;
+use App\Filament\Resources\OrderResource\RelationManagers\AddressRelationManager;
 use App\Models\Order;
 use App\Models\Product;
 use Filament\Forms;
@@ -70,24 +71,27 @@ class OrderResource extends Resource
                             ->inline()
                             ->required()
                             ->options([
+                                'new' => 'Nuevo',
                                 'processing' => 'En Proceso',
                                 'shipped' => 'Enviado',
                                 'delivered' => 'Entregado',
-                                'cancelled' => 'Cancelado',
+                                'canceled' => 'Cancelado',
                             ])
                             ->default('processing')
                             ->reactive()
                             ->colors([
+                                'new' => 'warning',
                                 'processing' => 'warning',
                                 'shipped' => 'success',
                                 'delivered' => 'success',
-                                'cancelled' => 'danger',
+                                'canceled' => 'danger',
                             ])
                             ->icons([
+                                'new' => 'heroicon-m-sparkles',
                                 'processing' => 'heroicon-m-arrow-path',
                                 'shipped' => 'heroicon-m-truck',
                                 'delivered' => 'heroicon-m-check-circle',
-                                'cancelled' => 'heroicon-m-x-circle',
+                                'canceled' => 'heroicon-m-x-circle',
                             ]),
                         Textarea::make('notes')
                             ->label('Notas del Pedido')
@@ -186,6 +190,7 @@ class OrderResource extends Resource
                 TextColumn::make('payment_status')
                     ->label('Estado de Pago')
                     ->sortable()
+                    ->badge() // para que el campo en la tabla tenga un contorno.
                     ->searchable(),
 
                 SelectColumn::make('status')
@@ -193,20 +198,20 @@ class OrderResource extends Resource
                     ->sortable()
                     ->searchable()
                     ->options([
-                        /* 'new' => 'Nuevo', */
+                        'new' => 'Nuevo',
                         'processing' => 'En Proceso',
                         'shipped' => 'Enviado',
                         'delivered' => 'Entregado',
-                        'cancelled' => 'Cancelado',
+                        'canceled' => 'Cancelado',
                     ]),
                 TextColumn::make('created_at')
                     ->label('Fecha de Creación')
-                    ->dateTime()
+                    ->dateTime('d/m/Y H:i')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
                     ->label('Fecha de Actualización')
-                    ->dateTime()
+                    ->dateTime('d/m/Y H:i')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                     
@@ -232,7 +237,7 @@ class OrderResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            AddressRelationManager::class
         ];
     }
 

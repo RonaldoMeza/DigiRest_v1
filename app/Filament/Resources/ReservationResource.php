@@ -19,6 +19,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\SelectColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Carbon\Carbon;
 
 class ReservationResource extends Resource
 {
@@ -35,16 +36,24 @@ class ReservationResource extends Resource
                     ->label('Nombre completo')
                     ->required(),
                 TextInput::make('customer_phone')
-                    ->label('Número de celular')
+                    ->label('Número teléfono o celular')
                     ->required(),
                 DatePicker::make('date')
                     ->label('Fecha')
-                    ->required(),
+                    ->placeholder('Ingrese la fecha para la reserva')
+                    ->required()
+                    ->minDate(Carbon::today()) // solo permite escoger fechas desde hoy en adelante
+                    ->displayFormat('d/m/Y')  // Formatea a dias meses y años, en ese orden.
+                    ->native(false),   // Hace el formulario de fecha  como el de html, el diseño cambia.
                 TimePicker::make('start_time')
                     ->label('Hora Inicio')
-                    ->required(),
+                    ->required()
+                    ->format('H:i') // Guarda como "14:00" en la BD.
+                    ->seconds(false),   // Quita los segundos
                 TimePicker::make('end_time')
-                    ->label('Hora Fin'),
+                    ->label('Hora Fin')
+                    ->format('H:i')
+                    ->seconds(false),  // Quita los segundos
                 TextInput::make('guests')
                     ->label('Comensales')
                     ->numeric()
@@ -52,6 +61,7 @@ class ReservationResource extends Resource
                     ->required(),
                 Select::make('table_id')
                     ->label('Mesa')
+                    ->placeholder('Seleccione una mesa')
                     ->relationship(
                         'table',
                         'code',
@@ -83,7 +93,7 @@ class ReservationResource extends Resource
                         // Si cambia a cancelada o finalizada, liberar mesa
                         $reservation = Reservation::find($get('id'));
                         if (in_array($state, ['cancelled', 'finished'])) {
-                            $reservation->table->update(['status' => 'available']);
+                            $reservation->table->update(['status' => ['available', 'confirmed']]);
                         } else {
                             $reservation->table->update(['status' => 'occupied']);
                         }
@@ -105,15 +115,15 @@ class ReservationResource extends Resource
                     ->searchable(),
                 TextColumn::make('date')
                     ->label('Fecha')
-                    ->date()
+                    ->date('d/m/Y')
                     ->sortable(),
                 TextColumn::make('start_time')
                     ->label('Inicio')
-                    ->time()
+                    ->time('H:i')
                     ->sortable(),
                 TextColumn::make('end_time')
                     ->label('Fin')
-                    ->time()
+                    ->time('H:i')
                     ->sortable(),
                 SelectColumn::make('status')
                     ->label('Estado de la Reserva')
@@ -134,13 +144,13 @@ class ReservationResource extends Resource
                         }
                     }),
                 TextColumn::make('created_at')
-                    ->label('Creado')
-                    ->dateTime()
+                    ->label('Fecha de Creación')
+                    ->dateTime('d/m/Y H:i')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
-                    ->label('Actualizado')
-                    ->dateTime()
+                    ->label('Fecha de Actualización')
+                    ->dateTime('d/m/Y H:i')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])

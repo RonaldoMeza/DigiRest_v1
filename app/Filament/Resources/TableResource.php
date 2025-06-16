@@ -74,14 +74,21 @@ class TableResource extends Resource
                     ->formatStateUsing(fn($state) => $state === 'available' ? 'Disponible' : 'Ocupada'),
                 Tables\Columns\TextColumn::make('location')
                     ->label('Ubicación')
-                    ->sortable(),
+                    ->sortable()
+                    ->formatStateUsing(function ($state) {
+                        return match ($state) {
+                            'primer_piso' => 'Primer piso',
+                            'segundo_piso' => 'Segundo piso',
+                            default => ucfirst(str_replace('_', ' ', $state)),
+                        };
+                    }),
                 Tables\Columns\TextColumn::make('created_at')
                     ->label('Fecha de creación')
-                    ->dateTime('d/m/Y H:i:s')
+                    ->dateTime('d/m/Y H:i')
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('updated_at')
                     ->label('Fecha de actualización')
-                    ->dateTime('d/m/Y H:i:s')
+                    ->dateTime('d/m/Y H:i')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])

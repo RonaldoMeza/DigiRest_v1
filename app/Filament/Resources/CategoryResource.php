@@ -83,12 +83,13 @@ class CategoryResource extends Resource
                     ->label('Activo')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('created_at')
-                ->label('Creado')
-                    ->dateTime()
+                    ->label('Fecha de Creación')
+                    ->dateTime('d/m/Y H:i')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
+                    ->label('Fecha de Actualización')
+                    ->dateTime('d/m/Y H:i')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])

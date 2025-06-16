@@ -34,7 +34,7 @@ Route::get('/productos/{producto}', ProductDetailPage::class);
 Route::middleware('guest')->group(function(){
     Route::get('/iniciar-sesion', LoginPage::class)->name('login');
     Route::get('/registrar', RegisterPage::class);
-    Route::get('/contraseña-olvidada', ForgotPasswordPage::class);
+    Route::get('/contraseña-olvidada', ForgotPasswordPage::class)->name('password.request');
     Route::get('/restaurar-contraseña', ResetPasswordPage::class);
 });
 
