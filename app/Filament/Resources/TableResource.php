@@ -19,6 +19,8 @@ class TableResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-Inbox';
     protected static ?string $navigationLabel = 'Mesas';
 
+    protected static ?int $navigationSort = 5;
+
     public static function form(Form $form): Form
     {
         return $form

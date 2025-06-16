@@ -29,6 +29,8 @@ class ProductResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-squares-2x2';
     protected static ?string $navigationLabel = 'Productos';
 
+    protected static ?int $navigationSort = 3;
+
     public static function form(Form $form): Form
     {
         return $form
@@ -143,11 +145,11 @@ class ProductResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                SelectFilter::make('category_id') // Llamar a la tabla categoría
+                /* SelectFilter::make('category_id') 
                     ->label('Categoría')
-                    ->relationship('category', 'name')  // Relación con el nombre de la categoría
-                    ->searchable() // Para un pequeño apartado de busqueda.
-                    ->preload(), // Para hacer una precarga de categorias, en la parte de filtros
+                    ->relationship('category', 'name')  
+                    ->searchable() 
+                    ->preload(),  */
             ])
             ->actions([
                 Tables\Actions\ActionGroup::make([
