@@ -4,7 +4,7 @@
     font-family: "Leckerli One", 'cursive';
     transition: .3s;
     &:hover{
-        transform: translateY(-3px);
+        transform: scale(1.07);
     }
 }
 

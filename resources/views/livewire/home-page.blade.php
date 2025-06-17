@@ -1,14 +1,9 @@
 <div>
-    
-    <!---------------------- INICIO 2 SECTIONS ------------------>
-    
-
         <!---------------------- SECCION INICIO ------------------>
-        <div class="section-container w-full "> 
-            <div
-                class="section1 mx-auto max-w-[85rem] px-4 sm:px-6 lg:px-8 
+        <div class="section-container-1 w-full"> 
+            <div class="section1 mx-auto max-w-[85rem] px-4 sm:px-6 lg:px-8 
                     grid grid-cols-1 md:grid-cols-2 gap-8 items-center
-                    min-h-[calc(100vh-5rem)]">
+                    min-h-[calc(100vh-4.5rem)]">
                 <!-- TEXTO -->
                 <div class="space-y-6">
                     <h1
@@ -37,8 +32,8 @@
                     </div>
 
                     <div class="mt-4 flex flex-wrap gap-4 justify-center md:justify-start px-4">
-                    <a href="/reservas"
-                        class="inline-flex items-center py-3 px-6 text-sm font-semibold rounded-lg bg-digirest text-black hover:bg-digirestDark transition">
+                    <a wire:navigate href="/reservas"
+                        class="inline-flex items-center py-3 px-6 text-sm font-semibold rounded-lg border-2 transition duration-300 border-digirest bg-digirest text-black hover:bg-transparent hover:text-white hover:scale-105">
                         Reservar mesa
                         <svg class="inline-block ml-2 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
@@ -46,7 +41,7 @@
                         </svg>
                     </a>
                     <a href="#contacto"
-                        class="inline-flex items-center py-3 px-6 text-sm font-medium rounded-lg border border-gray-200 bg-white text-black hover:bg-gray-200 transition">
+                        class="inline-flex items-center py-3 px-6 text-sm font-medium rounded-lg border-2 transition duration-300 border-white bg-white text-black hover:bg-transparent hover:text-white hover:scale-105">
                         Contacto
                     </a>
                     </div>
@@ -63,11 +58,9 @@
         </div>
         <!---------------------- FIN DE SECCION INICIO ------------------>
 
-    
-    <!---------------------FIN 2 SECTIONS------------------------------>
 
     <!----------------------SECTION BIENVENIDOS ------------------>
-        <section class="bg-gradient-to-b from-black to-gray-900 min-h-screen flex items-center justify-center py-10 px-4 relative overflow-hidden">
+        <section class="section-container-2 min-h-screen flex items-center justify-center py-10 px-4 relative overflow-hidden">
             <!-- Decorative background element -->
             <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary/5 to-transparent rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
             <div class="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-blue-500/5 to-transparent rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
@@ -81,9 +74,9 @@
                             <div class="relative flex flex-col items-center mb-6">
                                 <h1 class="text-3xl sm:text-4xl lg:text-5xl  font-leckerli dark:text-gray-200 text-white">
                                 Bienvenidos a Digi<span class="text-digirest">Rest</span> </h1>
-                
                             </div>
-                            <p class="text-base text-center text-gray-300">
+                            <div class="w-24 h-1 bg-digirest mx-auto mt-4 rounded-full"></div>
+                            <p class="mt-3 text-base text-center text-gray-300">
                             En DigiRest, llevamos la experiencia gastronómica al siguiente nivel. Realiza tus reservas fácilmente, recibe tus platos favoritos con nuestro servicio de delivery, y descubre una amplia variedad de productos pensados para ti.</p>
                         </div>
                     </div>
@@ -277,172 +270,152 @@
     <!---------------------- FIN CATEGORIAS ------------------>
     
 
-    <!-------------------- Sección de Testimonios -------------------------->
-    <section class="bg-gradient-to-b from-gray-900 to-black py-16 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto">
-            <!-- Título de la sección -->
-            <div class="text-center mb-12">
-                <h2 class="text-4xl sm:text-5xl font-bold text-white mb-4">
-                    Lo que dicen nuestros 
-                    <span class="text-[#FAC122]">clientes</span>
-                </h2>
-                <p class="text-base text-center text-gray-300">
-                    Descubre por qué miles de usuarios confían en nosotros
-                </p>
+    <!----------------------------COMENTARIOS------------------------------------->
+    <div class="section-container-3 w-full">
+    <section class="min-h-screen py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-digirest rounded-full mb-6 animate-pulse-hover">
+                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.5 6L12 10.5 8.5 8 12 5.5 15.5 8zM8.5 16L12 13.5 15.5 16 12 18.5 8.5 16z"/>
+                    </svg>
+                </div>
+                <h1 class="text-4xl font-bold text-white mb-4">Reseñas de Nuestros</h1>
+                <h2 class="text-3xl font-bold text-digirest">Comensales</h2>
+                <div class="w-24 h-1 bg-digirest mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <!-- Grid de testimonios -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-                
-                <!-- Testimonio 1 -->
-                <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                    <!-- Header del testimonio -->
-                    <div class="flex items-center mb-6">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=face" 
-                            alt="Avatar de Carlos" 
-                            class="w-14 h-14 rounded-full object-cover mr-4">
-                        <div class="flex-1">
-                            <h3 class="font-semibold text-gray-900 text-lg">Carlos Mendoza</h3>
-                            <p class="text-gray-600 text-sm">CEO, TechStart Solutions</p>
-                            <p class="text-gray-400 text-xs mt-1">15 de mayo, 2024</p>
-                        </div>
+            <!-- Testimonials Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 animate-pulse-hover">
+                    <div class="relative">
+                        <div class="quote-mark text-digirest absolute -top-4 -left-2">"</div>
+                        <p class="text-gray-700 text-lg leading-relaxed mb-6 relative z-10">
+                            "La comida aquí se ha convertido en <span class="font-semibold text-digirest">una de mis opciones favoritas</span> para todas mis cenas especiales. Hablo de este lugar casi tanto como hablo de mi familia, y eso dice mucho. Gracias por la experiencia increíble."
+                        </p>
                     </div>
-
-                    <!-- Contenido del comentario -->
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        "Excelente servicio y atención al cliente. El equipo superó nuestras expectativas en cada etapa del proyecto. La calidad del trabajo y la dedicación son impresionantes."
-                    </p>
-
-                    <!-- Footer con estrellas y likes -->
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center">
-                            <div class="flex text-[#FAC122] text-lg mr-2">
-                                ⭐⭐⭐⭐⭐
-                            </div>
-                            <span class="text-gray-600 text-sm font-medium">5.0</span>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-digirest to-yellow-400 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            M
                         </div>
-                        <div class="flex items-center text-gray-500">
-                            <svg class="w-5 h-5 mr-1 hover:text-[#FAC122] cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"></path>
-                            </svg>
-                            <span class="text-sm">24</span>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-black">María González</h4>
+                            <p class="text-gray-500 text-sm">Cliente Frecuente</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Testimonio 2 -->
-                <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                    <div class="flex items-center mb-6">
-                        <img src="https://images.unsplash.com/photo-1494790108755-2616b95aa46c?w=64&h=64&fit=crop&crop=face" 
-                             alt="Avatar de María" 
-                             class="w-14 h-14 rounded-full object-cover mr-4">
-                        <div class="flex-1">
-                            <h3 class="font-semibold text-gray-900 text-lg">María González</h3>
-                            <p class="text-gray-600 text-sm">Directora de Marketing, InnovaCorp</p>
-                            <p class="text-gray-400 text-xs mt-1">8 de mayo, 2024</p>
-                        </div>
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 animate-pulse-hover">
+                    <div class="relative">
+                        <div class="quote-mark text-digirest absolute -top-4 -left-2">"</div>
+                        <p class="text-gray-700 text-lg leading-relaxed mb-6 relative z-10">
+                            "Hace 6 meses, @chef_carlos me recomendó este restaurante. Estaba dudoso porque suelo ir a otros lugares. Acabo de pasar 2 horas aquí, y <span class="font-semibold text-digirest">WOW</span>. Definitivamente voy a recomendar este lugar en mi trabajo."
+                        </p>
                     </div>
-
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        "Una experiencia increíble de principio a fin. El nivel de profesionalismo y la capacidad de adaptarse a nuestras necesidades específicas nos convenció por completo."
-                    </p>
-
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center">
-                            <div class="flex text-[#FAC122] text-lg mr-2">
-                                ⭐⭐⭐⭐⭐
-                            </div>
-                            <span class="text-gray-600 text-sm font-medium">5.0</span>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            A
                         </div>
-                        <div class="flex items-center text-gray-500">
-                            <svg class="w-5 h-5 mr-1 hover:text-[#FAC122] cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"></path>
-                            </svg>
-                            <span class="text-sm">18</span>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-black">Andrés Ruiz</h4>
+                            <p class="text-gray-500 text-sm">@andresruiz</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Testimonio 3 -->
-                <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                    <div class="flex items-center mb-6">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop&crop=face" 
-                             alt="Avatar de Roberto" 
-                             class="w-14 h-14 rounded-full object-cover mr-4">
-                        <div class="flex-1">
-                            <h3 class="font-semibold text-gray-900 text-lg">Roberto Silva</h3>
-                            <p class="text-gray-600 text-sm">Fundador, EcoTech Innovations</p>
-                            <p class="text-gray-400 text-xs mt-1">3 de mayo, 2024</p>
-                        </div>
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 animate-pulse-hover">
+                    <div class="relative">
+                        <div class="quote-mark text-digirest absolute -top-4 -left-2">"</div>
+                        <p class="text-gray-700 text-lg leading-relaxed mb-6 relative z-10">
+                            "Debo decir que este restaurante es <span class="font-semibold text-digirest">increíble y un placer</span> para cenar. @chef_master tú y tu equipo han hecho un trabajo excelente."
+                        </p>
                     </div>
-
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        "Trabajar con este equipo ha sido una experiencia transformadora. Su enfoque innovador y atención al detalle realmente marcaron la diferencia en nuestro proyecto."
-                    </p>
-
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center">
-                            <div class="flex text-[#FAC122] text-lg mr-2">
-                                ⭐⭐⭐⭐☆
-                            </div>
-                            <span class="text-gray-600 text-sm font-medium">4.0</span>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            J
                         </div>
-                        <div class="flex items-center text-gray-500">
-                            <svg class="w-5 h-5 mr-1 hover:text-[#FAC122] cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"></path>
-                            </svg>
-                            <span class="text-sm">12</span>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-black">Javier Morales</h4>
+                            <p class="text-gray-500 text-sm">Food Blogger</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Testimonio 4 -->
-                <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                    <div class="flex items-center mb-6">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=64&h=64&fit=crop&crop=face" 
-                             alt="Avatar de Ana" 
-                             class="w-14 h-14 rounded-full object-cover mr-4">
-                        <div class="flex-1">
-                            <h3 class="font-semibold text-gray-900 text-lg">Ana Martínez</h3>
-                            <p class="text-gray-600 text-sm">CTO, DigitalFlow Agency</p>
-                            <p class="text-gray-400 text-xs mt-1">28 de abril, 2024</p>
-                        </div>
+                <!-- Testimonial 4 -->
+                <div class="bg-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 animate-pulse-hover">
+                    <div class="relative">
+                        <div class="quote-mark text-digirest absolute -top-4 -left-2">"</div>
+                        <p class="text-gray-700 text-lg leading-relaxed mb-6 relative z-10">
+                            "He organizado algunas cenas familiares aquí y solo tengo que comentar lo <span class="font-semibold text-digirest">bien diseñado</span> que está el ambiente, y qué rápido se puede crear una experiencia memorable. Impresionante."
+                        </p>
                     </div>
-
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        "La comunicación fue fluida durante todo el proceso y los resultados superaron ampliamente nuestras expectativas. Definitivamente recomendaría sus servicios."
-                    </p>
-
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center">
-                            <div class="flex text-[#FAC122] text-lg mr-2">
-                                ⭐⭐⭐⭐⭐
-                            </div>
-                            <span class="text-gray-600 text-sm font-medium">5.0</span>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            L
                         </div>
-                        <div class="flex items-center text-gray-500">
-                            <svg class="w-5 h-5 mr-1 hover:text-[#FAC122] cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"></path>
-                            </svg>
-                            <span class="text-sm">31</span>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-black">Laura Vega</h4>
+                            <p class="text-gray-500 text-sm">Organizadora de Eventos</p>
                         </div>
                     </div>
                 </div>
 
+                <!-- Testimonial 5 -->
+                <div class="bg-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 animate-pulse-hover">
+                    <div class="relative">
+                        <div class="quote-mark text-digirest absolute -top-4 -left-2">"</div>
+                        <p class="text-gray-700 text-lg leading-relaxed mb-6 relative z-10">
+                            "¿Qué más se puede pedir? Este restaurante es genial. Esta será mi primera opción al crear planes gastronómicos para clientes desde hoy en adelante."
+                        </p>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            C
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-black">Carlos Mendoza</h4>
+                            <p class="text-gray-500 text-sm">Consultor Gastronómico</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="bg-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 animate-pulse-hover">
+                    <div class="relative">
+                        <div class="quote-mark text-digirest absolute -top-4 -left-2">"</div>
+                        <p class="text-gray-700 text-lg leading-relaxed mb-6 relative z-10">
+                            "Este restaurante es <span class="font-semibold text-digirest">una alegría para visitar</span>. Prácticamente cubre todos los casos de uso para una cena perfecta. Excelente trabajo."
+                        </p>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-red-700 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            S
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-black">Sofía Torres</h4>
+                            <p class="text-gray-500 text-sm">Crítica Gastronómica</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <!---------------------- FIN COMENTARIOS ----------------------->
+    <!-------------------------------FIN COMENTARIOS---------------------------------->
 
     <!---------------------- Sección de Contacto y Ubicación ----------------------->
-    <section id="contacto" class="bg-gradient-to-b from-black to-gray-800 py-16 px-4 sm:px-6 lg:px-8">
+    <section id="contacto" class="py-16 px-4 sm:px-6 lg:px-8">
         <div class="container mx-auto max-w-7xl">
 
             <div class="text-center mb-12">
                 <h2 class="text-4xl sm:text-5xl font-bold text-white mb-4">
                     Contáct<span class="text-[#FAC122]">anos</span>
                 </h2>
-                <p class="text-base text-center text-gray-300">
+                <div class="w-24 h-1 bg-digirest mx-auto mt-4 rounded-full"></div>
+                <p class="mt-3 text-base text-center text-gray-300">
                     Gracias por visitar nuestro sitio web. Esperamos puedas visitarnos para vivir una experiencia inolvidable
                 </p>
             </div>  
@@ -517,7 +490,7 @@
                     </div>
 
                     <!-- Horarios de Atención -->
-                    <div class="bg-zinc-800 rounded-lg p-6 border border-zinc-700">
+                    <div class="bg-transparent rounded-lg p-6 border border-zinc-700">
                         <div class="flex items-center space-x-3 mb-4">
                             <div class="w-6 h-6 bg-digirest rounded-full flex items-center justify-center">
                                 <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -546,5 +519,5 @@
         </div>
     </section>
     <!---------------------- FIN Sección de Contacto y Ubicación ----------------------->
-
+</div>
 </div>
