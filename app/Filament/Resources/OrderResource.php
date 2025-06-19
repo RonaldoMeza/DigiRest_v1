@@ -67,7 +67,6 @@ class OrderResource extends Resource
                             ])
                             ->default('pendiente')
                             ->required(),
-
                         ToggleButtons::make('status')
                             ->label('Estado del Pedido')
                             ->inline()

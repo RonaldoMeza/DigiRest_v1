@@ -36,7 +36,7 @@ class ProductResource extends Resource
         return $form
             ->schema([
                 Group::make()->schema([
-                        Section::make('Información del Producto')->schema([
+                    Section::make('Información del Producto')->schema([
                         TextInput::make('name')
                             ->required()
                             ->maxLength(255)

@@ -6,6 +6,7 @@ use App\Filament\Resources\ReservationResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 use Filament\Resources\Pages\ListRecords\Tab;
+use App\Filament\Resources\ReservationResource\Widgets\ReservationStats; // Add this line or correct the namespace as needed
 
 class ListReservations extends ListRecords
 {
@@ -15,6 +16,12 @@ class ListReservations extends ListRecords
     {
         return [
             Actions\CreateAction::make(),
+        ];
+    }
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            ReservationStats::class
         ];
     }
 
