@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('first_name'); // Nombres del cliente
             $table->string('last_name'); // Apellidos del cliente
             $table->string('phone')->nullable(); // Teléfono o celular.
-            $table->string('district'); // Distrito
+            $table->string('district')->nullable(); // Distrito
             $table->text('street_address')->nullable(); // Dirección para la entrega
             $table->string('reference')->nullable();  // Referencia
 

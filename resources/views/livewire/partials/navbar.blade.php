@@ -20,7 +20,7 @@
 
         <div id="navbar-collapse-with-animation" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block">
             <div class="overflow-hidden overflow-y-auto max-h-[80vh]  [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-slate-700 dark:[&::-webkit-scrollbar-thumb]:bg-slate-500">
-            <div class="py-4 flex flex-col gap-x-0 mt-5 divide-y divide-dashed divide-black md:flex-row md:items-center md:justify-end md:gap-x-7 md:mt-0 md:ps-7 md:divide-y-0 md:divide-solid dark:divide-gray-700">
+            <div class="select-none py-4 flex flex-col gap-x-0 mt-5 divide-y divide-dashed divide-black md:flex-row md:items-center md:justify-end md:gap-x-7 md:mt-0 md:ps-7 md:divide-y-0 md:divide-solid dark:divide-gray-700">
                 
                 <a wire:navigate class="nav-link-prop {{ request()->is('/') ? 'text-digirest':'text-[#d7d7d7]'}}" href="/" aria-current="page">
                 Inicio

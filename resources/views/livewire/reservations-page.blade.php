@@ -3,7 +3,7 @@
         <!-- Header -->
         <div class="bg-black text-white p-6">
             <h1 class="text-3xl font-bold text-center">Reserva tu Mesa</h1>
-            <p class="text-gray-300 text-center mt-2">Completa los datos y selecciona tu mesa preferida</p>
+            <p class="text-gray-400 text-center mt-2">Completa los datos y selecciona tu mesa preferida</p>
         </div>
 
         <div class="flex flex-col lg:flex-row min-h-[600px]">
@@ -12,7 +12,7 @@
                 <!-- Formulario de datos personales -->
                 <section aria-labelledby="personal-data-heading" class="mb-8">
                     <h2 id="personal-data-heading" class="text-2xl font-semibold mb-6 text-black flex items-center">
-                        <svg class="w-6 h-6 text-gold mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-6 h-6 text-digirest mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                         </svg>
                         Datos de la Reserva
@@ -21,53 +21,30 @@
                     <div class="space-y-4">
                         <div>
                             <label for="fullName" class="block text-sm font-medium text-gray-700 mb-2">Nombre Completo *</label>
-                            <input 
-                                type="text" 
-                                id="fullName" 
-                                name="fullName"
-                                required
-                                aria-required="true"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold transition-colors text-lg"
-                                placeholder="Ingresa tu nombre completo"
-                            >
+                            <input type="text" id="fullName" name="fullName" required aria-required="true"
+                                class="w-full px-4 py-3 border border-gray-400 rounded-lg focus:ring-4 focus:ring-digirest focus:border-digirest transition-colors text-lg"
+                                placeholder="Ingresa tus nombres y apellidos">
                         </div>
                         
                         <div>
-                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Teléfono *</label>
-                            <input 
-                                type="tel" 
-                                id="phone" 
-                                name="phone"
-                                required
-                                aria-required="true"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold transition-colors text-lg"
-                                placeholder="+51 999 999 999"
-                            >
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Teléfono o Celular*</label>
+                            <input type="tel" id="phone" name="phone" required aria-required="true"
+                                class="w-full px-4 py-3 border border-gray-400 rounded-lg focus:ring-4 focus:ring-digirest focus:border-digirest transition-colors text-lg"
+                                placeholder="+51 999 999 999">
                         </div>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <label for="date" class="block text-sm font-medium text-gray-700 mb-2">Fecha *</label>
-                                <input 
-                                    type="date" 
-                                    id="date" 
-                                    name="date"
-                                    required
-                                    aria-required="true"
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold transition-colors text-lg"
-                                >
+                                <input type="date" id="date" name="date" required aria-required="true"
+                                    class="w-full px-4 py-3 border border-gray-400 rounded-lg focus:ring-4 focus:ring-digirest focus:border-digirest transition-colors text-lg">
                             </div>
                             <div>
                                 <label for="guests" class="block text-sm font-medium text-gray-700 mb-2">Nº de Comensales *</label>
-                                <select 
-                                    id="guests" 
-                                    name="guests"
-                                    required
-                                    aria-required="true"
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold transition-colors text-lg"
-                                >
+                                <select id="guests" name="guests" required aria-required="true"
+                                    class="w-full px-4 py-3 border border-gray-400 rounded-lg focus:ring-4 focus:ring-digirest focus:border-digirest transition-colors text-lg">
                                     <option value="">Seleccionar</option>
-                                    <option value="1">1 persona</option>
+                                    <option value="1" class="hover:bg-digirest hover:text-digirest">1 persona</option>
                                     <option value="2">2 personas</option>
                                     <option value="3">3 personas</option>
                                     <option value="4">4 personas</option>
@@ -82,79 +59,17 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <label for="startTime" class="block text-sm font-medium text-gray-700 mb-2">Hora Inicio *</label>
-                                <input 
-                                    type="time" 
-                                    id="startTime" 
-                                    name="startTime"
-                                    required
-                                    aria-required="true"
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold transition-colors text-lg"
-                                >
+                                <input type="time" id="startTime" name="startTime" required aria-required="true"
+                                    class="w-full px-4 py-3 border border-gray-400 rounded-lg focus:ring-4 focus:ring-digirest focus:border-digirest transition-colors text-lg">
                             </div>
                             <div>
                                 <label for="endTime" class="block text-sm font-medium text-gray-700 mb-2">Hora Fin *</label>
-                                <input 
-                                    type="time" 
-                                    id="endTime" 
-                                    name="endTime"
-                                    required
-                                    aria-required="true"
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold transition-colors text-lg"
-                                >
+                                <input type="time" id="endTime" name="endTime" required aria-required="true"
+                                    class="w-full px-4 py-3 border border-gray-400 rounded-lg focus:ring-4 focus:ring-digirest focus:border-digirest transition-colors text-lg">
                             </div>
                         </div>
                     </div>
                 </section>
-
-                <!-- Resumen de la reserva -->
-                <section aria-labelledby="summary-heading" class="mb-6">
-                    <h3 id="summary-heading" class="text-xl font-semibold mb-4 text-black flex items-center">
-                        <svg class="w-5 h-5 text-gold mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                        </svg>
-                        Resumen de Reserva
-                    </h3>
-                    <div id="reservation-summary" class="bg-gray-50 p-4 rounded-lg border-2 border-dashed border-gray-300">
-                        <div id="no-selection" class="text-gray-500 text-center py-6">
-                            <svg class="w-12 h-12 text-gray-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                            <p class="font-medium">Selecciona una mesa</p>
-                            <p class="text-sm">para ver el resumen de tu reserva</p>
-                        </div>
-                        <div id="selection-details" class="hidden">
-                            <div class="bg-white p-4 rounded-lg border border-gold">
-                                <div class="flex items-center justify-between mb-3">
-                                    <span class="text-lg font-bold text-gold">Mesa Seleccionada</span>
-                                    <span id="selected-table" class="text-2xl font-bold text-black bg-gold px-3 py-1 rounded-full"></span>
-                                </div>
-                                <div class="flex items-center text-gray-700">
-                                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                        <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
-                                    </svg>
-                                    <span>Capacidad: </span>
-                                    <span id="selected-capacity" class="ml-1 font-semibold text-black"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Botón de reserva -->
-                <div class="text-center">
-                    <button 
-                        type="submit"
-                        id="reserve-btn"
-                        disabled
-                        class="w-full px-8 py-4 bg-gray-300 text-gray-500 rounded-lg cursor-not-allowed transition-all duration-200 font-bold text-xl"
-                        aria-describedby="reserve-btn-help"
-                    >
-                        Reservar Ahora
-                    </button>
-                    <p id="reserve-btn-help" class="text-sm text-gray-500 mt-3">
-                        Completa todos los campos y selecciona una mesa para continuar
-                    </p>
-                </div>
             </div>
 
             <!-- Panel Derecho - Selección de Mesas -->
@@ -162,7 +77,7 @@
                 <!-- Filtro de pisos -->
                 <section aria-labelledby="floor-filter-heading" class="mb-6">
                     <h3 id="floor-filter-heading" class="text-2xl font-semibold mb-4 text-black flex items-center">
-                        <svg class="w-6 h-6 text-gold mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-6 h-6 text-digirest mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h12M9 7h6m-6 4h6m-6 4h6"/>
                         </svg>
                         Selecciona el Piso
@@ -172,18 +87,16 @@
                             type="button" 
                             id="floor1-btn"
                             onclick="filterFloor('1')"
-                            class="floor-filter active flex-1 px-6 py-3 rounded-lg border-2 border-gold bg-gold text-black font-bold hover:bg-yellow-400 transition-colors text-lg"
-                            aria-pressed="true"
-                        >
+                            class="floor-filter active flex-1 px-6 py-3 rounded-lg border-2 border-digirest bg-digirest text-black font-bold hover:bg-yellow-400 transition-colors text-lg"
+                            aria-pressed="true">
                             Primer Piso
                         </button>
                         <button 
                             type="button" 
                             id="floor2-btn"
                             onclick="filterFloor('2')"
-                            class="floor-filter flex-1 px-6 py-3 rounded-lg border-2 border-gray-300 bg-white text-gray-700 font-bold hover:border-gold hover:text-gold transition-colors text-lg"
-                            aria-pressed="false"
-                        >
+                            class="floor-filter flex-1 px-6 py-3 rounded-lg border-2 border-gray-400 bg-white text-gray-700 font-bold hover:border-digirest hover:text-digirest transition-colors text-lg"
+                            aria-pressed="false">
                             Segundo Piso
                         </button>
                     </div>
@@ -192,7 +105,7 @@
                 <!-- Grid de mesas -->
                 <section aria-labelledby="tables-heading" class="mb-6">
                     <h3 id="tables-heading" class="text-xl font-semibold mb-4 text-black flex items-center">
-                        <svg class="w-5 h-5 text-gold mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-5 h-5 text-digirest mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
                         </svg>
                         Mesas Disponibles
@@ -208,7 +121,7 @@
                             <span class="text-gray-700">Ocupada</span>
                         </div>
                         <div class="flex items-center">
-                            <div class="w-4 h-4 rounded-full bg-gold mr-2"></div>
+                            <div class="w-4 h-4 rounded-full bg-digirest mr-2"></div>
                             <span class="text-gray-700">Seleccionada</span>
                         </div>
                     </div>
@@ -217,13 +130,12 @@
                         <!-- Mesas del primer piso -->
                         <button 
                             type="button"
-                            class="table-btn available floor-1 w-24 h-24 rounded-full border-3 border-green-400 bg-green-50 hover:bg-green-100 hover:border-green-500 hover:scale-105 transition-all duration-200 flex flex-col items-center justify-center group focus:outline-none focus:ring-2 focus:ring-gold shadow-lg"
+                            class="table-btn available floor-1 w-24 h-24 rounded-full border-3 border-green-400 bg-green-50 hover:bg-green-100 hover:border-green-500 hover:scale-105 transition-all duration-200 flex flex-col items-center justify-center group focus:outline-none focus:ring-2 focus:ring-digirest shadow-lg"
                             data-table="M01"
                             data-capacity="2"
                             data-floor="1"
                             onclick="selectTable('M01', 2)"
-                            aria-label="Mesa M01 para 2 personas, disponible"
-                        >
+                            aria-label="Mesa M01 para 2 personas, disponible">
                             <span class="text-sm font-bold text-green-700 group-hover:text-green-800">M01</span>
                             <div class="flex items-center mt-1">
                                 <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
@@ -235,13 +147,12 @@
 
                         <button 
                             type="button"
-                            class="table-btn available floor-1 w-24 h-24 rounded-full border-3 border-green-400 bg-green-50 hover:bg-green-100 hover:border-green-500 hover:scale-105 transition-all duration-200 flex flex-col items-center justify-center group focus:outline-none focus:ring-2 focus:ring-gold shadow-lg"
+                            class="table-btn available floor-1 w-24 h-24 rounded-full border-3 border-green-400 bg-green-50 hover:bg-green-100 hover:border-green-500 hover:scale-105 transition-all duration-200 flex flex-col items-center justify-center group focus:outline-none focus:ring-2 focus:ring-digirest shadow-lg"
                             data-table="M02"
                             data-capacity="4"
                             data-floor="1"
                             onclick="selectTable('M02', 4)"
-                            aria-label="Mesa M02 para 4 personas, disponible"
-                        >
+                            aria-label="Mesa M02 para 4 personas, disponible">
                             <span class="text-sm font-bold text-green-700 group-hover:text-green-800">M02</span>
                             <div class="flex items-center mt-1">
                                 <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
@@ -258,8 +169,7 @@
                             data-capacity="6"
                             data-floor="1"
                             disabled
-                            aria-label="Mesa M03 para 6 personas, ocupada"
-                        >
+                            aria-label="Mesa M03 para 6 personas, ocupada">
                             <span class="text-sm font-bold text-red-700">M03</span>
                             <div class="flex items-center mt-1">
                                 <svg class="w-4 h-4 text-red-600" fill="currentColor" viewBox="0 0 20 20">
@@ -271,13 +181,12 @@
 
                         <button 
                             type="button"
-                            class="table-btn available floor-1 w-24 h-24 rounded-full border-3 border-green-400 bg-green-50 hover:bg-green-100 hover:border-green-500 hover:scale-105 transition-all duration-200 flex flex-col items-center justify-center group focus:outline-none focus:ring-2 focus:ring-gold shadow-lg"
+                            class="table-btn available floor-1 w-24 h-24 rounded-full border-3 border-green-400 bg-green-50 hover:bg-green-100 hover:border-green-500 hover:scale-105 transition-all duration-200 flex flex-col items-center justify-center group focus:outline-none focus:ring-2 focus:ring-digirest shadow-lg"
                             data-table="M04"
                             data-capacity="8"
                             data-floor="1"
                             onclick="selectTable('M04', 8)"
-                            aria-label="Mesa M04 para 8 personas, disponible"
-                        >
+                            aria-label="Mesa M04 para 8 personas, disponible">
                             <span class="text-sm font-bold text-green-700 group-hover:text-green-800">M04</span>
                             <div class="flex items-center mt-1">
                                 <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
@@ -289,13 +198,12 @@
 
                         <button 
                             type="button"
-                            class="table-btn available floor-1 w-24 h-24 rounded-full border-3 border-green-400 bg-green-50 hover:bg-green-100 hover:border-green-500 hover:scale-105 transition-all duration-200 flex flex-col items-center justify-center group focus:outline-none focus:ring-2 focus:ring-gold shadow-lg"
+                            class="table-btn available floor-1 w-24 h-24 rounded-full border-3 border-green-400 bg-green-50 hover:bg-green-100 hover:border-green-500 hover:scale-105 transition-all duration-200 flex flex-col items-center justify-center group focus:outline-none focus:ring-2 focus:ring-digirest shadow-lg"
                             data-table="M05"
                             data-capacity="2"
                             data-floor="1"
                             onclick="selectTable('M05', 2)"
-                            aria-label="Mesa M05 para 2 personas, disponible"
-                        >
+                            aria-label="Mesa M05 para 2 personas, disponible">
                             <span class="text-sm font-bold text-green-700 group-hover:text-green-800">M05</span>
                             <div class="flex items-center mt-1">
                                 <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
@@ -312,8 +220,7 @@
                             data-capacity="4"
                             data-floor="1"
                             disabled
-                            aria-label="Mesa M06 para 4 personas, ocupada"
-                        >
+                            aria-label="Mesa M06 para 4 personas, ocupada">
                             <span class="text-sm font-bold text-red-700">M06</span>
                             <div class="flex items-center mt-1">
                                 <svg class="w-4 h-4 text-red-600" fill="currentColor" viewBox="0 0 20 20">
@@ -326,13 +233,12 @@
                         <!-- Mesas del segundo piso -->
                         <button 
                             type="button"
-                            class="table-btn available floor-2 hidden w-24 h-24 rounded-full border-3 border-green-400 bg-green-50 hover:bg-green-100 hover:border-green-500 hover:scale-105 transition-all duration-200 flex flex-col items-center justify-center group focus:outline-none focus:ring-2 focus:ring-gold shadow-lg"
+                            class="table-btn available floor-2 hidden w-24 h-24 rounded-full border-3 border-green-400 bg-green-50 hover:bg-green-100 hover:border-green-500 hover:scale-105 transition-all duration-200 flex flex-col items-center justify-center group focus:outline-none focus:ring-2 focus:ring-digirest shadow-lg"
                             data-table="M07"
                             data-capacity="2"
                             data-floor="2"
                             onclick="selectTable('M07', 2)"
-                            aria-label="Mesa M07 para 2 personas, disponible"
-                        >
+                            aria-label="Mesa M07 para 2 personas, disponible">
                             <span class="text-sm font-bold text-green-700 group-hover:text-green-800">M07</span>
                             <div class="flex items-center mt-1">
                                 <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
@@ -349,8 +255,7 @@
                             data-capacity="4"
                             data-floor="2"
                             disabled
-                            aria-label="Mesa M08 para 4 personas, ocupada"
-                        >
+                            aria-label="Mesa M08 para 4 personas, ocupada">
                             <span class="text-sm font-bold text-red-700">M08</span>
                             <div class="flex items-center mt-1">
                                 <svg class="w-4 h-4 text-red-600" fill="currentColor" viewBox="0 0 20 20">
@@ -362,13 +267,12 @@
 
                         <button 
                             type="button"
-                            class="table-btn available floor-2 hidden w-24 h-24 rounded-full border-3 border-green-400 bg-green-50 hover:bg-green-100 hover:border-green-500 hover:scale-105 transition-all duration-200 flex flex-col items-center justify-center group focus:outline-none focus:ring-2 focus:ring-gold shadow-lg"
+                            class="table-btn available floor-2 hidden w-24 h-24 rounded-full border-3 border-green-400 bg-green-50 hover:bg-green-100 hover:border-green-500 hover:scale-105 transition-all duration-200 flex flex-col items-center justify-center group focus:outline-none focus:ring-2 focus:ring-digirest shadow-lg"
                             data-table="M09"
                             data-capacity="6"
                             data-floor="2"
                             onclick="selectTable('M09', 6)"
-                            aria-label="Mesa M09 para 6 personas, disponible"
-                        >
+                            aria-label="Mesa M09 para 6 personas, disponible">
                             <span class="text-sm font-bold text-green-700 group-hover:text-green-800">M09</span>
                             <div class="flex items-center mt-1">
                                 <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
@@ -380,13 +284,12 @@
 
                         <button 
                             type="button"
-                            class="table-btn available floor-2 hidden w-24 h-24 rounded-full border-3 border-green-400 bg-green-50 hover:bg-green-100 hover:border-green-500 hover:scale-105 transition-all duration-200 flex flex-col items-center justify-center group focus:outline-none focus:ring-2 focus:ring-gold shadow-lg"
+                            class="table-btn available floor-2 hidden w-24 h-24 rounded-full border-3 border-green-400 bg-green-50 hover:bg-green-100 hover:border-green-500 hover:scale-105 transition-all duration-200 flex flex-col items-center justify-center group focus:outline-none focus:ring-2 focus:ring-digirest shadow-lg"
                             data-table="M10"
                             data-capacity="8"
                             data-floor="2"
                             onclick="selectTable('M10', 8)"
-                            aria-label="Mesa M10 para 8 personas, disponible"
-                        >
+                            aria-label="Mesa M10 para 8 personas, disponible">
                             <span class="text-sm font-bold text-green-700 group-hover:text-green-800">M10</span>
                             <div class="flex items-center mt-1">
                                 <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
@@ -399,5 +302,58 @@
                 </section>
             </div>
         </div>
+
+        <!-- Sección de Resumen y Botón - Centrada abajo -->
+        <div class="w-full p-6 border-t border-gray-200 bg-white">
+            <!-- Resumen de la reserva -->
+            <section aria-labelledby="summary-heading" class="mb-6 max-w-2xl mx-auto">
+                <h3 id="summary-heading" class="text-xl font-semibold mb-4 text-black text-center flex items-center justify-center">
+                    <svg class="w-5 h-5 text-digirest mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                    Resumen de Reserva
+                </h3>
+                <div id="reservation-summary" class="bg-gray-50 p-6 rounded-lg border-2 border-dashed border-gray-400">
+                    <div id="no-selection" class="text-gray-500 text-center py-6">
+                        <svg class="w-12 h-12 text-gray-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <p class="font-medium">Selecciona una mesa</p>
+                        <p class="text-sm">para ver el resumen de tu reserva</p>
+                    </div>
+                    <div id="selection-details" class="hidden">
+                        <div class="bg-white p-4 rounded-lg border border-digirest">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-lg font-bold text-digirest">Mesa Seleccionada</span>
+                                <span id="selected-table" class="text-2xl font-bold text-black bg-digirest px-3 py-1 rounded-full"></span>
+                            </div>
+                            <div class="flex items-center justify-center text-gray-700">
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                                </svg>
+                                <span>Capacidad: </span>
+                                <span id="selected-capacity" class="ml-1 font-semibold text-black"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Botón de reserva -->
+            <div class="text-center max-w-md mx-auto">
+                <button 
+                    type="submit"
+                    id="reserve-btn"
+                    disabled
+                    class="w-full px-8 py-4 bg-gray-400 text-gray-500 rounded-lg cursor-not-allowed transition-all duration-200 font-bold text-xl"
+                    aria-describedby="reserve-btn-help">
+                    Reservar Ahora
+                </button>
+                <p id="reserve-btn-help" class="text-sm text-gray-500 mt-3">
+                    Completa todos los campos y selecciona una mesa para continuar
+                </p>
+            </div>
+        </div>
     </div>
+
 </div>

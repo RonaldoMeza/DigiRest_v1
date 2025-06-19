@@ -39,7 +39,7 @@ class CategoryResource extends Resource
                             TextInput::make('name')
                                 ->label('Nombre')
                                 ->required()
-                                ->live(onBlur: true)
+                                ->live(onBlur: true) // Hace que mientras se este editando el campo "name" no se genere el Slug, cuando se seleccione fuera del campo recien generará el Slug 
                                 ->maxLength(255)
                                 ->afterStateUpdated(fn (string $operation, $state, Set $set) => $operation 
                                 === 'create' ? $set('slug', Str::slug($state)) : null),
@@ -55,8 +55,9 @@ class CategoryResource extends Resource
                 FileUpload::make('image')
                     ->label('Imagen')
                     ->image()
-                    ->required()
-                    ->directory('categories'),
+                    ->directory('categories')
+                    ->visibility('public')
+                    ->required(),
 
                 Toggle::make('is_active')
                     ->label('Activo')

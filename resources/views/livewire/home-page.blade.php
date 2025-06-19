@@ -5,7 +5,7 @@
                     grid grid-cols-1 md:grid-cols-2 gap-8 items-center
                     min-h-[calc(100vh-4.5rem)]">
                 <!-- TEXTO -->
-                <div class="space-y-6">
+                <div class="space-y-6 select-none">
                     <h1
                         class="text-3xl sm:text-4xl lg:text-6xl font-leckerli text-white leading-tight text-center md:text-left">
                         Ven y disfruta de la mejor gastronomía <span class="text-digirest"></span>

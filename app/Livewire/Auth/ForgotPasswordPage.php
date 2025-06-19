@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Password;
 
 
-#[Title('Contraseña olvidada')]
+#[Title('Restaurar contraseña - DigiRest')]
 
 class ForgotPasswordPage extends Component
 {

@@ -28,6 +28,7 @@ class TableResource extends Resource
                 Forms\Components\TextInput::make('code')
                     ->label('Código de Mesa')
                     ->required()
+                    ->length(3)   // El campo será de 3 caracteres
                     ->unique(
                         \App\Models\Table::class, // Clase Eloquent cuyo $table interno se usará
                         'code',                   // Columna única
@@ -38,7 +39,8 @@ class TableResource extends Resource
                     ->label('Capacidad')
                     ->numeric()
                     ->required()
-                    ->minValue(1),
+                    ->minValue(1)
+                    ->maxValue(10),
                 Forms\Components\Select::make('status')
                     ->label('Estado')
                     ->options([

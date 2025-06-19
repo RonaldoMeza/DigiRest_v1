@@ -7,14 +7,16 @@
         </div>
         <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6">
             
-            <a class="categoria-link group flex flex-col bg-white dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">
+            @foreach ($categories as $category)
+            <a wire:navigate class="categoria-link group flex flex-col bg-white dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none 
+                dark:focus:ring-1 dark:focus:ring-gray-600" href="/productos" wire:key=" {{ $category->id }} ">
                 <div class="p-4 md:p-5">
                 <div class="flex justify-between items-center">
                     <div class="flex items-center">
-                    <img class="h-[5rem] w-[5rem]" src="/images/fondos1-categorias.png" alt="Image Description">
+                    <img class="h-[5rem] w-[5rem]" src="{{ url('storage', $category->image) }}" alt="{{ $category->name }}">
                     <div class="ms-3">
                         <h3 class="group-hover:text-digirest text-2xl font-semibold text-gray-800 dark:group-hover:text-gray-400 dark:text-gray-200">
-                        Platos de fondo
+                        {{ $category->name }}
                         </h3>
                     </div>
                     </div>
@@ -26,8 +28,9 @@
                 </div>
                 </div>
             </a>
+            @endforeach
 
-            <a class="categoria-link group flex flex-col bg-white dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">
+            {{-- <a class="categoria-link group flex flex-col bg-white dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">
                 <div class="p-4 md:p-5">
                 <div class="flex justify-between items-center">
                     <div class="flex items-center">
@@ -85,7 +88,7 @@
                     </div>
                 </div>
                 </div>
-            </a>
+            </a> --}}
         </div>
     </div>
 </div>
