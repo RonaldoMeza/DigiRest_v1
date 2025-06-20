@@ -9,7 +9,7 @@
             
             @foreach ($categories as $category)
             <a wire:navigate class="categoria-link group flex flex-col bg-white dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none 
-                dark:focus:ring-1 dark:focus:ring-gray-600" href="/productos" wire:key=" {{ $category->id }} ">
+                dark:focus:ring-1 dark:focus:ring-gray-600" href="/productos?selected_categories[0]={{ $category->id }}" wire:key=" {{ $category->id }} ">
                 <div class="p-4 md:p-5">
                 <div class="flex justify-between items-center">
                     <div class="flex items-center">
@@ -30,65 +30,7 @@
             </a>
             @endforeach
 
-            {{-- <a class="categoria-link group flex flex-col bg-white dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">
-                <div class="p-4 md:p-5">
-                <div class="flex justify-between items-center">
-                    <div class="flex items-center">
-                    <img class="h-[5rem] w-[5rem]" src="/images/aperitivos2-cate.png" alt="Aperitivos">
-                    <div class="ms-3">
-                        <h3 class="group-hover:text-digirest text-2xl font-semibold text-gray-800 dark:group-hover:text-gray-400 dark:text-gray-200">
-                        Aperitivos
-                        </h3>
-                    </div>
-                    </div>
-                    <div class="ps-3">
-                    <svg class="flex-shrink-0 w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="m9 18 6-6-6-6" />
-                    </svg>
-                    </div>
-                </div>
-                </div>
-            </a>
-
-            <a class="categoria-link group flex flex-col bg-white dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">
-                <div class="p-4 md:p-5">
-                <div class="flex justify-between items-center">
-                    <div class="flex items-center">
-                    <img class="h-[5rem] w-[5rem]" src="/images/bebidas5-categorias.png" alt="Image Description">
-                    <div class="ms-3">
-                        <h3 class="group-hover:text-digirest text-2xl font-semibold text-gray-800 dark:group-hover:text-gray-400 dark:text-gray-200">
-                        Bebidas
-                        </h3>
-                    </div>
-                    </div>
-                    <div class="ps-3">
-                    <svg class="flex-shrink-0 w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="m9 18 6-6-6-6" />
-                    </svg>
-                    </div>
-                </div>
-                </div>
-            </a>
-
-            <a class="categoria-link group flex flex-col bg-white dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">
-                <div class="p-4 md:p-5">
-                <div class="flex justify-between items-center">
-                    <div class="flex items-center">
-                    <img class="h-[5rem] w-[5rem]" src="/images/postres1-categorias.png" alt="Image Description">
-                    <div class="ms-3">
-                        <h3 class="group-hover:text-digirest text-2xl font-semibold text-gray-800 dark:group-hover:text-gray-400 dark:text-gray-200">
-                        Postres
-                        </h3>
-                    </div>
-                    </div>
-                    <div class="ps-3">
-                    <svg class="flex-shrink-0 w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="m9 18 6-6-6-6" />
-                    </svg>
-                    </div>
-                </div>
-                </div>
-            </a> --}}
+            
         </div>
     </div>
 </div>

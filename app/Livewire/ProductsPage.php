@@ -16,10 +16,11 @@ class ProductsPage extends Component
     use WithPagination;  // para usar Paginate.
 
     #[Url]
-    public $selected_categories = [];
+    public $selected_categories = []; // Categorias seleccionada
 
-    #[Url]
+    #[Url(keep: true)]
     public $stock=1; // 1 = Disponible, 0 = No disponible
+    
 
     public function render()
     {
@@ -29,7 +30,7 @@ class ProductsPage extends Component
             $productQuery->whereIn('category_id', $this->selected_categories); // Filtrar productos por categorías seleccionadas.
         }
 
-        // usa == para que “1” y “0” (strings) funcionen bien
+        // Condicional para la disponibilidad de productos 1 (disponible) y 0 (no disponible).
         if ($this->stock == 1) {
             $productQuery->where('in_stock', 1);
         } elseif ($this->stock == 0) {
@@ -40,7 +41,7 @@ class ProductsPage extends Component
         //$productQuery->orderBy('order', 'asc');
         
         return view('livewire.products-page', [
-            'products' => $productQuery->paginate(6), // Para la cantidad de elementos(productos) que se mostraran en cada página. 
+            'products' => $productQuery->paginate(2), // Para la cantidad de elementos(productos) que se mostraran en cada página. 
             'categories' => Category::where('is_active', 1)->get(['id', 'name', 'slug']),
         ]);
     }

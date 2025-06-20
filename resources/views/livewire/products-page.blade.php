@@ -3,74 +3,62 @@
         <div class="px-4 py-4 mx-auto max-w-7xl lg:py-6 md:px-6">
         <div class="flex flex-wrap mb-24 -mx-3">
             <div class="w-full pr-2 lg:w-1/4 lg:block">
-            <div class="p-4 mb-5 bg-white border border-gray-200 dark:border-gray-900 dark:bg-gray-900">
-                <h2 class="text-2xl font-bold dark:text-gray-400"> Categorías</h2>
+                <div class="p-4 mb-5 bg-white border border-gray-200 dark:border-gray-900 dark:bg-gray-900">
+                    <h2 class="text-2xl font-bold dark:text-gray-400"> Categorías</h2>
 
-                <div class="w-16 pb-2 mb-6 border-b border-digirest dark:border-digirest"></div>
-                
-                <ul>
-                {{-- Filtro para categorías --}}
-                @foreach ($categories as $category )
-                <li class="mb-4" wire:key="{{ $category->id }}">
-                    <label for="{{ $category->slug }}" class="flex items-center dark:text-gray-400 ">
-                    <input type="checkbox" wire:model.live="selected_categories" id="{{ $category->slug }}" value="{{ $category->id }}" class="w-4 h-4 mr-2">
-                    <span class="text-lg">{{ $category->name }}</span>
-                    </label>
-                </li>
-                @endforeach
-                
-                </ul>
-
-            </div>
-            
-            <div class="p-4 mb-5 bg-white border border-gray-200 dark:bg-gray-900 dark:border-gray-900">
-                <h2 class="text-2xl font-bold dark:text-gray-400">Estado del Producto</h2>
-                <div class="w-16 pb-2 mb-6 border-b border-digirest dark:border-gray-400"></div>
-                <ul>
-                    <li class="mb-4">
-                        <label for="stock-1" class="flex items-center dark:text-gray-300">
-                        <input
-                            type="radio"
-                            name="stock"           {{-- ¡aquí! mismo name --}}
-                            id="stock-1"
-                            wire:model.live="stock"
-                            value="1"
-                            class="appearance-none h-4 w-4 border border-gray-400 rounded-sm 
-                                checked:bg-digirest checked:border-digirest 
-                                focus:outline-none transition"
-                        />
-                        <span class="ml-2 text-lg dark:text-gray-400">Disponible</span>
+                    <div class="w-16 pb-2 mb-6 border-b border-digirest dark:border-digirest"></div>
+                    
+                    <ul>
+                    {{-- Filtro para categorías --}}
+                    @foreach ($categories as $category )
+                    <li class="mb-4" wire:key="{{ $category->id }}">
+                        <label for="{{ $category->slug }}" class="flex items-center dark:text-gray-400 ">
+                        <input type="checkbox" wire:model.live="selected_categories" id="{{ $category->slug }}" value="{{ $category->id }}" 
+                                class="w-4 h-4 mr-2 rounded-sm border border-gray-400 appearance-none 
+                                checked:bg-digirest checked:border-digirest focus:outline-none transition">
+                        <span class="text-lg">{{ $category->name }}</span>
                         </label>
                     </li>
-                    <li class="mb-4">
-                        <label for="stock-0" class="flex items-center dark:text-gray-300">
-                        <input
-                            type="radio"
-                            name="stock"           {{-- ¡mismo name que el anterior! --}}
-                            id="stock-0"
-                            wire:model.live="stock"
-                            value="0"
-                            class="appearance-none h-4 w-4 border border-gray-400 rounded-sm 
-                                checked:bg-digirest checked:border-digirest 
-                                focus:outline-none transition"
-                        />
-                        <span class="ml-2 text-lg dark:text-gray-400">No Disponible</span>
-                        </label>
-                    </li>
-                </ul>
-            </div>
+                    @endforeach
+                    </ul>
 
-            <div class="p-4 mb-5 bg-white border border-gray-200 dark:bg-gray-900 dark:border-gray-900">
-                <h2 class="text-2xl font-bold dark:text-gray-400">Precio</h2>
-                <div class="w-16 pb-2 mb-6 border-b border-digirest dark:border-gray-400"></div>
-                <div>
-                    <input type="range" class="w-full h-1 mb-4 bg-digirestClear rounded appearance-none cursor-pointer" max="500000" value="100000" step="100000">
-                    <div class="flex justify-between ">
-                        <span class="inline-block text-lg font-bold text-digirestDark ">S/ 5.00</span>
-                        <span class="inline-block text-lg font-bold text-digirestDark ">S/ 100.00</span>
-                    </div>
                 </div>
-            </div>
+            
+                <div class="p-4 mb-5 bg-white border border-gray-200 dark:bg-gray-900 dark:border-gray-900">
+                    <h2 class="text-2xl font-bold dark:text-gray-400">Stock del Producto</h2>
+                    <div class="w-16 pb-2 mb-6 border-b border-digirest dark:border-gray-400"></div>
+                    {{-- Filtro para stock (disponibilidad) --}}
+                    <ul>
+                        <li class="mb-4">
+                            <label for="stock-1" class="flex items-center dark:text-gray-300">
+                            <input type="radio" name="stock" id="stock-1" wire:model.live="stock" value="1"
+                                class="appearance-none h-4 w-4 border border-gray-400 rounded-sm checked:bg-digirest checked:border-digirest 
+                                    focus:outline-none transition"/>
+                            <span class="ml-2 text-lg dark:text-gray-400">Disponible</span>
+                            </label>
+                        </li>
+                        <li class="mb-4">
+                            <label for="stock-0" class="flex items-center dark:text-gray-300">
+                            <input type="radio" name="stock" id="stock-0" wire:model.live="stock" value="0"
+                                class="appearance-none h-4 w-4 border border-gray-400 rounded-sm checked:bg-digirest checked:border-digirest 
+                                    focus:outline-none transition"/>
+                            <span class="ml-2 text-lg dark:text-gray-400">No Disponible</span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+
+            {{--     <div class="p-4 mb-5 bg-white border border-gray-200 dark:bg-gray-900 dark:border-gray-900">
+                    <h2 class="text-2xl font-bold dark:text-gray-400">Precio</h2>
+                    <div class="w-16 pb-2 mb-6 border-b border-digirest dark:border-gray-400"></div>
+                    <div>
+                        <input type="range" class="w-full h-1 mb-4 bg-gray-400 rounded appearance-none cursor-pointer" max="150" value="100000" step="20">
+                        <div class="flex justify-between ">
+                            <span class="inline-block text-lg font-bold text-digirestDark ">S/ {{ $prodctu }}</span>
+                            <span class="inline-block text-lg font-bold text-digirestDark ">S/ 100.00</span>
+                        </div>
+                    </div>
+                </div> --}}
             </div>
             <div class="w-full px-3 lg:w-3/4">
             <div class="px-3 mb-4">
