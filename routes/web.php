@@ -28,7 +28,7 @@ Route::get('/categorias', CategoriesPage::class);
 Route::get('/productos', ProductsPage::class);
 Route::get('/reservas', ReservationsPage::class);
 Route::get('/carrito', CartPage::class);
-Route::get('/productos/{producto}', ProductDetailPage::class);
+Route::get('/productos/{slug}', ProductDetailPage::class);
 
 
 Route::middleware('guest')->group(function(){
