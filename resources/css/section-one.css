@@ -44,6 +44,30 @@
 }
 
 
+.btn-section {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid rgb(250, 193, 34);
+    border-radius: 8px;
+    background-color: rgb(250, 193, 34);
+    font-weight: 600;
+    /* cubic-bezier hace que  */
+    transition: 0.2s ease;
+    overflow: hidden;
+    &:hover{
+        background-color: #e0aa00;
+        border: 2px solid #e0aa00;
+    }
+}
+
+.btn-section:active {
+    scale: 0.9;
+}
+
 @media screen and (max-width:768px) {
     .section1{
         padding-top: 2rem;

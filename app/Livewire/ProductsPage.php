@@ -2,6 +2,8 @@
 
 namespace App\Livewire;
 
+use App\Helpers\CartManagement;
+use App\Livewire\Partials\Navbar;
 use App\Models\Category;
 use App\Models\Product;
 use Livewire\Attributes\Title;
@@ -13,6 +15,7 @@ use Livewire\WithPagination;
 
 class ProductsPage extends Component
 {
+
     use WithPagination;  // para usar Paginate.
 
     #[Url]
@@ -21,6 +24,17 @@ class ProductsPage extends Component
     #[Url(keep: true)]
     public $stock=1; // 1 = Disponible, 0 = No disponible
     
+    #[Url]
+    public $sort='latest';  // filtro para ordenar, por defecto en "Ordenar por último."
+
+
+    // Función para añadir el producto al carrito
+    public function addToCart($product_id){
+        $total_count = CartManagement::addItemToCart($product_id);
+
+        $this->dispatch('update-cart-count', total_count: $total_count)->to(Navbar::class);
+        $this->dispatch("sweet.success");
+    }
 
     public function render()
     {
@@ -37,11 +51,17 @@ class ProductsPage extends Component
             $productQuery->where('in_stock', 0);
         }
 
-        // Ordenar los productos por el campo 'order' de forma ascendente.
-        //$productQuery->orderBy('order', 'asc');
+        
+        if ($this->sort == 'latest'){  // Si el atributo sort tiene el valor latest
+            $productQuery->latest();   // Ordernar por último
+        }
+
+        if ($this->sort == 'price'){          // Si el atributo sort tiene el valor de price
+            $productQuery->orderBy('price');  // Ordenar por precio
+        }
         
         return view('livewire.products-page', [
-            'products' => $productQuery->paginate(2), // Para la cantidad de elementos(productos) que se mostraran en cada página. 
+            'products' => $productQuery->paginate(6), // Para la cantidad de elementos(productos) que se mostraran en cada página. 
             'categories' => Category::where('is_active', 1)->get(['id', 'name', 'slug']),
         ]);
     }
