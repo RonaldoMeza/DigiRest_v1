@@ -210,8 +210,7 @@
     document.addEventListener("sweet.success", event => {
         Swal.fire({
             toast:true,
-            position:"top-end",
-            timerProgressBar: true,
+            position:"bottom",
             icon: "success",
             title: "¡Añadido exitosamente!",
             showConfirmButton: false,

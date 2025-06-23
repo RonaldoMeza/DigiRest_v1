@@ -50,6 +50,44 @@ class CartManagement {
         return count($cart_items);
     }
 
+    // Añadir producto al carrito con cantidad en "Detalles del producto"
+    static public function addItemToCartWithQty($product_id, $qty = 1) {
+        // Obtiene los items actuales del carrito desde la cookie
+
+        $cart_items = self::getCartItemsFromCookie();
+        $existing_item = null; // Variable para rastrear si el producto ya existe
+
+        // Busca el producto en el carrito
+        foreach ($cart_items as $key => $item) {
+            if ($item['product_id'] == $product_id) {
+                $existing_item = $key; // Guarda la posición del item existente
+                break;
+            }
+        }
+
+        if ($existing_item !== null) {
+            // Si el producto ya está en el carrito: incrementa cantidad y actualiza total
+            $cart_items[$existing_item]['quantity'] = $qty ;
+            $cart_items[$existing_item]['total_amount'] = $cart_items[$existing_item]['quantity'] *
+                $cart_items[$existing_item]['unit_amount'];
+        } else {
+            // Si es un producto nuevo: lo busca en la BD y lo agrega al carrito
+            $product = Product::where('id', $product_id)->first(['id', 'name', 'price', 'images']);
+            if ($product) {
+                $cart_items[] = [
+                    'product_id' => $product_id,       // ID del producto
+                    'name' => $product->name,          // Nombre del producto
+                    'image' => $product->images[0],    // Primera imagen del producto
+                    'quantity' => $qty,                   // Cantidad inicial (1)
+                    'unit_amount' => $product->price,  // Precio unitario
+                    'total_amount' => $product->price  // Total (precio * cantidad)
+                ];
+            }
+        }
+        // Guarda los cambios en la cookie y devuelve la cantidad total de items
+        self::addCartItemsToCookie($cart_items);
+        return count($cart_items);
+    }
 
 
     /**
