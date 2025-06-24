@@ -132,7 +132,8 @@ class OrderResource extends Resource
                                 TextInput::make('unit_amount')
                                     ->label('Precio Unitario')
                                     ->numeric()
-                                    ->required() 
+                                    ->required()
+                                    ->prefix('S/ ')
                                     ->disabled()
                                     ->dehydrated() // dehydrated, es para que no se envíe al servidor
                                     ->columnSpan(3),
@@ -143,6 +144,7 @@ class OrderResource extends Resource
                                     ->prefix('S/ ')
                                     ->formatStateUsing(fn ($state) => number_format($state, 2))
                                     ->reactive() // reactive es para que se actualice automáticamente
+                                    ->numeric()
                                     ->disabled()
                                     ->dehydrated() 
                                     ->columnSpan(3),
