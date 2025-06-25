@@ -3,7 +3,7 @@
         <div class="relative md:flex md:items-center md:justify-between">
         <div class="flex items-center justify-between">
             
-            <a wire:navigate class="nav-logo select-none" href="/" aria-label="Brand">Digi<span class="span1-logo">Rest</span></a>
+            <a wire:navigate class="nav-logo select-none text-white" href="/" aria-label="Logo" >Digi<span class="span1-logo">Rest</span></a>
 
             <div class="md:hidden">
             <button type="button" class="hs-collapse-toggle flex justify-center items-center w-9 h-9 text-sm font-semibold rounded-lg border border-gray-200 text-white hover:bg-digirestDark disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:border-gray-70bg-gray-700" data-hs-collapse="#navbar-collapse-with-animation" aria-controls="navbar-collapse-with-animation" aria-label="Toggle navigation">

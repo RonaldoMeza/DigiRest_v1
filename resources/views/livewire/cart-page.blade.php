@@ -103,7 +103,7 @@
                 <span class="font-semibold">S/ {{ Number::format($grand_total, 2) }}</span>
             </div>
             @if ($cart_items)
-                <button class="bg-digirest hover:bg-digirestDark text-black py-2 px-4 rounded-lg mt-4 w-full">Realizar pago</button>
+                <a href="/verificar" class="block text-center w-full bg-digirest hover:bg-digirestDark text-black py-2 px-4 rounded-lg mt-4 w-full">Continuar compra</a>
             @endif
             </div>
         </div>

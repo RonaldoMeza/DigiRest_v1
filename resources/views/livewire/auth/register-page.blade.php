@@ -33,7 +33,7 @@
 
                     </div>
                     @error('name')
-                        <p class="text-xs text-red-600 mt-2" id="email-error">El campo de nombre completo es obligatorio</p>
+                        <p class="text-xs text-red-600 mt-2" id="email-error">{{ $message }}</p>
                     @enderror
                 </div>
 
@@ -51,8 +51,7 @@
 
                     </div>
                     @error('email')
-                        <p class="text-xs text-red-600 mt-2" id="email-error">El campo de nombre correo electrónico es obligatorio</p>
-                    
+                        <p class="text-xs text-red-600 mt-2" id="email-error">{{ $message }}</p>
                     @enderror
                     
                 </div>
@@ -75,8 +74,7 @@
                     @enderror
                     </div>
                     @error('password')
-                        <p class="text-xs text-red-600 mt-2" id="email-error">El campo de contraseña es obligatorio</p>
-                
+                        <p class="text-xs text-red-600 mt-2" id="email-error">{{ $message }}</p>
                     @enderror
                 </div>
                 <!-- End Form Group -->
