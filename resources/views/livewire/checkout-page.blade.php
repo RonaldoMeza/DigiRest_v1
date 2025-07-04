@@ -2,7 +2,7 @@
 	<h1 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">
 		Verificación de compra
 	</h1>
-	<form wire:submit.prevent='placeOrder'>
+	<form wire:submit.prevent='placeOrder' id="checkout-form">
 		<div class="grid grid-cols-12 gap-4">
 		<div class="md:col-span-12 lg:col-span-8 col-span-12">
 			<!-- Card -->
@@ -97,7 +97,7 @@
 							for="hosting-small">
 							<div class="block">
 								<div class="w-full text-lg font-semibold">
-									Tarjeta de Crédito o Débito
+									Pago con tarjeta
 								</div>
 							</div>
 							<svg aria-hidden="true" class="w-5 h-5 ms-3 rtl:rotate-180" fill="none" viewbox="0 0 14 10" xmlns="http://www.w3.org/2000/svg">
@@ -200,7 +200,13 @@
 				</hr>
 			</div>
 			<button type="submit" class="bg-digirest mt-4 w-full p-3 rounded-lg text-lg text-black hover:bg-digirestDark">
-				Realizar compra
+				<span wire:loading.remove >Confirmar</span>
+				<span wire:loading class="flex justify-center items-center gap-2">
+					<svg class="h-5 w-5 text-black animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+						<path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+							d="M4.5 12a7.5 7.5 0 0113.115-4.623M19.5 12a7.5 7.5 0 01-13.115 4.623M19.5 12H16.5m3 0l-1.5 1.5m1.5-1.5l-1.5-1.5" />
+					</svg>
+				</span>
 			</button>
 		</div>
 	</div>

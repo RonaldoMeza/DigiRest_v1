@@ -122,7 +122,7 @@
                         </a>
                         
                         <!-- Card 3: Análisis de Datos -->
-                        <a href="#analytics" class="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 card-shadow-analytics h-80">
+                        <a href="#" class="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 card-shadow-analytics h-80">
                             <div class="relative w-full h-full overflow-hidden">
                                 <img src="/images/delivery.jpg" 
                                     alt="Análisis de Datos" 

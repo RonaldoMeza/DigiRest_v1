@@ -30,4 +30,9 @@ class Order extends Model
     {
         return $this->hasOne(Address::class); // que una orden tiene una única dirección de entrega (La orden tiene una dirección de entrega).
     }
+    public function simulatedPayment()
+    {
+        return $this->hasOne(SimulatedPayment::class);
+    }
+
 }

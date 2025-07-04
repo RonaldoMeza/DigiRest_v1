@@ -23,7 +23,7 @@
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"><span class="bg-digirest py-1 px-3 rounded text-black shadow">Pagado</span></td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">S/ 65.00</td>
                     <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                    <a href="#" class="bg-slate-600 text-white py-2 px-4 rounded-md hover:bg-slate-500">Ver detalles</a>
+                    <a href="/mis-pedidos/10001" class="bg-slate-600 text-white py-2 px-4 rounded-md hover:bg-slate-500">Ver detalles</a>
                     </td>
                 </tr>
 
@@ -34,7 +34,7 @@
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"><span class="bg-digirest py-1 px-3 rounded text-black shadow">Pagado</span></td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">S/ 45.00</td>
                     <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                    <a href="#" class="bg-slate-600 text-white py-2 px-4 rounded-md hover:bg-slate-500">Ver detalles</a>
+                    <a href="/mis-pedidos/10001" class="bg-slate-600 text-white py-2 px-4 rounded-md hover:bg-slate-500">Ver detalles</a>
                     </td>
                 </tr>
 
@@ -45,7 +45,7 @@
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"><span class="bg-digirest py-1 px-3 rounded text-black shadow">Pagado</span></td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">S/ 190.00</td>
                     <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                    <a href="#" class="bg-slate-600 text-white py-2 px-4 rounded-md hover:bg-slate-500">Ver detalles</a>
+                    <a href="/mis-pedidos/10001" class="bg-slate-600 text-white py-2 px-4 rounded-md hover:bg-slate-500">Ver detalles</a>
                     </td>
                 </tr>
 

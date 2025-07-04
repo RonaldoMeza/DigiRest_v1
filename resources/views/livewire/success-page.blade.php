@@ -100,3 +100,18 @@
         </div>
     </section>
 </div>
+
+
+{{-- @script
+<script type="text/javascript">
+    document.addEventListener("sweet.success", event => {
+        const tipo = event.detail.tipo;
+        let title = "Pedido registrado";
+        if (tipo === "tarjeta") {
+            title = "¡Pago con tarjeta exitoso!";
+        }
+        Swal.fire({ title, icon: "success", timer: 1500, showConfirmButton: false });
+    });
+
+</script>
+@endscript --}}

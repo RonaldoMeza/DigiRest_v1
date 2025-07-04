@@ -53,8 +53,8 @@ class OrderResource extends Resource
                         Select::make('payment_method')
                             ->label('Método de Pago')
                             ->options([
-                                'tarjeta de crédito' => 'Tarjeta de Crédito',
-                                'pago en efectivo' => 'Pago en Efectivo',
+                                'tarjeta' => 'Tarjeta',
+                                'efectivo' => 'Efectivo',
                             ])
                             ->required(),
 

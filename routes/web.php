@@ -19,6 +19,7 @@ use App\Livewire\Auth\ResetPasswordPage;
 use App\Livewire\SuccessPage;
 use App\Livewire\CancelPage;
 use App\Livewire\ReservationsPage;
+use App\Livewire\PaymentCardPage;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -48,6 +49,9 @@ Route::middleware('auth')->group(function(){
     Route::get('/mis-pedidos', MyOrdersPage::class);
     Route::get('/mis-pedidos/{pedido}', OrderDetailPage::class);
 
-    Route::get('/exitoso', SuccessPage::class);
-    Route::get('/cancelado', CancelPage::class);
+    Route::get('/exitoso', SuccessPage::class)->name('success');
+    Route::get('/cancelado', CancelPage::class)->name('cancel');
+    
+    Route::get('/pago-tarjeta', PaymentCardPage::class)->name('pago.tarjeta');
 });
+

@@ -166,3 +166,13 @@
             line-height: 1;
             opacity: 0.3;
         }
+
+
+/* PARA TARJETA DE PAGO */
+.card-style{
+    transition: ease 0.5s;
+    &:hover{
+        box-shadow: 3px 3px 10px rgb(0, 0, 0, 0.5);
+        transform: scale(1.05); 
+    }
+}
