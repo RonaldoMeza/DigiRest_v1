@@ -16,14 +16,14 @@
             </div>
 
             <div class="grow">
-            <div class="flex items-center gap-x-2">
-                <p class="text-xs uppercase tracking-wide text-gray-500">
-                Cliente
-                </p>
-            </div>
-            <div class="mt-1 flex items-center gap-x-2">
-                <div>Jace Grimes</div>
-            </div>
+                <div class="flex items-center gap-x-2">
+                    <p class="text-xs uppercase tracking-wide text-gray-500">
+                    Cliente
+                    </p>
+                </div>
+                <div class="mt-1 font-medium flex items-center gap-x-2">
+                    <div>{{ $address->full_name }}</div>
+                </div>
             </div>
         </div>
         </div>
@@ -42,16 +42,14 @@
             </div>
 
             <div class="grow">
-            <div class="flex items-center gap-x-2">
-                <p class="text-xs uppercase tracking-wide text-gray-500">
-                Fecha del pedido
-                </p>
-            </div>
-            <div class="mt-1 flex items-center gap-x-2">
-                <h3 class="text-xl font-medium text-gray-800 dark:text-gray-200">
-                17-02-2024
-                </h3>
-            </div>
+                <div class="flex items-center gap-x-2">
+                    <p class="text-xs uppercase tracking-wide text-gray-500">
+                    Fecha del pedido
+                    </p>
+                </div>
+                <div class="mt-1 font-medium flex items-center gap-x-2">
+                    <div>{{ $order_items[0]->created_at->format('d-m-Y') }}</div>
+                </div>
             </div>
         </div>
         </div>
@@ -74,7 +72,24 @@
                 </p>
             </div>
             <div class="mt-1 flex items-center gap-x-2">
-                <span class="bg-digirest py-1 px-3 rounded text-black shadow">Processing</span>
+                @php
+                    $status = '';
+                        if ($order->status == 'new') {
+                            $status = 'Nuevo';
+                        } elseif ($order->status == 'processing') {
+                            $status = 'En Proceso';
+                        } elseif ($order->status == 'shipped') {
+                            $status = 'Enviado';
+                        } elseif ($order->status == 'delivered') {
+                            $status = 'Entregado';
+                        } elseif ($order->status == 'canceled') {
+                            $status = 'Cancelado';
+                        }
+                @endphp
+
+                <span class="bg-digirest py-1 px-3 rounded text-black shadow">
+                {{ $status }}
+                </span>
             </div>
             </div>
         </div>
@@ -100,7 +115,20 @@
                 </p>
             </div>
             <div class="mt-1 flex items-center gap-x-2">
-                <span class="bg-digirest py-1 px-3 rounded text-black shadow">Pagado</span>
+                @php
+                    $payment_status = '';
+                    if ($order->payment_status == 'pendiente') {
+                        $payment_status = 'Pendiente';
+                    } elseif ($order->payment_status == 'pagado') {
+                        $payment_status = 'Pagado';
+                    } elseif ($order->payment_status == 'fallado') {
+                        $payment_status = 'Fallido';
+                    } 
+                @endphp
+
+                <span class="bg-digirest py-1 px-3 rounded text-black shadow">
+                    {{ $payment_status }}
+                </span>
             </div>
             </div>
         </div>
@@ -124,32 +152,23 @@
             <tbody>
 
                 <!--[if BLOCK]><![endif]-->
-                <tr wire:key="53">
-                <td class="py-4">
-                    <div class="flex items-center">
-                    <img class="h-16 w-16 mr-4" src="/images/lomo-saltado.png" alt="Product image">
-                    <span class="font-semibold">Lomo Saltado</span>
-                    </div>
-                </td>
-                <td class="py-4">S/ 20.00</td>
-                <td class="py-4">
-                    <span class="text-center w-8">1</span>
-                </td>
-                <td class="py-4">S/ 20.00</td>
+
+                @foreach ($order_items as $item)
+                <tr wire:key="{{ $item->id }}">
+                    <td class="py-4">
+                        <div class="flex items-center">
+                            <img class="h-16 w-16 mr-4" src="{{ url('storage', $item->product->images[0]) }}" alt="{{ $item->product->name }}">
+                            <span class="font-semibold">{{ $item->product->name }}</span>
+                        </div>
+                    </td>
+                    <td class="py-4">S/ {{ Number::format($item->unit_amount, 2) }}</td>
+                    <td class="py-4">
+                        <span class="text-center w-8">{{ $item->quantity }}</span>
+                    </td>
+                    <td class="py-4">S/ {{ Number::format($item->total_amount, 2) }}</td>
                 </tr>
-                <tr wire:key="54">
-                <td class="py-4">
-                    <div class="flex items-center">
-                    <img class="h-16 w-16 mr-4" src="/images/arroz-con-mariscos.png" alt="Product image">
-                    <span class="font-semibold">Arroz con Mariscos</span>
-                    </div>
-                </td>
-                <td class="py-4">S/ 25.00</td>
-                <td class="py-4">
-                    <span class="text-center w-8">3</span>
-                </td>
-                <td class="py-4">S/ 75.00</td>
-                </tr>
+                @endforeach
+
                 <!--[if ENDBLOCK]><![endif]-->
 
             </tbody>
@@ -160,11 +179,10 @@
             <h1 class="font-3xl font-bold text-slate-500 mb-3">Dirección de envío</h1>
             <div class="flex justify-between items-center">
             <div>
-                <p>42227 Zoila Glens, Oshkosh, Michigan, 55928</p>
+                <p>{{ $address->district }}, {{ $address->street_address }}</p>
             </div>
             <div>
-                <p class="font-semibold">Telefono o Celular:</p>
-                <p>023-509-0009</p>
+                <p class="font-semibold">Teléfono: {{ $address->phone }}</p>
             </div>
             </div>
         </div>
@@ -175,7 +193,7 @@
             <h2 class="text-lg font-semibold mb-4">Resumen de Boleta</h2>
             <div class="flex justify-between mb-2">
                 <span>Subtotal</span>
-                <span>S/ 95.00</span>
+                <span>S/ {{ Number::format($item->order->grand_total, 2) }}</span>
             </div>
             {{-- <div class="flex justify-between mb-2">
                 <span>Taxes</span>
@@ -183,12 +201,12 @@
             </div> --}}
             <div class="flex justify-between mb-2">
                 <span>Envío</span>
-                <span>S/ 0.00</span>
+                <span>S/ {{ Number::format(0, 2) }}</span>
             </div>
             <hr class="my-2">
             <div class="flex justify-between mb-2">
                 <span class="font-semibold">Total</span>
-                <span class="font-semibold">S/ 95.00</span>
+                <span class="font-semibold">S/ {{ Number::format($item->order->grand_total, 2) }}</span>
             </div>
 
         </div>

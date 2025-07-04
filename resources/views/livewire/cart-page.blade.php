@@ -68,13 +68,13 @@
                         </button>
                     </td>
                     </tr>
+                {{-- @empty sirve para mostrar un mensaje cuando el carrito está vacío --}}
                 @empty
                     <tr>
-                        <td colspan="5" class="text-center py-4 text-4x1 font-semibold text-slate-500">
+                        <td colspan="5" class="text-center py-4 text-4xl font-semibold text-slate-500">
                             No hay artículos disponibles en el carrito
                         </td>
                     </tr>
-
                 @endforelse
                 <!-- More product rows -->
 
