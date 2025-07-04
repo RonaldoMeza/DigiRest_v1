@@ -29,7 +29,7 @@ class OrderPlaced extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: '¡Pedido Realizado!',
+            subject: 'Pedido Realizado - DigiRest',
         );
     }
 
@@ -40,6 +40,9 @@ class OrderPlaced extends Mailable
     {
         return new Content(
             markdown: 'mail.orders.placed',
+            with: [
+                'url' => route('my-orders.show', $this->order)
+            ]
         );
     }
 

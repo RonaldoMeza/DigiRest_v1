@@ -16,43 +16,61 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr class="odd:bg-white even:bg-gray-100 dark:odd:bg-slate-900 dark:even:bg-slate-800">
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">10001</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">18-02-2024</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"><span class="bg-digirest py-1 px-3 rounded text-black shadow">Pendiente</span></td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"><span class="bg-digirest py-1 px-3 rounded text-black shadow">Pagado</span></td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">S/ 65.00</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                    <a href="/mis-pedidos/10001" class="bg-slate-600 text-white py-2 px-4 rounded-md hover:bg-slate-500">Ver detalles</a>
-                    </td>
-                </tr>
+                
+                    @foreach ($orders as $order)
+                    @php
+                        $status = '';
+                        $payment_status = '';
+                        if ($order->status == 'new') {
+                            $status = 'Nuevo';
+                        } elseif ($order->status == 'processing') {
+                            $status = 'En Proceso';
+                        } elseif ($order->status == 'shipped') {
+                            $status = 'Enviado';
+                        } elseif ($order->status == 'delivered') {
+                            $status = 'Entregado';
+                        } elseif ($order->status == 'canceled') {
+                            $status = 'Cancelado';
+                        }
 
-                <tr class="odd:bg-white even:bg-gray-100 dark:odd:bg-slate-900 dark:even:bg-slate-800">
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">10006</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">18-02-2024</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"><span class="bg-digirest py-1 px-3 rounded text-black shadow">Pendiente</span></td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"><span class="bg-digirest py-1 px-3 rounded text-black shadow">Pagado</span></td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">S/ 45.00</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                    <a href="/mis-pedidos/10001" class="bg-slate-600 text-white py-2 px-4 rounded-md hover:bg-slate-500">Ver detalles</a>
-                    </td>
-                </tr>
+                        if ($order->payment_status == 'pendiente') {
+                            $payment_status = 'Pendiente';
+                        } elseif ($order->payment_status == 'pagado') {
+                            $payment_status = 'Pagado';
+                        } elseif ($order->payment_status == 'fallado') {
+                            $payment_status = 'Fallido';
+                        } 
 
-                <tr class="odd:bg-white even:bg-gray-100 dark:odd:bg-slate-900 dark:even:bg-slate-800">
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">10019</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">18-02-2024</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"><span class="bg-digirest py-1 px-3 rounded text-black shadow">Pendiente</span></td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"><span class="bg-digirest py-1 px-3 rounded text-black shadow">Pagado</span></td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">S/ 190.00</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                    <a href="/mis-pedidos/10001" class="bg-slate-600 text-white py-2 px-4 rounded-md hover:bg-slate-500">Ver detalles</a>
-                    </td>
-                </tr>
+                    @endphp
+
+                    <tr class="odd:bg-white even:bg-gray-100 dark:odd:bg-slate-900 dark:even:bg-slate-800"
+                        wire:key="{{ $order->id }}">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
+                            {{ $order->id }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                            {{ $order->created_at->format('d-m-Y') }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                            <span class="bg-digirest py-1 px-3 rounded text-black shadow">{{ $status }}</span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                            <span class="bg-digirest py-1 px-3 rounded text-black shadow">{{ $payment_status }}</span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                            S/ {{ Number::format($order->grand_total, 2) }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
+                        <a href="/mis-pedidos/{{ $order->id }}" class="bg-slate-600 text-white py-2 px-4 rounded-md hover:bg-slate-500">Ver detalles</a>
+                        </td>
+                    </tr>
+                    @endforeach
 
                 </tbody>
             </table>
             </div>
         </div>
+        {{ $orders->links() }}
         </div>
     </div>
 </div>

@@ -47,7 +47,7 @@ Route::middleware('auth')->group(function(){
 
     Route::get('/verificar', CheckoutPage::class);
     Route::get('/mis-pedidos', MyOrdersPage::class);
-    Route::get('/mis-pedidos/{pedido}', OrderDetailPage::class);
+    Route::get('/mis-pedidos/{pedido}', OrderDetailPage::class)->name('my-orders.show');
 
     Route::get('/exitoso', SuccessPage::class)->name('success');
     Route::get('/cancelado', CancelPage::class)->name('cancel');

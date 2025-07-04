@@ -1,12 +1,14 @@
 <x-mail::message>
-# Introduction
+# ¡Pedido realizado con éxito!
 
-The body of your message.
+Te confirmamos que hemos recibido tu pedido **#{{ $order->id }}** realizado el **{{ $order->created_at->format('d/m/Y \a \l\a\s H:i') }}**.
 
-<x-mail::button :url="''">
-Button Text
+<x-mail::button :url="$url">
+Ver mi pedido
 </x-mail::button>
 
-Thanks,<br>
-{{ config('app.name') }}
+¡Gracias por confiar en {{ config('app.name') }}!
+
+Saludos cordiales,<br>
+**El equipo de {{ config('app.name') }}**
 </x-mail::message>
