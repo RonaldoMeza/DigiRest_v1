@@ -72,7 +72,7 @@
                 @empty
                     <tr>
                         <td colspan="5" class="text-center py-4 text-4xl font-semibold text-slate-500">
-                            No hay artículos disponibles en el carrito
+                            Añade productos al carrito para solicitar un pedido.
                         </td>
                     </tr>
                 @endforelse

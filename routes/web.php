@@ -27,7 +27,7 @@ Route::get('/', HomePage::class);
 
 Route::get('/categorias', CategoriesPage::class);
 Route::get('/productos', ProductsPage::class);
-Route::get('/reservas', ReservationsPage::class);
+/* Route::get('/reservas', ReservationsPage::class); */
 Route::get('/carrito', CartPage::class);
 Route::get('/productos/{slug}', ProductDetailPage::class);
 
@@ -44,7 +44,7 @@ Route::middleware('auth')->group(function(){
         Auth::logout();
         return redirect('/');
     });
-
+    Route::get('/reservas', ReservationsPage::class)->name('reservations');
     Route::get('/verificar', CheckoutPage::class);
     Route::get('/mis-pedidos', MyOrdersPage::class);
     Route::get('/mis-pedidos/{order_id}', OrderDetailPage::class)->name('my-orders.show');

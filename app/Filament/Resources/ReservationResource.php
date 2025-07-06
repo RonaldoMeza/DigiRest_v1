@@ -37,7 +37,7 @@ class ReservationResource extends Resource
                     ->label('Nombre completo')
                     ->required(),
                 TextInput::make('customer_phone')
-                    ->label('Número teléfono o celular')
+                    ->label('Teléfono o celular')
                     ->required(),
                 DatePicker::make('date')
                     ->label('Fecha')
@@ -46,20 +46,27 @@ class ReservationResource extends Resource
                     ->minDate(Carbon::today()) // solo permite escoger fechas desde hoy en adelante
                     ->displayFormat('d/m/Y')  // Formatea a dias meses y años, en ese orden.
                     ->native(false),   // Hace el formulario de fecha  como el de html, el diseño cambia.
-                TimePicker::make('start_time')
-                    ->label('Hora Inicio')
-                    ->required()
-                    ->format('H:i') // Guarda como "14:00" en la BD.
-                    ->seconds(false),   // Quita los segundos
-                TimePicker::make('end_time')
-                    ->label('Hora Fin')
-                    ->format('H:i')
-                    ->seconds(false),  // Quita los segundos
                 TextInput::make('guests')
                     ->label('Comensales')
                     ->numeric()
                     ->minValue(1)
+                    ->maxValue(8)
+                    ->placeholder('Número de comensales')
                     ->required(),
+                TimePicker::make('start_time')
+                    ->label('Hora Inicio')
+                    ->required()
+                    ->placeholder('00:00')
+                    ->format('H:i') // Guarda como "14:00" en la BD.
+                    ->seconds(false)   // Quita los segundos
+                    ->native(false), // Hace el formulario de hora como el de html, el diseño cambia
+                TimePicker::make('end_time')
+                    ->label('Hora Fin')
+                    ->placeholder('00:00')
+                    ->native(false) // Hace el formulario de hora como el de html, el diseño cambia
+                    ->required()
+                    ->format('H:i')
+                    ->seconds(false),  // Quita los segundos
                 Select::make('table_id')
                     ->label('Mesa')
                     ->placeholder('Seleccione una mesa')

@@ -86,7 +86,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         
                         <!-- Card 1: Menú Digital -->
-                        <a href="reservas" class="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 card-shadow-menu h-80">
+                        <a wire:navigate href="reservas" class="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 card-shadow-menu h-80">
                             <div class="relative w-full h-full overflow-hidden">
                                 <img src="/images/restaurant.jpg" 
                                     alt="Reservas en línea" 
@@ -105,7 +105,7 @@
                         </a>
                         
                         <!-- Card 2: Gestión de Pedidos -->
-                        <a href="productos" class="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 card-shadow-orders h-80">
+                        <a wire:navigate href="productos" class="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 card-shadow-orders h-80">
                             <div class="relative w-full h-full overflow-hidden">
                                 <img src="/images/platillos-de-restaurante.jpg" 
                                     alt="Platillos deliciosos" 
@@ -122,7 +122,7 @@
                         </a>
                         
                         <!-- Card 3: Análisis de Datos -->
-                        <a href="#" class="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 card-shadow-analytics h-80">
+                        <a wire:navigate href="carrito" class="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 card-shadow-analytics h-80">
                             <div class="relative w-full h-full overflow-hidden">
                                 <img src="/images/delivery.jpg" 
                                     alt="Análisis de Datos" 
