@@ -82,7 +82,7 @@
                     @enderror
                 </div>
                 <!-- End Form Group -->
-                <button type="submit" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent 
+                <button type="submit" class="btn-click font-bold w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm rounded-lg border border-transparent 
                 bg-digirest text-black hover:bg-digirestDark disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                 Iniciar Sesión
                 </button>

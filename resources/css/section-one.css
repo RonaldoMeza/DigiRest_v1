@@ -68,6 +68,13 @@
     scale: 0.9;
 }
 
+.btn-click {
+    transition: 0.3s ease-in-out;
+}
+.btn-click:active {
+    scale: 0.9;
+}
+
 @media screen and (max-width:768px) {
     .section1{
         padding-top: 2rem;

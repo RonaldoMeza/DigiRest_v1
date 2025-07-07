@@ -75,7 +75,7 @@
 
             {{-- Botón --}}
             <button type="submit"
-                class="w-full bg-digirest text-black py-3 px-4 rounded-md font-medium hover:bg-digirest/90 active:bg-digirest/80 focus:outline-none focus:ring-2 focus:ring-digirest focus:ring-offset-2 transition duration-200 ease-in-out shadow-sm hover:shadow mt-6">
+                class="btn-click w-full bg-digirest text-black py-3 px-4 rounded-md font-medium hover:bg-digirest/90 active:bg-digirest/80 focus:outline-none focus:ring-2 focus:ring-digirest focus:ring-offset-2 transition duration-200 ease-in-out shadow-sm hover:shadow mt-6">
                 <span wire:loading.remove>Pagar S/ {{ number_format($grand_total, 2) }}</span>
                 <span wire:loading class="flex justify-center items-center gap-2">
                     <svg class="h-5 w-5 text-black animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">

@@ -67,9 +67,10 @@ class CartManagement {
 
         if ($existing_item !== null) {
             // Si el producto ya está en el carrito: incrementa cantidad y actualiza total
-            $cart_items[$existing_item]['quantity'] = $qty ;
-            $cart_items[$existing_item]['total_amount'] = $cart_items[$existing_item]['quantity'] *
-                $cart_items[$existing_item]['unit_amount'];
+            $cart_items[$existing_item]['quantity'] += $qty ;
+
+            // ✅ Corrige el cálculo del total
+            $cart_items[$existing_item]['total_amount'] = $cart_items[$existing_item]['quantity'] * $cart_items[$existing_item]['unit_amount'];
         } else {
             // Si es un producto nuevo: lo busca en la BD y lo agrega al carrito
             $product = Product::where('id', $product_id)->first(['id', 'name', 'price', 'images']);

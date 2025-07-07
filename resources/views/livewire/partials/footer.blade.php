@@ -11,8 +11,8 @@
             </figure>
         </div>
         <div class="box box-2">
-            <h2 class="font-bold">SOBRE NOSOTROS</h2>
-            <p class="text-gray-400">
+            <h2 class="font-bold text-base sm:text-lg md:text-xl">SOBRE NOSOTROS</h2>
+            <p class="text-gray-400 text-sm sm:text-sm md:text-base">
                 En <strong>DigiRest</strong> somos un equipo apasionado por la gastronomía que trabaja cada día 
                 para ofrecerte experiencias culinarias inolvidables. Nuestra meta es combinar ingredientes 
                 frescos, creatividad y tradición en cada plato.
@@ -20,7 +20,7 @@
         </div>
         <div class="box box-3">
             <div class="redes-container">
-                <h2 class="font-bold">SIGUENOS</h2>
+                <h2 class="font-bold text-base sm:text-lg md:text-xl">SIGUENOS</h2>
                 <div class="red-social">
                     <!-- Facebook -->
                     <a href="https://www.facebook.com/people/DigiRest/61577720574364/" target="_blank" aria-label="Facebook">
@@ -40,8 +40,8 @@
             </div>
         </div>
     </div>
-    <div class="grupo-2">
-        <small>&copy; 2025 <b>DigiRest</b> - Todos los Derechos Reservados.</small>
+    <div class="grupo-2 ">
+        <small class="text-sm sm:text-sm md:text-base">&copy; 2025 <b>DigiRest</b> - Todos los Derechos Reservados.</small>
     </div>
 
 </footer>

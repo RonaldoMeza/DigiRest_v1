@@ -234,7 +234,7 @@
                 <div class="text-center max-w-md mx-auto">
                     <button 
                         type="submit"
-                        class="w-full px-8 py-4 rounded-lg font-bold text-xl transition-all duration-200
+                        class="btn-click w-full px-8 py-4 rounded-lg font-bold text-xl transition-all duration-200
                             {{ $canSubmitReservation ? 'bg-digirest hover:bg-digirestDark text-black' : 'bg-gray-300 text-gray-500 cursor-not-allowed' }}"
                         {{ $canSubmitReservation ? '' : 'disabled' }}>
                         <span wire:loading.remove wire:target="createReservation">Reservar Ahora</span>

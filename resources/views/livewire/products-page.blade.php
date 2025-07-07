@@ -25,7 +25,7 @@
                 </div>
             
                 <div class="p-4 mb-5 bg-white border border-gray-200 dark:bg-gray-900 dark:border-gray-900">
-                    <h2 class="text-2xl font-bold dark:text-gray-400">Stock del Producto</h2>
+                    <h2 class="text-2xl font-bold dark:text-gray-400">Mostrar</h2>
                     <div class="w-16 pb-2 mb-6 border-b border-digirest dark:border-gray-400"></div>
                     {{-- Filtro de stock (disponibilidad) --}}
                     <ul>
@@ -34,7 +34,7 @@
                             <input type="radio" name="stock" id="stock-1" wire:model.live="stock" value="1"
                                 class="appearance-none h-4 w-4 border border-gray-400 rounded-sm checked:bg-digirest checked:border-digirest 
                                     focus:outline-none transition"/>
-                            <span class="ml-2 text-lg dark:text-gray-400">Disponible</span>
+                            <span class="ml-2 text-lg dark:text-gray-400">Disponibles</span>
                             </label>
                         </li>
                         <li class="mb-4">
@@ -42,7 +42,7 @@
                             <input type="radio" name="stock" id="stock-0" wire:model.live="stock" value="0"
                                 class="appearance-none h-4 w-4 border border-gray-400 rounded-sm checked:bg-digirest checked:border-digirest 
                                     focus:outline-none transition"/>
-                            <span class="ml-2 text-lg dark:text-gray-400">No Disponible</span>
+                            <span class="ml-2 text-lg dark:text-gray-400">No disponibles</span>
                             </label>
                         </li>
                     </ul>

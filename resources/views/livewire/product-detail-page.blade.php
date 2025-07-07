@@ -45,19 +45,20 @@
                 </p>
                 </div>
                 <div class="w-32 mb-8 ">
-                <label for="" class="w-full pb-1 text-xl font-semibold text-gray-700 border-b border-digirest dark:border-gray-600 dark:text-gray-400">Cantidad</label>
-                <div class="relative flex flex-row w-full h-10 mt-6 bg-transparent rounded-lg">
-                    <button wire:click='decreaseQty' class="w-20 h-full text-gray-600 bg-gray-300 rounded-l outline-none cursor-pointer dark:hover:bg-gray-700 dark:text-gray-400 hover:text-gray-700 dark:bg-gray-900 hover:bg-gray-400">
-                    <span class="m-auto text-2xl font-thin">-</span>
-                    </button>
-                    <input type="number" wire:model="quantity" readonly class="flex items-center w-full font-semibold text-center text-gray-700 placeholder-gray-700 bg-gray-300 outline-none dark:text-gray-400 dark:placeholder-gray-400 dark:bg-gray-900 focus:outline-none text-md hover:text-black" placeholder="1">
-                    <button wire:click='increaseQty' class="w-20 h-full text-gray-600 bg-gray-300 rounded-r outline-none cursor-pointer dark:hover:bg-gray-700 dark:text-gray-400 dark:bg-gray-900 hover:text-gray-700 hover:bg-gray-400">
-                    <span class="m-auto text-2xl font-thin">+</span>
-                    </button>
-                </div>
+                    <label for="" class="w-full pb-1 text-xl font-semibold text-gray-700 border-b border-digirest dark:border-gray-600 dark:text-gray-400">Cantidad</label>
+                    
+                    <div class="relative flex flex-row w-full h-12 mt-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
+                        <button wire:click='decreaseQty' class="w-20 h-full text-gray-600 dark:text-gray-400 bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-700 dark:to-gray-800 hover:from-red-50 hover:to-red-100 dark:hover:from-red-900/20 dark:hover:to-red-800/20 hover:text-red-600 dark:hover:text-red-400 transition-all duration-200 ease-in-out transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-50">
+                            <span class="m-auto text-2xl font-medium">−</span>
+                        </button>
+                        <input type="number" wire:model="quantity" readonly class="flex items-center w-full font-bold text-center text-gray-800 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-400 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 outline-none focus:outline-none text-lg selection:bg-blue-200 dark:selection:bg-blue-800" placeholder="1">
+                        <button wire:click='increaseQty' class="w-20 h-full text-gray-600 dark:text-gray-400 bg-gradient-to-r from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-700 hover:from-green-50 hover:to-green-100 dark:hover:from-green-900/20 dark:hover:to-green-800/20 hover:text-green-600 dark:hover:text-green-400 transition-all duration-200 ease-in-out transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
+                            <span class="m-auto text-2xl font-medium">+</span>
+                        </button>
+                    </div>
                 </div>
                 <div class="flex flex-wrap items-center gap-4">
-                <button wire:click='addToCart({{ $product->id }})' class="w-full p-4 bg-digirest rounded-md lg:w-2/5 dark:text-gray-200 text-black hover:bg-digirestDark">
+                <button wire:click.prevent='addToCart({{ $product->id }})' class="btn-click font-bold w-full p-4 bg-digirest rounded-md lg:w-2/5 dark:text-gray-200 text-black hover:bg-digirestDark">
                     <span wire:loading.remove wire:target='addToCart({{ $product->id }})'>Añadir al carrito</span>
                     <span wire:loading wire:target='addToCart({{ $product->id }})'>Añadiendo...</span>
                 </button>

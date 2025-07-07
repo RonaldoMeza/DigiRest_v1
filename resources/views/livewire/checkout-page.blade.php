@@ -199,7 +199,7 @@
 				</div>
 				</hr>
 			</div>
-			<button type="submit" class="bg-digirest mt-4 w-full p-3 rounded-lg text-lg text-black hover:bg-digirestDark">
+			<button type="submit" class="btn-click bg-digirest font-bold mt-4 w-full p-3 rounded-lg text-lg text-black hover:bg-digirestDark">
 				<span wire:loading.remove >Confirmar</span>
 				<span wire:loading class="flex justify-center items-center gap-2">
 					<svg class="h-5 w-5 text-black animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">

@@ -17,7 +17,10 @@ class ProductDetailPage extends Component
 
 
     public function increaseQty(){    // Método para incrementar la cantidad de cada producto en una unidad
-        $this->quantity++;
+        // Limita la cantidad máxima a 10 unidades
+        if ($this->quantity < 10) {
+            $this->quantity++;
+        }
     }
 
     public function decreaseQty(){     // Método para disminuir la cantidad de cada producto en una unidad
