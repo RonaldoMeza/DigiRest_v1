@@ -79,7 +79,9 @@ class ProductResource extends Resource
                                 ->required()
                                 ->numeric()
                                 ->label('Precio')
-                                ->prefix('S/.'),
+                                ->prefix('S/.')
+                                ->minValue(0)
+                                ->maxValue(999.99),
                         ]),
                         Section::make('Asociaciones')->schema([
                             Select::make('category_id')

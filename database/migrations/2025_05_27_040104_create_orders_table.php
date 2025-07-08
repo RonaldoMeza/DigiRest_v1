@@ -20,8 +20,8 @@ return new class extends Migration
             $table->decimal('grand_total', 10, 2); // Precio total del pedido.
             $table->string('payment_method'); // Método de pago
             $table->string('payment_status'); // Estado del pago
-            $table->enum('status', ['processing', 'shipped', 'delivered', 'canceled'])
-                ->default('processing'); // Estado del pedido - en proceso, enviado, entregado y cancelado.
+            $table->enum('status', ['new', 'processing', 'shipped', 'delivered', 'canceled'])
+                ->default('new'); // Estado del pedido - en proceso, enviado, entregado y cancelado.
             $table->text('notes')->nullable(); // Notas adicionales para el pedido.
 
 
