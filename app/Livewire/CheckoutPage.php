@@ -93,7 +93,9 @@ class CheckoutPage extends Component
         $order->items()->createMany($cart_items);
         CartManagement::clearCartItems();
 
+        // Enviar confirmación del pedido al correo
         Mail::to(request()->user())->send(new OrderPlaced($order));
+
         return redirect()->route('success');
     }
 

@@ -14,9 +14,10 @@ class SuccessPage extends Component
     public function render()
     {
         // Obtenemos el último pedido creado por el usuario que ha iniciado sesión actualmente.
-        $latest_order = Order::with('address')->where('user_id', Auth::user()->id)
-        ->latest()
-        ->first();
+        $latest_order = Order::with('address')
+        ->where('user_id', Auth::user()->id) // Filtramos por el ID del usuario autenticado
+        ->latest() // latest() obtiene el último pedido
+        ->first(); // first() obtiene el primer resultado de la consulta
 
         return view('livewire.success-page', [
             'order' => $latest_order,

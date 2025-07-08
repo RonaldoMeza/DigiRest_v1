@@ -19,7 +19,7 @@ class MyOrdersPage extends Component
         // Obtenemos los pedidos del usuario que inició sesión actualmente
         $my_orders = Order::where('user_id', Auth::user()->id)
         ->latest()
-        ->paginate(2);
+        ->paginate(6);
         return view('livewire.my-orders-page', [
             'orders' => $my_orders,
         ]);
