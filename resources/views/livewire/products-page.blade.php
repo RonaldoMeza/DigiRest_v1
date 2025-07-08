@@ -4,7 +4,7 @@
         <!-- Header Section -->
         <div class="mb-8">
             <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-2">Productos</h1>
-            <p class="text-gray-600 dark:text-gray-400">Descubre nuestra amplia variedad platillos</p>
+            <p class="text-gray-600 dark:text-gray-400">Descubre nuestra amplia variedad de platillos</p>
         </div>
 
         <div class="flex flex-col lg:flex-row gap-8">
