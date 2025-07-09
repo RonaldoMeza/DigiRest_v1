@@ -29,7 +29,7 @@ class ListReservations extends ListRecords
     {
         return [
             'all' => Tab::make('Todas'),
-            'pending' => Tab::make('Pendiente')
+            'pending' => Tab::make('Nuevo')
                 ->modifyQueryUsing(fn ($query) => $query->where('status', 'pending')),
             'confirmed' => Tab::make('Confirmada')
                 ->modifyQueryUsing(fn ($query) => $query->where('status', 'confirmed')),

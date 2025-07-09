@@ -98,7 +98,7 @@ class PaymentCardPage extends Component
         session()->forget('checkout_data');
 
         // Enviar confirmación del pedido al correo
-        Mail::to(request()->user())->send(new OrderPlaced($order));
+        /* Mail::to(request()->user())->send(new OrderPlaced($order)); */
 
         // Redireccionar
         return redirect()->route('success');

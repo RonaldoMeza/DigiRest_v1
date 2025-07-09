@@ -170,12 +170,12 @@ class ReservationResource extends Resource
                     Tables\Actions\ViewAction::make(),
                     Tables\Actions\EditAction::make()
                         ->visible(fn($record) => in_array($record->status, ['pending', 'confirmed'])),
-                    Tables\Actions\DeleteAction::make(),
+                    /* Tables\Actions\DeleteAction::make(), */
                 ]),
-            ])
-            ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
             ]);
+            /* ->bulkActions([
+                Tables\Actions\DeleteBulkAction::make(),
+            ]); */
     }
 
     public static function getRelations(): array
