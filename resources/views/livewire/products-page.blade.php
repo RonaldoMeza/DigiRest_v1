@@ -76,7 +76,7 @@
                             <label 
                                 for="stock-0" 
                                 class="ml-3 text-gray-700 dark:text-gray-300 cursor-pointer group-hover:text-digirest transition-colors duration-200">
-                                No disponibles
+                                Proximamente
                             </label>
                         </div>
                     </div>
