@@ -8,7 +8,9 @@ use App\Models\SimulatedPayment;
 use App\Models\Address;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Attributes\Title;
+use App\Mail\OrderPlaced;
 
 #[Title('Pago con tarjeta - DigiRest')]
 class PaymentCardPage extends Component
@@ -94,6 +96,9 @@ class PaymentCardPage extends Component
         // Limpiar todo
         CartManagement::clearCartItems();
         session()->forget('checkout_data');
+
+        // Enviar confirmación del pedido al correo
+        Mail::to(request()->user())->send(new OrderPlaced($order));
 
         // Redireccionar
         return redirect()->route('success');
