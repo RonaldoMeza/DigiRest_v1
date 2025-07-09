@@ -81,7 +81,7 @@ class CartManagement {
                     'image' => $product->images[0],    // Primera imagen del producto
                     'quantity' => $qty,                   // Cantidad inicial (1)
                     'unit_amount' => $product->price,  // Precio unitario
-                    'total_amount' => $product->price  // Total (precio * cantidad)
+                    'total_amount' => $product->price * $qty  // Total (precio * cantidad)
                 ];
             }
         }

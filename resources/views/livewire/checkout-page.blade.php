@@ -127,7 +127,7 @@
 							<!-- Referencia -->
 							<div>
 								<label class="block text-sm font-semibold text-gray-700 mb-2" for="reference">
-									Referencia <span class="text-gray-500 font-normal">(opcional)</span>
+									Referencia
 								</label>
 								<input wire:model="reference" 
 									class="w-full rounded-xl border-2 border-gray-200 py-3 px-4 text-gray-700 focus:border-digirest focus:outline-none focus:ring-2 focus:ring-digirest/20 transition-all duration-200" 

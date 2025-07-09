@@ -44,7 +44,7 @@
                     Número de tarjeta
                 </label>
                 <div class="relative group">
-                    <input wire:model="cardnumber" type="text" id="cardnumber" name="cardnumber"
+                    <input wire:model="cardnumber" type="text" id="cardnumber" name="cardnumber" oninput="formatCardNumber(this)"
                         placeholder="1234 5678 9012 3456" maxlength="19"
                         class="w-full px-4 py-3.5 pr-16 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-digirest/20 focus:border-digirest transition-all duration-200 ease-in-out text-gray-900 placeholder-gray-400 hover:border-gray-300"
                         required>
@@ -71,7 +71,7 @@
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg>
                         </div>
-                        <input wire:model="expiry" type="text" id="expiry" name="expiry" placeholder="MM/AA" maxlength="5"
+                        <input wire:model="expiry" type="text" id="expiry" name="expiry" placeholder="MM/AA" maxlength="5" oninput="formatExpiry(this)"
                             class="w-full pl-12 pr-4 py-3.5 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-digirest/20 focus:border-digirest transition-all duration-200 ease-in-out text-gray-900 placeholder-gray-400 hover:border-gray-300"
                             required>
                         @error('expiry') 
@@ -139,3 +139,21 @@
         </div>
     </div>
 </div>
+
+
+<script>
+    function formatCardNumber(input) {
+        let value = input.value.replace(/\D/g, ''); // Solo números
+        value = value.substring(0, 16); // Máximo 16 dígitos
+        const formatted = value.match(/.{1,4}/g)?.join(' ') || '';
+        input.value = formatted;
+    }
+    function formatExpiry(input) {
+        let value = input.value.replace(/\D/g, ''); // Solo números
+        if (value.length >= 3) {
+            value = value.substring(0, 4); // Máximo 4 dígitos
+            value = value.replace(/(\d{2})(\d{1,2})/, '$1/$2');
+        }
+        input.value = value;
+    }
+</script>
